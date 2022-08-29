@@ -5,6 +5,7 @@
 
 	<typeAliases>
 		<typeAlias type="model.ExLocation" alias="exlocation" />
+		<typeAlias type="model.ExLocation" alias="exlocation" />
 		
 
 	</typeAliases>
