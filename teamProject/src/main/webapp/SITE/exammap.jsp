@@ -202,6 +202,10 @@ h1{
 	white-space: nowrap;
 }
 
+.info{
+
+}
+
 #placesList .item .info {
 	padding: 10px 0 10px 55px;
 }
@@ -511,7 +515,8 @@ h1{
 		// 검색결과 항목을 Element로 반환하는 함수입니다
 		function getListItem(index, places) {
 
-			var el = document.createElement('li'), itemStr = '<span class="markerbg marker_'
+			var el = document.createElement('li'), itemStr = '<div id="menu_wrap" class="bg_white">' 
+					+ '<span class="markerbg marker_'
 					+ (index + 1)
 					+ '"></span>'
 					+ '<div class="info">'
