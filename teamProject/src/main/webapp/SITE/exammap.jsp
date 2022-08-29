@@ -339,12 +339,14 @@ h1{
 
 <body>
 	<div class="map_wrap">
-		<div>
-			<form name="f" method="post">
+	
 				<div id="menu_wrap" class="bg_white">
 					<h1
 						style="position: relative; font-size: 2.5rem; color: #FFF; text-align: center; top: 30px;">JAGONGJA.</h1>
 					<div class="option">
+							<form name="f" method="post">
+							
+							
 						<select name="selectedAdress1" id="" class="selected1"
 							onchange="categoryChange(this)">
 							<option value>시/도 선택</option>
@@ -515,8 +517,7 @@ h1{
 		// 검색결과 항목을 Element로 반환하는 함수입니다
 		function getListItem(index, places) {
 
-			var el = document.createElement('li'), itemStr = '<div id="menu_wrap" class="bg_white">' 
-					+ '<span class="markerbg marker_'
+			var el = document.createElement('li'), itemStr = '<span class="markerbg marker_'
 					+ (index + 1)
 					+ '"></span>'
 					+ '<div class="info">'
