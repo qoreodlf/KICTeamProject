@@ -290,10 +290,10 @@
   height: 100%;
   width: 3%;
   left: 0;
-  background: #0d0925;
+  background: #1f2029;
   display: block;
   transition: all 0.3s ease;
-  color: #0d0925;
+  color: #1f2029;
 }
 
 .bar:hover{
