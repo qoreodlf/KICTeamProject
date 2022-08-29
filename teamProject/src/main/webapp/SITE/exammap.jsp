@@ -7,7 +7,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>자격증 공부하</title>
+    <title>자격증 공부하자</title>
     <!-- <link rel="stylesheet" href="css/exammap.css"> -->
     <script src="locationSelect.js"></script>
     <style>
@@ -21,7 +21,6 @@
     padding: 0;
     box-sizing: border-box;
 }
-
 .container{
     position: relative;
     display: flex;
@@ -106,11 +105,29 @@
     /* box-shadow: 1px 0 5px #000; */
     z-index: 3;
 }
+
     
 .map_wrap, .map_wrap * {margin:0;padding:0;font-family:'Malgun Gothic',dotum,'돋움',sans-serif;font-size:12px;}
 .map_wrap a, .map_wrap a:hover, .map_wrap a:active{color:#000;text-decoration: none;}
 .map_wrap {position:relative;width:100%;height:500px;}
-#menu_wrap {position:absolute;top:0;left:0;bottom:0;width:250px;margin:10px 0 30px 10px;padding:5px;overflow-y:auto;background:rgba(255, 255, 255, 0.7);z-index: 1;font-size:12px;border-radius: 10px;}
+
+#menu_wrap {
+	position:absolute;
+    top:100%;
+    left:0;
+    bottom:0;
+    width:100%;
+    height: 100%;
+    padding:5px;
+    overflow-y:auto;
+    background:rgba(255, 255, 255, 0.7);
+    z-index: 1;
+    font-size:12px;
+    border-radius: 10px;
+    background: #888;
+    z-index: 1000000;
+}
+
 .bg_white {background:#fff;}
 #menu_wrap hr {display: block; height: 1px;border: 0; border-top: 2px solid #5F5F5F;margin:3px 0;}
 #menu_wrap .option{text-align: center;}
@@ -124,7 +141,7 @@
 #placesList .info .gray {color:#8a8a8a;}
 #placesList .info .jibun {padding-left:26px;background:url(https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/places_jibun.png) no-repeat;}
 #placesList .info .tel {color:#009900;}
-#placesList .item .markerbg {float:left;position:absolute;width:36px; height:37px;margin:10px 0 0 10px;background:url(https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/marker_number_blue.png) no-repeat;}
+#placesList .item .markerbg {float:left;position:absolute;width:36px; height:37px;margin:10px 0 0 10px;background-img:url(https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/marker_number_blue.png) no-repeat;}
 #placesList .item .marker_1 {background-position: 0 -10px;}
 #placesList .item .marker_2 {background-position: 0 -56px;}
 #placesList .item .marker_3 {background-position: 0 -102px}
@@ -140,19 +157,28 @@
 #placesList .item .marker_13 {background-position: 0 -562px;}
 #placesList .item .marker_14 {background-position: 0 -608px;}
 #placesList .item .marker_15 {background-position: 0 -654px;}
+#placesList .item .marker_16 {background-position: 0 -700px;}
+#placesList .item .marker_17 {background-position: 0 -746px;}
+#placesList .item .marker_18 {background-position: 0 -792px;}
+#placesList .item .marker_19 {background-position: 0 -838px;}
+#placesList .item .marker_20 {background-position: 0 -884px;}
+
 #pagination {margin:10px auto;text-align: center;}
 #pagination a {display:inline-block;margin-right:10px;}
 #pagination .on {font-weight: bold; cursor: default;color:#777;}
 </style>
+
 </head>
+
+
+
 <body>
 <div class="container">
         <h2>시험장소</h2>
     </div>
 <div class="map_wrap">
-    <div id="map" style="width:100%;height:100%;position:relative;overflow:hidden;"></div>
 
-    <div id="menu_wrap" class="bg_white">
+<div id="menu_wrap" class="bg_white">
         <div class="option">
             <div><form name="f" method="post">
 					
@@ -194,9 +220,14 @@
         <ul id="placesList"></ul>
         <div id="pagination"></div>
     </div>
+    
+    <div id="map" style="width:100%;height:100%;position:relative;overflow:hidden;"></div>
 </div>
-
+<!-- 대일 -->
 <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=00abcb26ff21f4396d563e8d0aa1dada&libraries=services"></script>
+
+<!-- 현겸  -->
+<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=e6f49681a0acfa52262e987fe4da0029&libraries=services"></script>
 <script>
 // 마커를 담을 배열입니다
 // 마커를 담을 배열입니다
