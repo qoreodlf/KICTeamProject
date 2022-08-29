@@ -43,5 +43,6 @@ public class LocationScheduleController {
 		return adressList.toString();
 		
 		
+		
 	}
 }
