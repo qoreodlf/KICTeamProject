@@ -4,14 +4,14 @@
 <configuration>
 
 	<typeAliases>
-		<typeAlias type="model.Board" alias="board" />
-		<typeAlias type="model.Member" alias="member" />
+		<typeAlias type="model.ExLocation" alias="exlocation" />
+		
 
 	</typeAliases>
 
 	<mappers><!-- sql구문 -->
-		<mapper resource="mybatis/MemberMapper.xml" />
-		<mapper resource="mybatis/BoardMapper.xml" />
+		<mapper resource="mybatis/LocationScheduleMapper.xml" />
+		
 
 	</mappers>
 </configuration>
