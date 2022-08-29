@@ -294,7 +294,7 @@
                 <p class="copy">신재생에너지<br>발전설비</p>
             </div>
         </div>
-    </main>
+    </main>  
 </body>
 
 </html>
