@@ -96,7 +96,7 @@ body {
 
 .map_wrap, .map_wrap * {
 	margin: 0;
-	padding: 0;
+	padding: 0; 
 	font-family: 'Malgun Gothic', dotum, '돋움', sans-serif;
 	font-size: 12px;
 }
