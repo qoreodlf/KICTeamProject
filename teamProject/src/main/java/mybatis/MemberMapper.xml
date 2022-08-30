@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org/DTD config 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="member">
+
+	<select id="selectmemberone" parameterType="string" resultType="member">
+	 select * from jgjuser where useremail = #{useremail} 
+	</select>
+
+	<insert id="addkakaomember" parameterType="member">
+		insert into jgjuser values (#{userId}, #{userPasswoed}, #{userName}, #{userEmail}, #{userType})
+	</insert>
+</mapper>
