@@ -357,6 +357,7 @@
         <div class="card current--card">
           <div class="card__image">
             <img src="img/index/technician.png" alt="" />
+           
           </div>
         </div>
 

@@ -55,7 +55,7 @@
 			<value>jdbc:oracle:thin:@localhost:1521:xe</value>
 		</property>
 		<property name="user">
-			<value>c##kic</value>
+			<value>KIC</value>
 		</property>
 		<property name="password">
 			<value>1111</value>
