@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import model.ExList;
 import model.ExLocation;
 import service.LocationScheduleDao;
 
@@ -41,8 +42,35 @@ public class LocationScheduleController {
 		List<ExLocation> adressList = lsd.selectLocation(adress);
 		System.out.println(adressList.toString());
 		return adressList.toString();
+	}
 		
 		
+	@RequestMapping(value = "sendexlist", produces = "application/json; charset=utf8")
+	public String sendExList() throws Exception{
+		
+		List<ExList> exCon = lsd.selectExList("14");
+		List<ExList> exMa = lsd.selectExList("16");
+		List<ExList> exInfo= lsd.selectExList("21");
+		List<ExList> exFor = lsd.selectExList("24");
+		List<ExList> exSafe = lsd.selectExList("25");
+		List<ExList> exEn = lsd.selectExList("26");
+		
+		System.out.println("exCon: " + exCon.toString());
+		System.out.println("exMa: " + exMa.toString());
+		System.out.println("exInfo: " + exInfo.toString());
+		System.out.println("exFor: " + exFor.toString());
+		System.out.println("exSafe: " + exSafe.toString());
+		System.out.println("exEn: " + exEn.toString());
+		
+		return null;
 		
 	}
+	
+	public static void main(String[] args) {
+		
+	}
+		
+		
+		
+	
 }

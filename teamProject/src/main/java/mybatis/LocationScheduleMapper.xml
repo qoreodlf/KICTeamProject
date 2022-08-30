@@ -7,4 +7,7 @@
 	 select * from exlocation2 where adress like '%${value}%'
 	</select>
 
+	<select id="selectexlist" parameterType="string" resultType="exlist">
+	select * from exlist where obligfldcd = #{value}
+	</select>
 </mapper>

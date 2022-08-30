@@ -42,12 +42,12 @@ public class MemberController {
 	// 08.30 백대일 작성
 	@PostMapping("kakaologin")
 	public String kakaoLogin(@RequestBody Member member) throws Exception {
-		member.setUserId(member.getUserEmail());
+
 		member.setUserPasswoed("@kakaologin@");
 		member.setUserType(2);
 		
 		String msg;
-		
+		System.out.println("member : "+member.toString());
 		Member selectedMember = md.selectMemberOne(member.getUserEmail());
 		if(selectedMember == null) {
 			md.addKakaoMember(member);

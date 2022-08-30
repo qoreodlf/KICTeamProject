@@ -5,8 +5,8 @@
 
 	<typeAliases>
 		<typeAlias type="model.ExLocation" alias="exlocation" />
+		<typeAlias type="model.ExList" alias="exlist" />
 		<typeAlias type="model.Member" alias="member" />
-		
 
 	</typeAliases>
 

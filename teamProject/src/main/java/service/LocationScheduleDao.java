@@ -9,6 +9,7 @@ import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import model.ExList;
 import model.ExLocation;
 
 
@@ -26,6 +27,12 @@ public class LocationScheduleDao {
 		
 		List<ExLocation> list = session.selectList(ns+"selectLocation", adress);
 		return list;
+	}
+	
+	public List<ExList> selectExList(String obligfldcd) {
+		List<ExList> list = session.selectList(ns+"selectexlist", obligfldcd);
+		return list;
+		
 	}
 	
 }
