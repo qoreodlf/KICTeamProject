@@ -196,7 +196,7 @@
 <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=e6f49681a0acfa52262e987fe4da0029&libraries=services"></script>
 =======
 <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=00abcb26ff21f4396d563e8d0aa1dada&libraries=services"></script>
->>>>>>> branch 'master' of https://github.com/qoreodlf/KICTeamProject.git
+<!-- >>>>>>> branch 'master' of https://github.com/qoreodlf/KICTeamProject.git -->
 <script>
 // 마커를 담을 배열입니다
 // 마커를 담을 배열입니다

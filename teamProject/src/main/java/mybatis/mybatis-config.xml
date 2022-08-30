@@ -5,13 +5,14 @@
 
 	<typeAliases>
 		<typeAlias type="model.ExLocation" alias="exlocation" />
-		<typeAlias type="model.ExLocation" alias="exlocation" />
+		<typeAlias type="model.Member" alias="member" />
 		
 
 	</typeAliases>
 
 	<mappers><!-- sql구문 -->
 		<mapper resource="mybatis/LocationScheduleMapper.xml" />
+		<mapper resource="mybatis/MemberMapper.xml" />
 		
 
 	</mappers>
