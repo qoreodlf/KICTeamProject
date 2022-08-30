@@ -35,6 +35,11 @@
 
 
     <style>
+        body {
+            position: relative;
+            top: -200px;
+        }
+
         .check {
             position: relative;
             float: right;
@@ -61,7 +66,7 @@
                 <form id="boardSearchParam" action="/board/words" method="get"><input id="boardCode" name="boardCode"
                         type="hidden" value="words" /></form>
                 <div class="inner">
-                    <h2 class="top_title">문제집 <br> [자격증 이름]</h2>
+                    <h2 class="top_title">오답노트<br>[자격증 이름]</h2>
                     <div class="info_box">
                         <div class="input_wrap w100 ">
                             <form id="boardSearchParam" action="/board/words" method="get"><input type="hidden"
@@ -77,6 +82,30 @@
                         <div id="content1" class="info_box on">
                             <!-- 기본 10개 노출, 더보기 선택시 5개씩 추가 노출  -->
                             <ul id="list-data" class="list">
+                                <li>
+                                    <a href="#" class="noti-tit">제목 들어갈 곳</a>
+                                    <input type="checkbox" class="check">
+                                    <p class="date mont">출제자 : userId</p>
+                                    <p class="date mont">날짜 : Date</p>
+                                    <button style="font-weight: bold;">다시 풀기</button>
+                                </li>
+
+                                <li>
+                                    <a href="#" class="noti-tit">제목 들어갈 곳</a>
+                                    <input type="checkbox" class="check">
+                                    <p class="date mont">출제자 : userId</p>
+                                    <p class="date mont">날짜 : Date</p>
+                                    <button style="font-weight: bold;">다시 풀기</button>
+                                </li>
+
+                                <li>
+                                    <a href="#" class="noti-tit">제목 들어갈 곳</a>
+                                    <input type="checkbox" class="check">
+                                    <p class="date mont">출제자 : userId</p>
+                                    <p class="date mont">날짜 : Date</p>
+                                    <button style="font-weight: bold;">다시 풀기</button>
+                                </li>
+
                                 <li>
                                     <a href="#" class="noti-tit">제목 들어갈 곳</a>
                                     <input type="checkbox" class="check">

@@ -35,6 +35,11 @@
 
 
     <style>
+        body {
+            position: relative;
+            top: -200px;
+        }
+
         .good,
         .viewer {
             float: right;
@@ -44,7 +49,7 @@
     </style>
 
 
-</head>
+</head>잭
 
 <body>
     <div id="wrap">

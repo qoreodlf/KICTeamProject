@@ -63,7 +63,6 @@
 
     <!-- <script src="https://uicdn.toast.com/editor/latest/toastui-editor-viewer.js"></script> -->
     <!-- <link rel="stylesheet" href="https://uicdn.toast.com/editor/latest/toastui-editor-viewer.min.css" /> -->
-
     <div id="wrap">
         <div id="container">
             <div class="contents help notice mg_mobile">
@@ -71,14 +70,14 @@
                 <form id="boardSearchParam" action="/board/words" method="get"><input id="boardCode" name="boardCode"
                         type="hidden" value="words" /></form>
                 <div class="inner">
-                    <h2 class="top_title">[제목]<br></h2>
+                    <h2 class="top_title">[자격증 종류]<br></h2>
+
+                    <input type="text" placeholder="제목을 입력하세요" style="border-radius: 5px; background: #F7F9FC;">
                     <div class="info_box">
                         <div class="input_wrap w100 ">
                             <form id="boardSearchParam" action="/board/words" method="get"><input type="hidden"
-                                    name="where" value="SUBJECT_CONTENT" />
+                                    name="where" value="SUBJECT_CONTENT" placeholder="내용을 입력하세요" />
                                 <!-- <input type="text" class="input_txt required _filter" placeholder="제목" maxlength="20"> -->
-                                <p class="viewer">작성자 : [userId]</p>
-                                <p class="viewer">작성날짜 : [Date]</p>
                             </form>
                         </div>
                         <br><br>
@@ -90,7 +89,7 @@
                                 <div class="btn_wd500 btn_wrap">
 
                                     <script>
-                                        const htmlContents = '<div data-language="text" class="toastui-editor-ww-code-block"><pre><code>SYSTEM.OUT.PRINTLN("HELLO KIC")</code></pre></div>';
+                                        const htmlContents = '<blockquote><p>문제 내용을 입력하세요</p></blockquote><p><br></p><blockquote><p>보기를 입력하세요 ( 최대 5개)</p><p>1 )</p><p>2 )</p><p>3 )</p><p>4 )</p><p>5 )</p></blockquote>';
 
                                         const editor = new toastui.Editor({
                                             el: document.querySelector('#editor'),
@@ -122,6 +121,32 @@
                                             }
                                         }
                                     </script>
+                                    <div class="answerbox">
+
+                                        <h2>정답</h2>
+                                        <span>1.</span> <input type="radio" name="xxx"
+                                            style="position:relative; width: 20px; height: 20px; margin: 0 10px 0 0; top:-2px"
+                                            id="answer1">
+
+                                        <span>2.</span> <input type="radio" name="xxx"
+                                            style="position:relative; width: 20px; height: 20px; margin: 0 10px 0 0; top:-2px"
+                                            id="answer1">
+
+                                        <span>3.</span> <input type="radio" name="xxx"
+                                            style="position:relative; width: 20px; height: 20px; margin: 0 10px 0 0; top:-2px"
+                                            id="answer1">
+
+                                        <span>4.</span> <input type="radio" name="xxx"
+                                            style="position:relative; width: 20px; height: 20px; margin: 0 10px 0 0; top:-2px"
+                                            id="answer1">
+
+                                        <span>5.</span> <input type="radio" name="xxx"
+                                            style="position:relative; width: 20px; height: 20px; margin: 0 10px 0 0; top:-2px"
+                                            id="answer1">
+
+                                    </div>
+
+                                    <br>
 
                                     <button type="button" class="btn btn-lg btn-success" onclick="save();">작성완료</button>
                                     <button type="button" class="btn btn-lg btn-success">취소</button>
