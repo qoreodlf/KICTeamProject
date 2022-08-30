@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>자격증 공부하자</title>
     <!-- <link rel="stylesheet" href="css/exammap.css"> -->
-    <script src="locationSelect.js"></script>
+    <script src="${pageContext.request.contextPath}/SITE/js/locationSelect.js"></script>
     <style>
     
     @charset "UTF-8";
@@ -186,15 +186,9 @@
         <div id="pagination"></div>
     </div>
 </div>
-<<<<<<< HEAD
 
-<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=00abcb26ff21f4396d563e8d0aa1dada&libraries=services"></script>
-=======
->>>>>>> branch 'master' of https://github.com/qoreodlf/KICTeamProject.git
-
-<<<<<<< HEAD
 <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=e6f49681a0acfa52262e987fe4da0029&libraries=services"></script>
-=======
+
 <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=00abcb26ff21f4396d563e8d0aa1dada&libraries=services"></script>
 <!-- >>>>>>> branch 'master' of https://github.com/qoreodlf/KICTeamProject.git -->
 <script>

@@ -54,7 +54,7 @@
                 <form id="boardSearchParam" action="/board/words" method="get"><input id="boardCode" name="boardCode"
                         type="hidden" value="words" /></form>
                 <div class="inner">
-                    <h2 class="top_title">문제집 <br> [자격증 이름]</h2>
+                    <h2 class="top_title">문제집 <br> [${sessionScope.jmfldnm}]</h2>
                     <div class="info_box">
                         <div class="input_wrap w100 ">
                             <form id="boardSearchParam" action="/board/words" method="get"><input type="hidden"

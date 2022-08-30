@@ -487,32 +487,32 @@ a._collapz_parant._close:after,a._collapz_parant._open:after{
 
       <div class="blog-slider__item swiper-slide">
         <div class="blog-slider__img">
-          <img src="img/source/schedule.gif" alt="">
+          <img src="${pageContext.request.contextPath}/SITE/img/source/schedule.gif" alt="">
         </div>
         <div class="blog-slider__content">
-          <div class="blog-slider__title">[자격증 이름]시험 일정</div>
+          <div class="blog-slider__title">${sessionScope.jmfldnm} 시험 일정</div>
           <div class="blog-slider__text">자공자에서 시험 일정을 확인해보세요</div>
-          <a href="#" class="blog-slider__button">시험일정 보러가기</a>
+          <a href="${pageContext.request.contextPath}/losh/exschedule" class="blog-slider__button">시험일정 보러가기</a>
         </div>
       </div>
 
       <div class="blog-slider__item swiper-slide">
         <div class="blog-slider__img">
-          <img src="img/source/mappin.gif" alt="">
+          <img src="${pageContext.request.contextPath}/SITE/img/source/mappin.gif" alt="">
         </div>
         <div class="blog-slider__content">
-          <div class="blog-slider__title">[자격증 이름]시험 장소</div>
+          <div class="blog-slider__title">${sessionScope.jmfldnm} 시험 장소</div>
           <div class="blog-slider__text">자공자에서 시험 장소를 확인해보세요</div>
-          <a href="#" class="blog-slider__button">시험장소 보러가기</a>
+          <a href="${pageContext.request.contextPath}/losh/exmap" class="blog-slider__button">시험장소 보러가기</a>
         </div>
       </div>
 
       <div class="blog-slider__item swiper-slide">
         <div class="blog-slider__img">
-          <img src="img/source/talktalk.gif" alt="">
+          <img src="${pageContext.request.contextPath}/SITE/img/source/talktalk.gif" alt="">
         </div>
         <div class="blog-slider__content">
-          <div class="blog-slider__title">[자격증 이름]질문톡</div>
+          <div class="blog-slider__title">${sessionScope.jmfldnm} 질문톡</div>
           <div class="blog-slider__text">함께하는 사람들과 소통해을 해보세요</div>
           <a href="#" class="blog-slider__button">질문톡 입장하기</a>
         </div>
@@ -520,12 +520,12 @@ a._collapz_parant._close:after,a._collapz_parant._open:after{
 
       <div class="blog-slider__item swiper-slide">
         <div class="blog-slider__img">
-          <img src="img/source/workbook.gif" alt="">
+          <img src="${pageContext.request.contextPath}/SITE/img/source/workbook.gif" alt="">
         </div>
         <div class="blog-slider__content">
-          <div class="blog-slider__title">[자격증 이름]문제집</div>
+          <div class="blog-slider__title">${sessionScope.jmfldnm} 문제집</div>
           <div class="blog-slider__text">공부하는 사람들과 문제를 내고 풀어보세요</div>
-          <a href="#" class="blog-slider__button">문제 풀이/출제 하러가기</a>
+          <a href="${pageContext.request.contextPath}/workbook/workbooklist" class="blog-slider__button">문제 풀이/출제 하러가기</a>
         </div>
       </div>
 

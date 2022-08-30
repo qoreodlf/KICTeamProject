@@ -34,6 +34,12 @@ public class LocationScheduleController {
 		this.session = request.getSession();
 	}
 	
+	@RequestMapping("index")
+	public String index() throws Exception{
+		return "index";
+		
+	}
+	
 	//시험장소 지도에 표시 (백대일 0829수정)
 	@RequestMapping(value = "exlocation", produces = "application/json; charset=utf8")
 	public @ResponseBody String exLocationPro (String adress1, String adress2) throws Exception{
@@ -44,9 +50,10 @@ public class LocationScheduleController {
 		return adressList.toString();
 	}
 		
-		
-	@RequestMapping(value = "sendexlist", produces = "application/json; charset=utf8")
-	public String sendExList() throws Exception{
+	
+	//list.jsp 시험종목별 코드 맵핑 (백대일 0830작성)
+	@RequestMapping(value = "exlist")
+	public String exList() throws Exception{
 		
 		List<ExList> exCon = lsd.selectExList("14");
 		List<ExList> exMa = lsd.selectExList("16");
@@ -62,13 +69,42 @@ public class LocationScheduleController {
 		System.out.println("exSafe: " + exSafe.toString());
 		System.out.println("exEn: " + exEn.toString());
 		
-		return null;
+		request.setAttribute("exCon", exCon);
+		request.setAttribute("exMa", exMa);
+		request.setAttribute("exInfo", exInfo);
+		request.setAttribute("exFor", exFor);
+		request.setAttribute("exSafe", exSafe);
+		request.setAttribute("exEn", exEn);
+		
+		return "list";
 		
 	}
 	
-	public static void main(String[] args) {
+	
+	//source.jsp 열어주는 url.
+	//list.jsp에서 링크 별 파라메타에 과목코드 붙여둠(0830 백대일 작성)
+	@RequestMapping(value = "source")
+	public String source() throws Exception{
+		
+		if (request.getParameter("jmcd") != null && request.getParameter("jmfldnm") != null) {
+			session.setAttribute("jmcd", request.getParameter("jmcd"));
+			session.setAttribute("jmfldnm", request.getParameter("jmfldnm"));
+		}
+		return "source";
 		
 	}
+	
+	//시험일정, 장소 페이지 로딩(0830 백대일)
+	@RequestMapping(value = "exschedule")
+	public String exSchedule() throws Exception{	
+		return "examschedule";	
+	}
+	
+	@RequestMapping(value = "exmap")
+	public String exMap() throws Exception{
+		return "exammap";
+	}
+	
 		
 		
 		

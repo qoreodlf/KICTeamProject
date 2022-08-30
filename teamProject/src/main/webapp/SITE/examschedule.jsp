@@ -21,7 +21,7 @@
                 <div class="content exam-schedule">
                     <div class="inner">
                         <div class="tit-wrap">
-                            <h2 class="main-tit">시험일정</h2>
+                            <h2 class="main-tit">${sessionScope.jmfldnm} 시험일정</h2>
                         </div>
                         <div class="box-wrap type03">
                             <div class="box">

@@ -356,20 +356,20 @@
       <div class="cards__wrapper" onclick="location.href='#'">
         <div class="card current--card">
           <div class="card__image">
-            <img src="img/index/technician.png" alt="" />
+            <img src="${pageContext.request.contextPath}/SITE/img/index/technician.png" alt="" />
            
           </div>
         </div>
 
         <div class="card next--card">
           <div class="card__image">
-            <img src="img/index/article.png" alt="" />
+            <img src="${pageContext.request.contextPath}/SITE/img/index/article.png" alt="" />
           </div>
         </div>
 
         <div class="card previous--card">
           <div class="card__image">
-            <img src="img/index/technician2.png" alt="" />
+            <img src="${pageContext.request.contextPath}/SITE/img/index/technician2.png" alt="" />
           </div>
         </div>
       </div>
@@ -391,10 +391,10 @@
           <p class="text description">자세히 보기</p>
         </div>
 
-        <div class="info next--info">
+        <div class="info next--info" onclick="location.href ='${pageContext.request.contextPath}/losh/exlist'">
           <h1 class="text name">기사</h1>
           <h4 class="text location"></h4>
-          <p class="text description">자세히 보기</p>
+          <p class="text description"><a href="${pageContext.request.contextPath}/losh/exlist">자세히 보기</a></p>
         </div>
 
         <div class="info previous--info">
