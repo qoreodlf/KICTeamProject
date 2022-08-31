@@ -71,7 +71,7 @@
                 <form id="boardSearchParam" action="/board/words" method="get"><input id="boardCode" name="boardCode"
                         type="hidden" value="words" /></form>
                 <div class="inner">
-                    <h2 class="top_title">[제목]<br></h2>
+                    <h1 class="top_title">${sessionScope.jmfldnm} 문제출제<br></h1>
                     <div class="info_box">
                         <div class="input_wrap w100 ">
                             <form id="boardSearchParam" action="/board/words" method="get"><input type="hidden"

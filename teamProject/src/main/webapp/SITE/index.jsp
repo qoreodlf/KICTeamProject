@@ -209,8 +209,9 @@
    position: absolute;
    width: calc(3 * var(--card-width));
    height: var(--card-height);
-   pointer-events: none;
+   z-index: 10000;
 }
+
  .infoList .info__wrapper {
    position: relative;
    width: 100%;
@@ -267,14 +268,26 @@
    height: 2px;
 }
  .info .description {
-   --text-size-offset: 0.065;
+   --text-size-offset: 0.0625;
    font-weight: 500;
+}
+
+.info .description {
+  color: #FFF;
+  z-index: 10000;
+}
+
+.info .description:hover {
+  cursor: pointer;
+  text-shadow: 0 0 5px #FFF;
 }
 
  .info.current--info {
    opacity: 1;
    display: block;
 }
+
+
  .info.previous--info, .info.next--info {
    opacity: 0;
    display: none;
@@ -337,6 +350,7 @@
    transform: scale(1.1);
 }
  
+ 
   </style>
   
 </head>
@@ -356,20 +370,20 @@
       <div class="cards__wrapper" onclick="location.href='#'">
         <div class="card current--card">
           <div class="card__image">
-            <img src="${pageContext.request.contextPath}/SITE/img/index/technician.png" alt="" />
+            <img src="img/index/technician.png" alt="" />
            
           </div>
         </div>
 
         <div class="card next--card">
           <div class="card__image">
-            <img src="${pageContext.request.contextPath}/SITE/img/index/article.png" alt="" />
+            <img src="img/index/article.png" alt="" />
           </div>
         </div>
 
         <div class="card previous--card">
           <div class="card__image">
-            <img src="${pageContext.request.contextPath}/SITE/img/index/technician2.png" alt="" />
+            <img src="img/index/technician2.png" alt="" />
           </div>
         </div>
       </div>
@@ -391,10 +405,10 @@
           <p class="text description">자세히 보기</p>
         </div>
 
-        <div class="info next--info" onclick="location.href ='${pageContext.request.contextPath}/losh/exlist'">
+        <div class="info next--info">
           <h1 class="text name">기사</h1>
           <h4 class="text location"></h4>
-          <p class="text description"><a href="${pageContext.request.contextPath}/losh/exlist">자세히 보기</a></p>
+          <p class="text description">자세히 보기</p>
         </div>
 
         <div class="info previous--info">

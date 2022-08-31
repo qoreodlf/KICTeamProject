@@ -81,7 +81,8 @@
                             <div class="btn_wd640 btn_wrap">
                                 <button type="button" class="btn btn-lg btn-success">더보기</button>
                                 <br><br>
-                                <button type="button" class="btn btn-lg btn-success">문제 출제</button>
+                                <button type="button" class="btn btn-lg btn-success" onclick="location.href='${pageContext.request.contextPath}/workbook/workbookform'">
+                                문제 출제</button>
                             </div>
                         </div>
                     </div>

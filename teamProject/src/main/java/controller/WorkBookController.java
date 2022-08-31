@@ -29,9 +29,18 @@ public class WorkBookController {
 		this.session = request.getSession();
 	}
 	
+	//워크북리스트 띄우는 창.
+	//워크북 db에서 종목코드가 세션아이디 종목코드와 맞는애들만 불러서 띄우면됨(0830백대일)
 	@RequestMapping("workbooklist")
 	public String workBookList() throws Exception{
+		
+		//워크북 db에서 종목코드가 세션아이디 종목코드와 맞는애들만 불러서 띄우면됨
 		return "workbook";
 		
+	}
+	
+	@RequestMapping("workbookform")
+	public String workBookForm() throws Exception{
+		return "workbookform";
 	}
 }
