@@ -74,61 +74,7 @@
                                
                             </div>
                         <!-- =================================================테스트용============================================= -->
-                            <div class="box">
-                                <div class="main-info">
-                                    <div class="item_label">
-                                        <span class="expected" style="color: #465fc6;">접수대기</span>
-                                        <span class="d-day" style="color: #465fc6; border: 1px solid #465fc6;">64</span>
-                                    </div>
-                                    <p class="dream">
-                                        [제<span class="round mont" style="color: #465fc6;">1</span>회 ${sessionScope.jmfldnm} 시험]
-                                    </p>
-                                    <p class="txt_type01 bold">
-                                        <span style="color: #465fc6;">2022.01.01</span><span
-                                            style="color: #465fc6;">(토)</span><span>오전</span><span>10:00</span>
-                                    </p>
-                                </div>
-                                <div class="sub-info">
-                                    <p class="txt_type03 color medium">
-                                        접수기간:<span>2022.01.02</span><span>(일)</span><span
-                                            style="color: #465fc6;">09:00</span>~<span>2022.01.04</span><span>(화)</span><span
-                                            style="color: #465fc6;">18:00</span>
-                                    </p>
-                                    <p class="txt_type03 medium">성적발표:<span>2022.01.06</span><span>(목)</span></p>
-                                </div>
-                                <div class="btn-wrap type02">
-                                    <button type="button" class="btn btn-lg btn-normal w100 disabled">접수기간이
-                                        아닙니다.</button>
-                                </div>
-                            </div>
-
-                            <div class="box">
-                                <div class="main-info">
-                                    <div class="item_label">
-                                        <span class="expected" style="color: #465fc6;">접수대기</span>
-                                        <span class="d-day" style="color: #465fc6; border: 1px solid #465fc6;">65</span>
-                                    </div>
-                                    <p class="dream">
-                                        [제<span class="round mont" style="color: #465fc6;">2</span>회 자격증이름시험]
-                                    </p>
-                                    <p class="txt_type01 bold">
-                                        <span style="color: #465fc6;">2022.01.02</span><span
-                                            style="color: #465fc6;">(일)</span><span>오전</span><span>10:00</span>
-                                    </p>
-                                </div>
-                                <div class="sub-info">
-                                    <p class="txt_type03 color medium">
-                                        접수기간:<span>2022.01.02</span><span>(일)</span><span
-                                            style="color: #465fc6;">09:00</span>~<span>2022.01.04</span><span>(화)</span><span
-                                            style="color: #465fc6;">18:00</span>
-                                    </p>
-                                    <p class="txt_type03 medium">성적발표:<span>2022.01.06</span><span>(목)</span></p>
-                                </div>
-                                <div class="btn-wrap type02">
-                                    <button type="button" class="btn btn-lg btn-normal w100 disabled">접수기간이
-                                        아닙니다.</button>
-                                </div>
-                            </div>
+                         
                         </div>
                     </div>
                 </div>
