@@ -15,6 +15,27 @@
 	href="https://kltfile.blob.core.windows.net/content/css/common.css">
 <link rel="stylesheet" type="text/css"
 	href="https://kltfile.blob.core.windows.net/content/css/layout.css">
+	
+	
+	<style>
+	.box-wrap .box {
+	width: 358px;
+	height: 611px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 5px 5px 20px rgb(135 137 178 / 20%);
+    transition: 0.3s;
+    margin: 40px 10px 10px 0px;
+	}
+	
+	.box-wrap{
+	justif-content: center;
+	}
+	
+	.btn-lg{
+	font-size: 1.4rem
+	}
+	</style>
 </head>
 
 <body>
@@ -25,9 +46,9 @@
 				<div class="content exam-schedule">
 					<div class="inner">
 						<div class="tit-wrap">
-							<h2 class="main-tit">${notOverlapedJSON[0].implYy}년도 ${sessionScope.jmfldnm} 시험일정</h2>
+							<h2 class="main-tit" style="margin: auto; text-align: center; font-size: 3.3rem;">${notOverlapedJSON[0].implYy}년도 ${sessionScope.jmfldnm} 시험일정</h2>
 						</div>
-						<div class="box-wrap type03">
+						<div class="box-wrap type03" style="justify-content: center;">
 						<c:forEach var="i" items="${notOverlapedJSON}">
 							
 							<!--============================================테스트용============================================  -->

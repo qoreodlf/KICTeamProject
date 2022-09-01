@@ -356,7 +356,10 @@
 </head>
 
 <body>
-
+<script>
+alert(444)
+alert("세션"+${sessionScope.userEmail}+${sessionScope.userName}+${sessionScope.userType})
+</script>
   <div class="app">
     <div class="cardList">
       <button class="cardList__btn btn btn--left">
@@ -408,7 +411,7 @@
         <div class="info next--info">
           <h1 class="text name">기사</h1>
           <h4 class="text location"></h4>
-          <p class="text description">자세히 보기</p>
+          <p class="text description"><a href="${pageContext.request.contextPath}/losh/exlist">자세히 보기</a></p>
         </div>
 
         <div class="info previous--info">

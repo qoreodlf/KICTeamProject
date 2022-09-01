@@ -1,15 +1,15 @@
 package model;
 
 public class Member {
-	String userPasswoed;
+	String userPassword;
 	String userName;
 	String userEmail;
 	int userType;
-	public String getUserPasswoed() {
-		return userPasswoed;
+	public String getUserPassword() {
+		return userPassword;
 	}
-	public void setUserPasswoed(String userPasswoed) {
-		this.userPasswoed = userPasswoed;
+	public void setUserPassword(String userPassword) {
+		this.userPassword = userPassword;
 	}
 	public String getUserName() {
 		return userName;
@@ -31,7 +31,7 @@ public class Member {
 	}
 	@Override
 	public String toString() {
-		return " {\"userPasswoed\":\"" + userPasswoed + "\", \"userName\":\"" + userName + "\", \"userEmail\":\""
+		return " {\"userPassword\":\"" + userPassword + "\", \"userName\":\"" + userName + "\", \"userEmail\":\""
 				+ userEmail + "\", \"userType\":\"" + userType + "\"}";
 	}
 	
