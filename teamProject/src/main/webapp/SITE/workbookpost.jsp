@@ -30,77 +30,7 @@
 	<link rel="stylesheet" type="text/css" href="https://kltfile.blob.core.windows.net/content/css/main.css">
 	<link rel="stylesheet" type="text/css" href="https://kltfile.blob.core.windows.net/content/css/exam.css">
 	<link rel="stylesheet" type="text/css" href="https://kltfile.blob.core.windows.net/content/css/help.css">
-
-
-
-
-	<style>
-		body {
-			position: relative;
-			top: -200px;
-		}
-
-		.good,
-		.viewer {
-			position: relative;
-			padding: 0 20px 0 0;
-			font-weight: bold;
-			left: 3%;
-		}
-
-		.btn_wrap {
-			padding: 20px 0 20px 0;
-			text-align: center;
-		}
-
-		.btn {
-			position: relative;
-			top: 15px;
-		}
-
-		.btn:hover {
-			background: #4474E6;
-			color: #FFF;
-		}
-
-		.comment {
-			position: relative;
-			float: left;
-			font-size: 1.4rem;
-			left: 1%;
-		}
-
-		select {
-			width: 100%;
-			height: 100%;
-			padding: 0 28px 0 10px;
-			font-size: 15px;
-			-webkit-appearance: none;
-			/* for chrome */
-			-moz-appearance: none;
-			/*for firefox*/
-			appearance: none;
-			box-sizing: border-box;
-			background: transparent !important;
-		}
-
-		.orderby {
-			position: relative;
-			float: right;
-			width: 100px;
-			height: 20px;
-			font-size: 10px;
-			border-radius: 5px;
-			top: -2px;
-		}
-
-		.orderbytxt {
-			position: relative;
-			font-size: 10px;
-			float: right;
-			width: 70px;
-		}
-	</style>
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/SITE/css/post.css" />
 
 
 </head>
@@ -146,7 +76,7 @@
 									<hr>
 									<br>
 									<textarea name="comment" cols="10" rows="10"
-										style="height: 65px; border-radius: 5px;" placeholder="댓글작성"></textarea>
+										style="height: 54px; border-radius: 5px; font-size: 1.2rem;" placeholder="댓글작성"></textarea>
 
 
 									<script>
