@@ -1,213 +1,244 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <!doctype html>
 <html>
 
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>자격증 공부하자</title>
-    <link rel="stylesheet" href="css/floating.css">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-    <script type="text/javascript" src="js/floating.js"></script>
-    <style>
-@import url('https://fonts.googleapis.com/css2?family=Hahmlet:wght@300&family=IBM+Plex+Sans+KR:wght@500&family=Kanit:wght@500&display=swap');
-
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>자격증 공부하자</title>
+<link rel="stylesheet" href="css/floating.css">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+	rel="stylesheet">
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script type="text/javascript" src="js/floating.js"></script>
+<style>
+@import
+	url('https://fonts.googleapis.com/css2?family=Hahmlet:wght@300&family=IBM+Plex+Sans+KR:wght@500&family=Kanit:wght@500&display=swap')
+	;
 
 a._collapz_parant._close:after, a._collapz_parant._open:after {
-    content: "\E5CD";
-    font-family: 'Material Icons';
-    font-size: 30px;
-    position: relative;
-    top: 16px;
-    font-style: normal;
-    color: #fff;
-}
-a._collapz_parant {
-    color: #fff;
-    border-radius: 50%;
-    width: 60px;
-    height: 60px;
-    display: inline-block;
-    text-decoration: none;
-    float: right;
-    -webkit-transition: -webkit-transform .1s linear 0ms;
-    -moz-transition: -moz-transform .1s linear 0ms;
-    transition: transform .1s linear 0ms;
-    transform: rotate(44deg);
-}
-a._collapz_parant._close {
-    background-color: #e45353;
-}
-a._collapz_parant._close:after {
-    left: 0;
-}
-a._collapz_parant._open {
-    background-color: #2f353e;
-}
-ul._child_collapzion {
-    position: absolute;
-    margin: 0;
-    list-style: none;
-    padding: 1px;
-    top: 0;
-    left: 0;
-    width: 100%;
-    overflow: auto;
-    z-index: 10;
-    -webkit-transform: translate3d(0, -100%, 0);
-    -moz-transform: translate3d(0, -100%, 0);
-    transform: translate3d(0, -100%, 0);
-    -webkit-transition: -webkit-transform .3s ease-in-out;
-    -moz-transition: -moz-transform .3s ease-in-out;
-    transition: transform .3s ease-in-out;
-}
-ul._child_collapzion li a._collapz_child {
-    color: #fff;
-    border-radius: 50%;
-    width: 53px;
-    height: 53px;
-    display: inline-block;
-    background-color: #e45353;
-    margin: 6px 14px;
-    text-align: center;
-    z-index: 10000;
-}
-ul._child_collapzion li {
-    text-align: right;
-}
-ul._child_collapzion li a._collapz_child i {
-    margin-top: 15px;
-}
-ul._child_collapzion li span._title {
-    color: #000;
-    position: relative;
-    left: 8px;
-    top: -6px;
-    padding: 3px;    
-    font-family: 'IBM Plex Sans KR', sans-serif;
-    cursor: pointer;
-    z-index: 10000;
-    transition: all 0.3s ease;
+	content: "\E5CD";
+	font-family: 'Material Icons';
+	font-size: 30px;
+	position: relative;
+	top: 16px;
+	font-style: normal;
+	color: #fff;
 }
 
-a._collapz_parant._close:after,a._collapz_parant._open:after{
-    content:"\E5CD";
-    font-family:'Material Icons';
-    font-size:30px;
-    position:relative;
-    top:16px;
-    font-style:normal;
-    color:#fff
- }
- a._collapz_parant{
-    color:#fff;
-    border-radius:50%;
-    width:60px;
-    height:60px;
-    display:inline-block;
-    text-decoration:none;
-    float:right;
-    -webkit-transition:-webkit-transform .1s linear 0s;
-    -moz-transition:-moz-transform .1s linear 0s;
-    transition:transform .1s linear 0s;
-    transform:rotate(44deg)
- }
- a._collapz_parant._close{
-    background-color:#999
- }
- a._collapz_parant._close:after{
-    left:0
- }
- a._collapz_parant._open{
-    background-color:#2f353e
- }
- ul._child_collapzion{
-    position:absolute;
-    margin:0;
-    list-style:none;
-    padding:1px;
-    top:0;
-    left:0;
-    width:100%;
-    overflow:auto;
-    z-index:10;
-    -webkit-transform:translate3d(0,-100%,0);
-    -moz-transform:translate3d(0,-100%,0);
-    transform:translate3d(0,-100%,0);
-    -webkit-transition:-webkit-transform .3s ease-in-out;
-    -moz-transition:-moz-transform .3s ease-in-out;
-    transition:transform .3s ease-in-out
- }
- ul._child_collapzion li a._collapz_child{
-    color:#fff;
-    border-radius:50%;
-    width:53px;
-    height:53px;
-    display:inline-block;
-    background-color:#e45353;
-    margin:6px 14px;
-    text-align:center;
-    z-index: 10000;
- }
- ul._child_collapzion li{
-    text-align:right
- }
- ul._child_collapzion li a._collapz_child i{
-    margin-top:15px
- }
- ul._child_collapzion li span._title{
-    position:relative;
-    left:8px;
-    top:-6px;
-    padding:3px;
-    z-index: 10000;
- } 
- 
- 
- .element.style{
-    width: 100%;
-    min-height: 20%;
-    position: fixed;
-    right: 0px;
-    left: -20px;
-    bottom: -144px;
-    text-align: center;
-    padding: 0px 8px;
-    display: block;
-    margin-bottom: 34px;
- 
- }
-    </style>
+a._collapz_parant {
+	color: #fff;
+	border-radius: 50%;
+	width: 60px;
+	height: 60px;
+	display: inline-block;
+	text-decoration: none;
+	float: right;
+	-webkit-transition: -webkit-transform .1s linear 0ms;
+	-moz-transition: -moz-transform .1s linear 0ms;
+	transition: transform .1s linear 0ms;
+	transform: rotate(44deg);
+}
+
+a._collapz_parant._close {
+	background-color: #e45353;
+}
+
+a._collapz_parant._close:after {
+	left: 0;
+}
+
+a._collapz_parant._open {
+	background-color: #2f353e;
+}
+
+ul._child_collapzion {
+	position: absolute;
+	margin: 0;
+	list-style: none;
+	padding: 1px;
+	top: 0;
+	left: 0;
+	width: 100%;
+	overflow: auto;
+	z-index: 10;
+	-webkit-transform: translate3d(0, -100%, 0);
+	-moz-transform: translate3d(0, -100%, 0);
+	transform: translate3d(0, -100%, 0);
+	-webkit-transition: -webkit-transform .3s ease-in-out;
+	-moz-transition: -moz-transform .3s ease-in-out;
+	transition: transform .3s ease-in-out;
+}
+
+ul._child_collapzion li a._collapz_child {
+	color: #fff;
+	border-radius: 50%;
+	width: 53px;
+	height: 53px;
+	display: inline-block;
+	background-color: #e45353;
+	margin: 6px 14px;
+	text-align: center;
+	z-index: 10000;
+}
+
+ul._child_collapzion li {
+	text-align: right;
+}
+
+ul._child_collapzion li a._collapz_child i {
+	margin-top: 15px;
+}
+
+ul._child_collapzion li span._title {
+	color: #000;
+	position: relative;
+	left: 8px;
+	top: -6px;
+	padding: 3px;
+	font-family: 'IBM Plex Sans KR', sans-serif;
+	cursor: pointer;
+	z-index: 10000;
+	transition: all 0.3s ease;
+}
+
+a._collapz_parant._close:after, a._collapz_parant._open:after {
+	content: "\E5CD";
+	font-family: 'Material Icons';
+	font-size: 30px;
+	position: relative;
+	top: 16px;
+	font-style: normal;
+	color: #fff
+}
+
+a._collapz_parant {
+	color: #fff;
+	border-radius: 50%;
+	width: 60px;
+	height: 60px;
+	display: inline-block;
+	text-decoration: none;
+	float: right;
+	-webkit-transition: -webkit-transform .1s linear 0s;
+	-moz-transition: -moz-transform .1s linear 0s;
+	transition: transform .1s linear 0s;
+	transform: rotate(44deg)
+}
+
+a._collapz_parant._close {
+	background-color: #999
+}
+
+a._collapz_parant._close:after {
+	left: 0
+}
+
+a._collapz_parant._open {
+	background-color: #2f353e
+}
+
+ul._child_collapzion {
+	position: absolute;
+	margin: 0;
+	list-style: none;
+	padding: 1px;
+	top: 0;
+	left: 0;
+	width: 100%;
+	overflow: auto;
+	z-index: 10;
+	-webkit-transform: translate3d(0, -100%, 0);
+	-moz-transform: translate3d(0, -100%, 0);
+	transform: translate3d(0, -100%, 0);
+	-webkit-transition: -webkit-transform .3s ease-in-out;
+	-moz-transition: -moz-transform .3s ease-in-out;
+	transition: transform .3s ease-in-out
+}
+
+ul._child_collapzion li a._collapz_child {
+	color: #fff;
+	border-radius: 50%;
+	width: 53px;
+	height: 53px;
+	display: inline-block;
+	background-color: #e45353;
+	margin: 6px 14px;
+	text-align: center;
+	z-index: 10000;
+}
+
+ul._child_collapzion li {
+	text-align: right
+}
+
+ul._child_collapzion li a._collapz_child i {
+	margin-top: 15px
+}
+
+ul._child_collapzion li span._title {
+	position: relative;
+	left: 8px;
+	top: -6px;
+	padding: 3px;
+	z-index: 10000;
+}
+
+.element.style {
+	width: 100%;
+	min-height: 20%;
+	position: fixed;
+	right: 0px;
+	left: -20px;
+	bottom: -144px;
+	text-align: center;
+	padding: 0px 8px;
+	display: block;
+	margin-bottom: 34px;
+}
+</style>
 </head>
 
 <body>
-    <script type="text/javascript">
+	<script type="text/javascript">
     </script>
-    <script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+	<script type="text/javascript"
+		src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
     </script>
-    </div>
-    <script type="text/javascript">
+	</div>
+	<script type="text/javascript">
         jQuery(function ($) {
             $('#btncollapzion').Collapzion({
                 _child_attribute: [
-                    {
-                        'label': '마이페이지',
-                        'url': '#',
-                        'icon': '&#xe853;'
-                    },
-                    {
+                	
+                	{
                         'label': '홈',
-                        'url': '#',
+                        'url': '${pageContext.request.contextPath}/losh/index',
                         'icon': '&#xe9b2;'
                     },
-                    {
-                        'label': '로그인',
-                        'url': '#',
-                        'icon': '&#xf042;'
-                    },
+                    
+                 
+	                    {
+	                        'label': '로그인',
+	                        'url': '${pageContext.request.contextPath}/member/loginform',
+	                        'icon': '&#xea77;'
+	                    },
+                    
+	                    {
+	                        'label': '로그아웃',
+	                        'url': '#',
+	                        'icon': '&#xe9ba;'
+	                    },
+	                    {
+	                        'label': '마이페이지',
+	                        'url': '#',
+	                        'icon': '&#xe853;'
+	                    }
+                    
+                    
+                    
                 ],
                 _main_btn_color: '#4285f4;',
                 _child_btn_color: '#1f2029;',
@@ -216,8 +247,8 @@ a._collapz_parant._close:after,a._collapz_parant._open:after{
         });
     </script>
 
-    <div id="btncollapzion" class=" btn_collapzion"></div>
-    <script type="text/javascript">
+	<div id="btncollapzion" class=" btn_collapzion"></div>
+	<script type="text/javascript">
 
         var _gaq = _gaq || [];
         _gaq.push(['_setAccount', 'UA-36251023-1']);

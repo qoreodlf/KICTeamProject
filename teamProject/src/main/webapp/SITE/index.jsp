@@ -30,7 +30,8 @@
    margin: 0;
    padding: 0;
    font-family: 'Kanit', sans-serif;
-
+	color: #fff;
+	text-decoration: none;
        /* 드래그 방지 */
        -webkit-user-select:none;
        -moz-user-select:none;
@@ -373,20 +374,20 @@ alert("세션"+${sessionScope.userEmail}+${sessionScope.userName}+${sessionScope
       <div class="cards__wrapper" onclick="location.href='#'">
         <div class="card current--card">
           <div class="card__image">
-            <img src="img/index/technician.png" alt="" />
+            <img src="${pageContext.request.contextPath}/SITE/img/index/technician.png" alt="" />
            
           </div>
         </div>
 
         <div class="card next--card">
           <div class="card__image">
-            <img src="img/index/article.png" alt="" />
+            <img src="${pageContext.request.contextPath}/SITE/img/index/article.png" alt="" />
           </div>
         </div>
 
         <div class="card previous--card">
           <div class="card__image">
-            <img src="img/index/technician2.png" alt="" />
+            <img src="${pageContext.request.contextPath}/SITE/img/index/technician2.png" alt="" />
           </div>
         </div>
       </div>
