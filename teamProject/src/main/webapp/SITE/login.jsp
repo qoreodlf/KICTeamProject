@@ -33,6 +33,7 @@
 							action="${pageContext.request.contextPath}/member/kakaologin">
 							<input type="hidden" id="userEmail" name="userEmail">
 							<input type="hidden" id="userName" name="userName">
+							<input type="hidden" id="userId" name="userId">
 						</form>
 						<div class="card-3d-wrap mx-auto">
 							<div class="card-3d-wrapper">

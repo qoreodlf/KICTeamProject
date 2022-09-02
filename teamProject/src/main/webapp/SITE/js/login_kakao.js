@@ -1,9 +1,11 @@
 
 /* 카카오 디벨롭 키 */
-window.Kakao.init("e6f49681a0acfa52262e987fe4da0029")
-
+window.Kakao.init("00abcb26ff21f4396d563e8d0aa1dada")
+//00abcb26ff21f4396d563e8d0aa1dada  백대일
+//e6f49681a0acfa52262e987fe4da0029 김현겸
 let email
 let nickname
+let id
 function kakaoLogin(){
    Kakao.Auth.login({
       success: function (authObj) {
@@ -17,7 +19,8 @@ function kakaoLogin(){
             
             email = response.kakao_account.email
             nickname = response.kakao_account.profile.nickname
-            console.log(email, nickname)
+            id = response.id
+            console.log(email, nickname, id)
             addinfo()
             
          },
@@ -34,9 +37,9 @@ function kakaoLogin(){
 function addinfo() {
 	document.getElementById("userEmail").value = email
 	document.getElementById("userName").value = nickname
+	document.getElementById("userId").value = id
 	document.getElementById("sendkakaomember").submit();
-	console.log(document.getElementById("userEmail"))
-	console.log(document.getElementById("userName"))
+	
 	
 }
   

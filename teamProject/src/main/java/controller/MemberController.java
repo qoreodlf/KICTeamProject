@@ -52,11 +52,12 @@ public class MemberController {
 		String url;
 		String msg = null;
 		System.out.println("member : " + member.toString());
-		Member selectedMember = md.selectMemberOne(member.getUserEmail());
+		Member selectedMember = md.selectMemberOne(member.getUserId());
 		if (selectedMember == null) {
 			md.addKakaoMember(member);
 			msg = "카카오 회원가입 완료";
 			url = "/losh/index";
+			session.setAttribute("userId", member.getUserId());
 			session.setAttribute("userEmail", member.getUserEmail());
 			session.setAttribute("userName", member.getUserName());
 			session.setAttribute("userType", member.getUserType());
@@ -65,11 +66,12 @@ public class MemberController {
 			msg = "일반 회원가입된 회원입니다. 이메일로 로그인 해주세요.";
 			url = "/member/loginform";
 		} else {
+			session.setAttribute("userId", selectedMember.getUserId());
 			session.setAttribute("userEmail", selectedMember.getUserEmail());
 			session.setAttribute("userName", selectedMember.getUserName());
 			session.setAttribute("userType", selectedMember.getUserType());
 			
-			url = "/losh/index";
+			url ="/losh/index";
 		}
 	
 		
@@ -90,6 +92,7 @@ public class MemberController {
 	@RequestMapping("addmember")
 	public String addMember(Member member) throws Exception {
 		System.out.println(member.toString());
+		member.setUserId(member.getUserEmail());
 		String msg;
 		String url = "/member/loginform";
 		Member selectedMember = md.selectMemberOne(member.getUserEmail());
@@ -126,6 +129,7 @@ public class MemberController {
 			
 			//로그인 시 세션에 userEmail, userName, userType 등록
 			if (userPassword.equals(loginMember.getUserPassword()) && loginMember.getUserType() == 1) {
+				session.setAttribute("userId", loginMember.getUserId());
 				session.setAttribute("userEmail", loginMember.getUserEmail());
 				session.setAttribute("userName", loginMember.getUserName());
 				session.setAttribute("userType", loginMember.getUserType());

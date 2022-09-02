@@ -8,6 +8,6 @@
 	</select>
 
 	<insert id="addkakaomember" parameterType="member">
-		insert into jgjuser values (#{userPassword}, #{userName}, #{userEmail}, #{userType})
+		insert into jgjuser values (#{userId}, #{userPassword}, #{userName}, #{userEmail}, #{userType})
 	</insert>
 </mapper>
