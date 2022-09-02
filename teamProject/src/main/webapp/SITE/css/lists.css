@@ -130,20 +130,15 @@ body {
 }
 
 .card:nth-child(4):before {
-	background-image:
-		url(https://i.pinimg.com/736x/4a/e2/cd/4ae2cd3a5023659cb59ed3a09de29b99.jpg);
-}
-
-.card:nth-child(5):before {
 	background-image: url(https://wallpaper.dog/large/5533439.jpg);
 }
 
-.card:nth-child(6):before {
+.card:nth-child(5):before {
 	background-image:
 		url(https://i.pinimg.com/564x/03/57/f0/0357f08371f9b9e8d7606f0d5a7cb307.jpg);
 }
 
-.card:nth-child(7):before {
+.card:nth-child(6):before {
 	background-image:
 		url(https://i.pinimg.com/564x/6a/f2/52/6af252f8048b6236f5e2c979ad105feb.jpg);
 }

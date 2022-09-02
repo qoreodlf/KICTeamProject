@@ -6,7 +6,7 @@
 
 <head>
 <title>자격증 공부하자</title>
-<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/SITE/css/list.css">
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/SITE/css/lists.css">
 <link rel="stylesheet"
 	href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 
@@ -14,6 +14,7 @@
 </head>
 
 <body>
+
 	<main class="page-content">
 		<div class="card">
 			<div class="content">
@@ -66,6 +67,8 @@
 		</div>
 	</main>
 </body>
+
+
 
 
 
