@@ -4,7 +4,7 @@
 <mapper namespace="losh">
 
 	<select id="selectLocation" parameterType="string" resultType="exlocation">
-	 select * from exlocation2 where adress like '%${value}%'
+	 select * from exlocation2 where adress like '%${value}%' and rownum &lt; 16
 	</select>
 
 	<select id="selectexlist" parameterType="string" resultType="exlist">
