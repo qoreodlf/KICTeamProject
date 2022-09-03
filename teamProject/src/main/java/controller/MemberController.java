@@ -53,6 +53,8 @@ public class MemberController {
 		String msg = null;
 		System.out.println("member : " + member.toString());
 		Member selectedMember = md.selectMemberOne(member.getUserId());
+		System.out.println(member.getUserId());
+		System.out.println("selectedMember : " + selectedMember.toString());
 		if (selectedMember == null) {
 			md.addKakaoMember(member);
 			msg = "카카오 회원가입 완료";

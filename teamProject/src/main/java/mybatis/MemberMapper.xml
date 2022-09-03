@@ -4,7 +4,7 @@
 <mapper namespace="member">
 
 	<select id="selectmemberone" parameterType="string" resultType="member">
-	 select * from jgjuser where useremail = #{useremail} 
+	 select * from jgjuser where userid = #{userid} 
 	</select>
 
 	<insert id="addkakaomember" parameterType="member">
