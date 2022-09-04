@@ -36,16 +36,18 @@
 
 
 	<!-- WebSocket -->
-	<bean id="chatHandler"
-		class="controller.ChatHandler" />
+	<bean id="chatHandler" class="chat.ChatHandler" />
 
 	<websocket:handlers>
 		<websocket:mapping handler="chatHandler"
 			path="/chat" />
-		<websocket:handshake-interceptors>
+		<websocket:sockjs></websocket:sockjs>
+		<!-- <websocket:handshake-interceptors>
 			<bean
 				class="org.springframework.web.socket.server.support.HttpSessionHandshakeInterceptor" />
-		</websocket:handshake-interceptors>
+		</websocket:handshake-interceptors> -->
+
+
 	</websocket:handlers>
 
 

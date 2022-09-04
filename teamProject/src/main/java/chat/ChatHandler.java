@@ -1,4 +1,4 @@
-package controller;
+package chat;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,16 +19,16 @@ public class ChatHandler extends TextWebSocketHandler {
 	public void afterConnectionEstablished(WebSocketSession session) throws Exception {
 		System.out.println("afterConnectionEstablished:"+session);
 		sessionList.add(session);
-		msg = session.getId() + "님이 입장하였습니다.";
-		System.out.println("{} 연결됨" + session.getId());
+		
+		System.out.println("{} 연결됨 : " + session.getId());
 	}
 
 	// 클라가 서버로 메세지를 전송할때 실행되는 메서드
 	@Override
 	protected void handleTextMessage(WebSocketSession session, TextMessage message) throws Exception {
-		System.out.println(("{}로 부터 {} 받음" + session.getId() + message.getPayload()));
+		System.out.println(("클라에서 받은 메세지  " + session.getId() + " : " + message.getPayload()));
 		for (WebSocketSession ws : sessionList) {
-			ws.sendMessage(new TextMessage(session.getPrincipal().getName() + ":" + message.getPayload()));
+			ws.sendMessage(new TextMessage(session.getId() + ":" + message.getPayload()));
 		}
 	}
 
@@ -36,7 +36,8 @@ public class ChatHandler extends TextWebSocketHandler {
 	@Override
 	public void afterConnectionClosed(WebSocketSession session, CloseStatus status) throws Exception {
 		sessionList.remove(session);
-		System.out.println(("{} 연결 끊김" + session.getId()));
+		System.out.println(("{} 연결 끊김 : " + session.getId()));
+		System.out.println("================================");
 	}
 
 }

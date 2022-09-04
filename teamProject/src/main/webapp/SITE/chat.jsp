@@ -37,7 +37,7 @@ $("#button-send").on("click", function(e) {
 	$('#msg').val('')
 });
 
-var sock = new SockJS('ws://localhost:8080/chat');
+var sock = new SockJS('/teamProject/chat');
 sock.onmessage = onMessage;
 sock.onclose = onClose;
 sock.onopen = onOpen;
@@ -98,6 +98,7 @@ function onOpen(evt) {
 	
 	var user = '${pr.username}';
 	var str = user + "님이 입장하셨습니다.";
+	console.log("ddd")
 	
 	$("#msgArea").append(str);
 }
