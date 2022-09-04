@@ -37,7 +37,7 @@ $("#button-send").on("click", function(e) {
 	$('#msg').val('')
 });
 
-var sock = new SockJS('${pageContext.request.contextPath}/chat');
+var sock = new SockJS('ws://localhost:8080/chat');
 sock.onmessage = onMessage;
 sock.onclose = onClose;
 sock.onopen = onOpen;

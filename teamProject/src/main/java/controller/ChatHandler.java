@@ -3,10 +3,12 @@ package controller;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.context.annotation.Configuration;
 import org.springframework.web.socket.CloseStatus;
 import org.springframework.web.socket.TextMessage;
 import org.springframework.web.socket.WebSocketSession;
 import org.springframework.web.socket.handler.TextWebSocketHandler;
+
 
 public class ChatHandler extends TextWebSocketHandler {
 	private List<WebSocketSession> sessionList = new ArrayList<WebSocketSession>();
@@ -15,6 +17,7 @@ public class ChatHandler extends TextWebSocketHandler {
 	// 클라이언트와 연결 후 실행
 	@Override
 	public void afterConnectionEstablished(WebSocketSession session) throws Exception {
+		System.out.println("afterConnectionEstablished:"+session);
 		sessionList.add(session);
 		msg = session.getId() + "님이 입장하였습니다.";
 		System.out.println("{} 연결됨" + session.getId());
