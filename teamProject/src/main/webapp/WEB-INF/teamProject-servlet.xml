@@ -14,7 +14,7 @@
 	<!-- web 환경에서 객체 주입을 위한 설정 : @Autowired, @Controller ..기능 사용 -->
 	<mvc:annotation-driven />
 	
-	<!-- base-package="comtroller, service" 패키지를 먼저 scan해서 @Component를 가진 클래스의 
+	<!-- base-package="controller, service" 패키지를 먼저 scan해서 @Component를 가진 클래스의 
 		객체 생성 -->
 	<context:component-scan
 		base-package="controller, service" />
@@ -31,9 +31,7 @@
 		<property name="suffix" value=".jsp" />
 	</bean>
 	
-
-	
-	
+		
 	
 	
 	<!-- 파일 업로드 설정 : enctype="multipart/form-data"형식의 요청이 들어오면 구동. maxUploadSize 

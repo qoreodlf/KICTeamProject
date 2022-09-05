@@ -77,8 +77,8 @@
                             <form id="boardSearchParam" action="/board/words" method="get"><input type="hidden"
                                     name="where" value="SUBJECT_CONTENT" />
                                 <!-- <input type="text" class="input_txt required _filter" placeholder="제목" maxlength="20"> -->
-                                <p class="viewer">작성자 : [userId]</p>
-                                <p class="viewer">작성날짜 : [Date]</p>
+                                <p class="viewer">작성자 : [$("userId")]</p>
+                                <p class="viewer">작성날짜 : [$("wbDate")]</p>
                             </form>
                         </div>
                         <br><br>

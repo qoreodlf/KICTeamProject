@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@taglib prefix="pageNav" tagdir="/WEB-INF/tags"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <!doctype html>
 <html lang="ko">
 
@@ -76,12 +79,75 @@
                                     <p class="viewer">조회수 : [조회수 값]</p>
                                     <p class="date mont">출제자 : 김현겸</p>
                                 </li>
+                                <li>
+                                	<a href="#" class="noti-tit"></a>
+                                	<p class="good">추천수 : [추천수 값]</p>
+                                    <p class="viewer">조회수 : [조회수 값]</p>
+                                    <p class="date mont">출제자 : 김현겸</p>
+                                </li>
+                                <li>
+                                	<a href="#" class="noti-tit"></a>
+                                	<p class="good">추천수 : [추천수 값]</p>
+                                    <p class="viewer">조회수 : [조회수 값]</p>
+                                    <p class="date mont">출제자 : 김현겸</p>
+                                </li>
+                                <li>
+                                	<a href="#" class="noti-tit"></a>
+                                	<p class="good">추천수 : [추천수 값]</p>
+                                    <p class="viewer">조회수 : [조회수 값]</p>
+                                    <p class="date mont">출제자 : 김현겸</p>
+                                </li>
+                                
+                                <c:forEach items="${list }" var="dto">                              
+                                <li>
+                                	<a href="#" class="noti-tit"></a>
+                                	<p class="good">추천수 : [추천수 값]</p>
+                                    <p class="viewer">조회수 : [${dto.cnt}]</p>
+                                    <p class="date mont">출제자 : ${dto.userName}</p>
+                                </li>
+                               </c:forEach>
+                                <li>
+                                	<a href="#" class="noti-tit"></a>
+                                	<p class="good">추천수 : [추천수 값]</p>
+                                    <p class="viewer">조회수 : [조회수 값]</p>
+                                    <p class="date mont">출제자 : 김현겸</p>
+                                </li>
+                                <li>
+                                	<a href="#" class="noti-tit"></a>
+                                	<p class="good">추천수 : [추천수 값]</p>
+                                    <p class="viewer">조회수 : [조회수 값]</p>
+                                    <p class="date mont">출제자 : 김현겸</p>
+                                </li>
+                                <li>
+                                	<a href="#" class="noti-tit"></a>
+                                	<p class="good">추천수 : [추천수 값]</p>
+                                    <p class="viewer">조회수 : [조회수 값]</p>
+                                    <p class="date mont">출제자 : 김현겸</p>
+                                </li>
+                                <li>
+                                	<a href="#" class="noti-tit"></a>
+                                	<p class="good">추천수 : [추천수 값]</p>
+                                    <p class="viewer">조회수 : [조회수 값]</p>
+                                    <p class="date mont">출제자 : 김현겸</p>
+                                </li>
+                                <li>
+                                	<a href="#" class="noti-tit"></a>
+                                	<p class="good">추천수 : [추천수 값]</p>
+                                    <p class="viewer">조회수 : [조회수 값]</p>
+                                    <p class="date mont">출제자 : 김현겸</p>
+                                </li>
+                                <li>
+                                	<a href="#" class="noti-tit"></a>
+                                	<p class="good">추천수 : [추천수 값]</p>
+                                    <p class="viewer">조회수 : [조회수 값]</p>
+                                    <p class="date mont">출제자 : 김현겸</p>
+                                </li>
                             </ul>
-
+								
                             <div class="btn_wd640 btn_wrap">
                                 <button type="button" class="btn btn-lg btn-success">더보기</button>
                                 <br><br>
-                                <button type="button" class="btn btn-lg btn-success" onclick="location.href='${pageContext.request.contextPath}/workbook/workbookform'">
+                                <button type="button" class="btn btn-lg btn-success" onclick="location.href='http://localhost:8080/teamProject/SITE/workbookform.jsp';">
                                 문제 출제</button>
                             </div>
                         </div>

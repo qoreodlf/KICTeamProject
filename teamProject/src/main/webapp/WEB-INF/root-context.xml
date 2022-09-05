@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mybatis-spring="http://mybatis.org/schema/mybatis-spring"
+	xsi:schemaLocation="http://mybatis.org/schema/mybatis-spring http://mybatis.org/schema/mybatis-spring-1.2.xsd
+		http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+	
+	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name = "configLocation">
+			<value>classpath:/mybatis/mybatis-config.xml</value>
+		</property>
+	
+		<!-- (중요부분) mybatis 와 연결하는 데이터 베이스 (커넥션 풀)을 지정하는 부분-->
+		<property name ="dataSource" ref="dataSource"/>
+	</bean>
+	
+	<!-- Root Context: defines shared resources visible to all other web components -->
+	<!-- @Controller, @Service, @Repository, @Component, @RestController - 자동생성하지 위해서 찾는 위치를 지정한다. 위치와 아래 위치를 다 찾아서 생성과 DI를 해준다. -->
+	<!-- URL과 상관이 없는 객체 -->
+	<context:component-scan base-package="workbook"></context:component-scan>
+	
+	
+	<!-- DAO에서 스테이트먼트를 이용하여 쿼리실행 및 결과를 받기 위해 필요한 sqlSession 부분-->
+	<bean id ="sqlSession" class="org.mybatis.spring.SqlSessionTemplete">
+		<constructor-arg index ="0" ref ="sqlSessionFactory"></constructor-arg>
+	</bean>
+</beans>	
