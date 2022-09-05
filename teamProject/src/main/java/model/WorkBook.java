@@ -9,7 +9,7 @@ public class WorkBook {
 	String wbTittle;
 	String wbText;
 	String wbAnswer;
-	Date date;
+	Date wbDate;
 	int readcnt;
 	int recocnt;
 	public String getUserId() {
@@ -48,11 +48,11 @@ public class WorkBook {
 	public void setWbAnswer(String wbAnswer) {
 		this.wbAnswer = wbAnswer;
 	}
-	public Date getDate() {
-		return date;
+	public Date getWbDate() {
+		return wbDate;
 	}
-	public void setDate(Date date) {
-		this.date = date;
+	public void setWbDate(Date wbDate) {
+		this.wbDate = wbDate;
 	}
 	public int getReadcnt() {
 		return readcnt;
@@ -70,8 +70,10 @@ public class WorkBook {
 	public String toString() {
 		return " {\"userId\":\"" + userId + "\", \"wbNum\":\"" + wbNum + "\", \"wbJmcd\":\"" + wbJmcd
 				+ "\", \"wbTittle\":\"" + wbTittle + "\", \"wbText\":\"" + wbText + "\", \"wbAnswer\":\"" + wbAnswer
-				+ "\", \"date\":\"" + date + "\", \"readcnt\":\"" + readcnt + "\", \"recocnt\":\"" + recocnt + "\"}";
+				+ "\", \"wbDate\":\"" + wbDate + "\", \"readcnt\":\"" + readcnt + "\", \"recocnt\":\"" + recocnt
+				+ "\"}";
 	}
+	
 	
 	
 	

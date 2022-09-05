@@ -4,15 +4,72 @@
 <mapper namespace="workbook">
 
 	<insert id="addworkbook" parameterType="workbook">
-		insert into workbook values 
-		(#{userId}, wbseq.nextval, #{wbJmcd}, #{wbTittle}, #{wbText}, #{wbAnswer}, sysdate,0,0) 
+		insert into workbook
+		values
+		(#{userId}, wbseq.nextval, #{wbJmcd}, #{wbTittle}, #{wbText},
+		#{wbAnswer},
+		sysdate,0,0)
 	</insert>
-	
-	<select id="selectwblist" parameterType="string" resultType="workbook">
-		select * from workbook where wbJmcd = #{value}
+
+	<select id="selectwblist" parameterType="string"
+		resultType="workbook">
+		select * from workbook where wbJmcd = #{value} order by wbdate desc
 	</select>
-	
-	<select id="selectwbone" parameterType="string" resultType="workbook">
+
+	<select id="selectwbone" parameterType="string"
+		resultType="workbook">
 		select * from workbook where wbNum = #{value}
 	</select>
+	
+	<!-- 게시글 조회수 업 -->
+	<update id="readcountup" parameterType="string">
+		update workbook set
+		readcnt = readcnt + 1 where wbnum = #{value}
+	</update>
+
+	<!-- 게시글 추천 수 업 -->
+	<update id="updateLike" parameterType="int">
+		update workbook set
+		recocnt = recocnt+1 where wbnum = #{value}
+	</update>
+
+	<!-- 게시글 추천 취소 -->
+	<update id="updateLikeCancel" parameterType="int">
+		update workbook set
+		recocnt = recocnt-1 where wbnum = #{value}
+	</update>
+
+	<!-- 게시글 추천 시 boardlike 테이블에 insert -->
+	<insert id="insertLike">
+		insert into boardlike(LIKENO , wbnum , userid)
+		values((SELECT NVL(MAX(likeno), 0) + 1 FROM boardlike) ,#{wbNum}
+		,#{userId})
+	</insert>
+
+	<!-- 게시글 추천취소 시 delete -->
+	<delete id="deleteLike">
+		delete from boardlike where wbNum = #{wbNum} and
+		userId = #{userId}
+	</delete>
+
+	<!-- 게시글 추천 시 Check를 1로 만들어서 중복방지 -->
+	<update id="updateLikeCheck">
+		update boardlike set LIKECHECK = 1
+		where wbNum =
+		#{wbNum} and userId = #{userId}
+	</update>
+
+	<!-- 게시글 추천취소 시 다시 0 -->
+	<update id="updateLikeCheckCancel">
+		update boardlike set LIKECHECK = 0
+		where wbNum =
+		#{wbNum} and userId = #{userId}
+	</update>
+
+	<!-- 게시글 추천 중복방지 select문 -->
+	<select id="likeCheck" resultType="int" parameterType="map">
+		select count(*) from boardlike where wbNum = #{wbNum} and userId = #{userId}
+	</select>
+
+
 </mapper>

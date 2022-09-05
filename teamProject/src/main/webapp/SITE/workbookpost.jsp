@@ -65,11 +65,10 @@
 								<input type="hidden" name="where" value="SUBJECT_CONTENT" />
 								<!-- <input type="text" class="input_txt required _filter" placeholder="제목" maxlength="20"> -->
 								<p class="viewer">작성자 : ${selectedWB.userId}</p>
-								<p class="viewer">작성날짜 : ${selectedWB.date}</p>
+								<p class="viewer">작성날짜 : ${selectedWB.wbDate}</p>
 							</form>
 						</div>
-						<br>
-						<br>
+						<br> <br>
 
 						<div class="tab-panel">
 							<!-- 공지사항 -->
@@ -79,8 +78,28 @@
 								<div class="btn_wd500 btn_wrap">
 									<hr>
 									<h4>${selectedWB.wbText}</h4>
-									<br>
-									<br>
+									<br> <br>
+
+									<div class="answerbox">
+										<input type="hidden" id="wbText" name="wbText">
+										<h2>정답</h2>
+										<span>1.</span> <input type="radio" name="Answer"
+											style="position: relative; width: 20px; height: 20px; margin: 0 10px 0 0; top: -2px"
+											id="1" value="1"> <span>2.</span> <input type="radio"
+											name="Answer"
+											style="position: relative; width: 20px; height: 20px; margin: 0 10px 0 0; top: -2px"
+											id="2" value="2"> <span>3.</span> <input type="radio"
+											name="Answer"
+											style="position: relative; width: 20px; height: 20px; margin: 0 10px 0 0; top: -2px"
+											id="3" value="3"> <span>4.</span> <input type="radio"
+											name="Answer"
+											style="position: relative; width: 20px; height: 20px; margin: 0 10px 0 0; top: -2px"
+											id="4" value="4"> <span>5.</span> <input type="radio"
+											name="Answer"
+											style="position: relative; width: 20px; height: 20px; margin: 0 10px 0 0; top: -2px"
+											id="5" value="5">
+
+									</div>
 									<br>
 									<p class="comment">댓글 : 0개</p>
 
@@ -96,11 +115,17 @@
 										style="height: 54px; border-radius: 5px; font-size: 1.2rem;"
 										placeholder="댓글작성"></textarea>
 
+									<script type="text/javascript">
+									
+									</script>
+
 
 									<button type="button" class="btn btn-lg btn-success"
 										style="width: 120px; height: 50px;" onclick="save();">댓글달기</button>
 									<button type="button" class="btn btn-lg btn-success"
-										style="width: 120px; height: 50px;" onclick="save();">문제풀기</button>
+										style="width: 120px; height: 50px;" onclick="checkAnswer();">문제풀기</button>
+									<button type="button" class="btn btn-lg btn-success"
+										style="width: 120px; height: 50px;" onclick="like();">추천</button>
 								</div>
 							</div>
 						</div>
@@ -108,6 +133,49 @@
 				</div>
 			</div>
 		</div>
+
+		<script>
+		//라디오체크에 체크된 정답과 문제 정답 비교
+		console.log(${selectedWB.wbAnswer})
+		function checkAnswer() {
+			var checkedAnswer  //체크된 정답
+			var wbAnswer = ${selectedWB.wbAnswer}  //문제의 정답
+			var radioLenght=document.getElementsByName('Answer').length
+
+			 for (var i=0; i<radioLenght; i++) {
+		            if (document.getElementsByName("Answer")[i].checked == true) {
+		                checkedAnswer = document.getElementsByName("Answer")[i].value
+		            }
+		        }
+
+			if(checkedAnswer == null){
+				alert("정답을 체크해주세요")
+			} else if(wbAnswer == checkedAnswer){
+				alert("정답입니다!")
+			} else {
+				alert("오답입니다")
+			} 
+		}
+		
+		var wbNum="${selectedWB.wbNum}"
+		var userId = "${sessionScope.userId}"
+		var url="${pageContext.request.contextPath}/workbook/updatelike?wbNum="+wbNum+"&userId="+userId
+		function like() {
+			fetch(url)
+			.then(response=>{
+				 if(response == 0){
+                 	alert("추천완료.");
+                 	location.reload();
+                 }
+                 else if (response == 1){
+                  alert("추천취소");
+                 	location.reload();
+                 }
+				})
+		}
+		
+		
+		</script>
 </body>
 
 </html>

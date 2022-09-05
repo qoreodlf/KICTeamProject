@@ -70,7 +70,28 @@ public class WorkBookController {
 		//파라메타에서 wbNum따서 해당 워크북 가져옴
 		String wbNum = request.getParameter("wbNum");
 		WorkBook selectedWB = wd.selectWBOne(wbNum);
+		wd.readCountUp(wbNum); //조회수
+		
 		request.setAttribute("selectedWB", selectedWB);
 		return "workbookpost";
+	}
+	
+	@RequestMapping("updatelike")
+	public int updateLike(int wbNum, String userId) throws Exception{
+		System.out.println(wbNum + userId);
+		System.out.println("userid="+userId);
+		int likeCheck = wd.likeCheck(wbNum, userId); //해당개시물을 좋아요 눌렀는지
+		System.out.println("likecheck:"+likeCheck);
+		
+		if(likeCheck == 0) {
+			wd.insertLike(wbNum, userId);
+			wd.updateLike(wbNum);
+			wd.updateLikeCheck(wbNum, userId);
+		}else if (likeCheck == 1) {
+			wd.updateLikeCheckCancel(wbNum, userId);
+			wd.updateLikeCancel(wbNum);
+			wd.deleteLike(wbNum, userId);
+		}
+		return likeCheck;
 	}
 }

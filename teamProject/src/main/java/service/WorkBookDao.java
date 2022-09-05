@@ -33,4 +33,63 @@ public class WorkBookDao {
 		WorkBook wb = session.selectOne(ns+"selectwbone", wbNum);
 		return wb;
 	}
+	
+	public int readCountUp(String wbNum) {
+		int num = session.update(ns+"readcountup", wbNum);
+		return num;
+	}
+	
+	public int updateLike(int wbNum) {
+		int num = session.update(ns+"updateLike", wbNum);
+		return num;
+	}
+	
+	public int updateLikeCancel(int wbNum) {
+		int num = session.update(ns+"updateLikeCancel", wbNum);
+		return num;
+	}
+	
+	public int insertLike(int wbNum, String userId) {
+		map.clear();
+		map.put("wbNum", wbNum);
+		map.put("userId", userId);
+		int num = session.insert(ns+"insertLike", map);
+		return num;
+	}
+	
+	public int deleteLike(int wbNum, String userId) {
+		map.clear();
+		map.put("wbNum", wbNum);
+		map.put("userId", userId);
+		int num = session.insert(ns+"deleteLike", map);
+		return num;
+	}
+	
+	public int updateLikeCheck(int wbNum, String userId) {
+		map.clear();
+		map.put("wbNum", wbNum);
+		map.put("userId", userId);
+		int num = session.insert(ns+"updateLikeCheck", map);
+		return num;
+	}
+	
+	public int updateLikeCheckCancel(int wbNum, String userId) {
+		map.clear();
+		map.put("wbNum", wbNum);
+		map.put("userId", userId);
+		int num = session.insert(ns+"updateLikeCheckCancel", map);
+		return num;
+	}
+	
+	public int likeCheck(int wbNum, String userId) {
+		map.clear();
+		map.put("wbNum", wbNum);
+		map.put("userId", userId);
+		int num = session.selectOne(ns+"likeCheck", map);
+		return num;
+	}
+	
+	
+	
+	
 }
