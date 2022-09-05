@@ -1,0 +1,106 @@
+@charset "UTF-8";
+/* 바디 추가 */
+body {
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ min-height: 100vh;
+}
+
+h1 {
+ color: #fff;
+}
+
+/* 타이틀 */
+.source_title {
+ position: absolute;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ top: 20%;
+ font-size: 1.2rem;
+}
+
+/* 큰 틀 */
+.container_source {
+ position: relative;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+}
+
+/* 헥사곤 사이즈 */
+.container_source .hexagon_source {
+ position: relative;
+ width: 350px;
+ height: 400px;
+ margin: 50px 20px 70px;
+}
+
+/* 그림자 */
+.container_source .hexagon_source::before {
+ content: "";
+ position: absolute;
+ bottom: -70px;
+ width: 100%;
+ height: 60px;
+ background: radial-gradient(rgba(0, 0, 0, 1), transparent, transparent);
+ border-radius: 50%;
+ transition: 0.5s;
+}
+
+/* 그림자 호버 */
+.container_source .hexagon_source:hover::before {
+ opacity: 0.8;
+ transform: scale(0.8);
+}
+
+/* 폴리곤 */
+.container_source .hexagon_source .shape_source {
+ position: absolute;
+ top: 0;
+ left: 0;
+ width: 100%;
+ height: 100%;
+ background: #000;
+ clip-path: polygon(0 25%, 50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%);
+ transition: 0.5s;
+ cursor: pointer;
+}
+
+/* 호버 무브먼트 */
+.container_source .hexagon_source:hover .shape_source {
+ transform: translateY(-30px);
+}
+
+/* 이미지박스 */
+.container_source .hexagon_source .shape_source img {
+ position: absolute;
+ top: 0;
+ left: 0;
+ width: 100%;
+ height: 100%;
+ object-fit: cover;
+}
+
+/* 컨텐츠 텍스트 */
+.container_source .hexagon_source .shape_source .content_source {
+ position: absolute;
+ top: 0;
+ left: 0;
+ width: 100%;
+ height: 100%;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ padding: 20px;
+ text-align: center;
+ background: linear-gradient(45deg, #999, rgba(0, 0, 0, 0.5));
+ color: #fff;
+ opacity: 0;
+ transition: 0.5s;
+}
+
+.container_source .hexagon_source:hover .shape_source .content_source {
+ opacity: 1;
+}

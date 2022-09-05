@@ -1,0 +1,177 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Jost:wght@900&family=Jua&display=swap");
+
+/* Header 큰 틀 */
+header {
+ position: relative;
+ top: 0;
+ left: 0;
+ width: 100%;
+ padding: 30px 100px;
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ background: rgba(0, 0, 0, 0.4);
+ z-index: 100;
+}
+
+/* INFO 큰 틀 */
+.my_wrap {
+ position: relative;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ width: 100%;
+ height: 90vh;
+}
+
+/* INFO 안쪽 틀 */
+.in_wrap {
+ position: relative;
+ width: 95%;
+ height: 80vh;
+ background: rgba(0, 0, 0, 0.3);
+ overflow: hidden;
+}
+
+/* USERNAME BOX */
+.username {
+ position: relative;
+ width: 48%;
+ height: 20%;
+ margin: 20px;
+ left: 0;
+ background: rgba(255, 255, 255, 0.1);
+ box-shadow: 1px 1px 10px #000;
+ display: flex;
+ align-items: center;
+}
+
+/* INFO BOX */
+.userinfo {
+ position: relative;
+ width: 48%;
+ height: 72.5%;
+ margin: 20px;
+ left: 0;
+ background: rgba(255, 255, 255, 0.1);
+ box-shadow: 1px 1px 10px #000;
+}
+
+/* LIKE BOX */
+.mylike {
+ position: absolute;
+ width: 48%;
+ height: 95%;
+ margin: 20px;
+ right: 0;
+ top: 0;
+ background: rgba(255, 255, 255, 0.1);
+ box-shadow: 1px 1px 10px #000;
+}
+
+.userprofile_wrap {
+ position: relative;
+ height: 80%;
+ width: 15.5%;
+ left: 4%;
+ border-radius: 50%;
+}
+/* USER PROFILE */
+.username .img_wrap {
+ position: absolute;
+ width: 100%;
+ height: 100%;
+ left: 5%;
+ border-radius: 50%;
+ background: #fff;
+ overflow: hidden;
+}
+img {
+ position: absolute;
+ max-width: 100%;
+ height: auto;
+}
+
+/* USER NAME */
+.username input {
+ position: absolute;
+ right: 20%;
+ color: #fff;
+ border: 0;
+ outline: none;
+ font-size: 2em;
+ padding: 0 30px 0 0;
+ background: transparent;
+ float: right;
+}
+
+/* USER BUTTON */
+.username button {
+ position: absolute;
+ color: #fff;
+ font-size: 1em;
+ right: 10%;
+}
+
+/* INFO IN TITLE */
+.userinfo .infotitle {
+ position: relative;
+ display: flex;
+ height: 10%;
+ left: 5%;
+ top: 30px;
+ font-size: 2rem;
+}
+
+.userinfo .infotitle .material-symbols-outlined {
+ font-size: 3.2rem;
+}
+/* INFO H,P */
+.infocontact {
+ position: relative;
+ width: 80%;
+ left: 5%;
+}
+.infocontact p {
+ margin: 0 0 10px 0;
+ font-size: 1.5rem;
+}
+.infocontact h4 {
+ color: #999;
+ margin: 40px 0 0 0;
+ font-size: 2rem;
+}
+.infocontact textarea {
+ border: 0;
+ outline: none;
+ background: transparent;
+ color: #fff;
+ resize: none;
+ font-size: 1.2rem;
+}
+
+.like_title_wrap {
+ position: relative;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ padding: 20px;
+}
+
+.mySwiper {
+ position: relative;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ top: 10%;
+ width: 80%;
+ height: 60%;
+}
+
+.swiper-slide {
+ text-align: center;
+ font: 18px;
+ background: #fff;
+ box-shadow: 3px 0px 5px #000;
+}

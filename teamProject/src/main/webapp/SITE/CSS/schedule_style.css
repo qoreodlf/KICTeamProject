@@ -1,0 +1,108 @@
+@charset "UTF-8";
+body {
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ min-height: 100vh;
+}
+
+/* 타이틀 */
+.main-tit {
+ position: absolute;
+ margin: auto;
+ font-size: 2rem;
+ top: 11%;
+ color: white;
+ text-align: center;
+}
+
+/* 스케줄 큰 틀 */
+.container_schedule {
+ max-width: 100%;
+ position: relative;
+ display: flex;
+ justify-content: center;
+ flex-wrap: wrap;
+ transition: 0.5s;
+}
+
+/* 큰 틀 IN 카드 */
+.container_schedule .card_schedule {
+ position: relative;
+ width: 450px;
+ height: 600px;
+ background: #fff;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ transition: 0.5s;
+ margin: 10px 20px;
+}
+
+/* 카드 Blur */
+.container_schedule:hover .card_schedule {
+ filter: blur(5px);
+ transform: scale(0.9);
+}
+
+/* 카드 blur */
+.container_schedule .card_schedule:hover {
+ filter: blur(0px);
+ transform: scale(1);
+}
+
+/* 카드 : Before */
+.container_schedule .card_schedule:before {
+ content: "";
+ position: absolute;
+ width: 100%;
+ height: 100%;
+ background: #fff;
+ z-index: 1;
+ transition: 0.5s;
+}
+
+/* 카드 : Hover : Before */
+.container_schedule .card_schedule:hover:before {
+ background: rgb(255, 255, 255);
+ transform: scaleY(1.15);
+ box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+ border-radius: 20px;
+}
+
+/* 컨텐츠 */
+.container_schedule .card_schedule .content_schedule {
+ text-align: center;
+ z-index: 2;
+ padding: 0 20px;
+ transition: 0.5s;
+}
+
+/* 컨텐츠 h2 */
+.container_schedule .card_schedule .content_schedule h2 {
+ font-size: 2em;
+ font-weight: bold;
+}
+/* 컨텐츠 p */
+.container_schedule .card_schedule .content_schedule p {
+ font-size: 1.2em;
+ font-weight: bold;
+ color: #3185de;
+}
+/* 컨텐츠 a */
+.container_schedule .card_schedule .content_schedule a {
+ display: inline-block;
+ margin-top: 15px;
+ margin-bottom: 20px;
+ padding: 5px 10px;
+ background: #262626;
+ color: #fff;
+ text-decoration: none;
+ transition: 0.5s;
+}
+
+/* 버튼 Hover */
+.container_schedule .card_schedule:hover .content_schedule a {
+ text-shadow: 0 0 5px #fff;
+ border-radius: 10px;
+}

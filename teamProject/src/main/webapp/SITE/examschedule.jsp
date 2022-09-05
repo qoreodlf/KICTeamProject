@@ -1,156 +1,76 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<!doctype html>
-<html lang="ko">
+<html lang="en">
 
 <head>
 <meta charset="UTF-8">
-<link rel="stylesheet" href="css/examschedule.css">
-<title>자공자 토익</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>자격증 공부하자</title>
+<!-- CSS -->
+<link rel="stylesheet"
+	href="${pageContext.request.contextPath}/SITE/CSS/index_style.css">
+<link rel="stylesheet"
+	href="${pageContext.request.contextPath}/SITE/CSS/schedule_style.css">
 
-<link rel="stylesheet" type="text/css"
-	href="https://kltfile.blob.core.windows.net/content/css/base.css">
-<link rel="stylesheet" type="text/css"
-	href="https://kltfile.blob.core.windows.net/content/css/common.css">
-<link rel="stylesheet" type="text/css"
-	href="https://kltfile.blob.core.windows.net/content/css/layout.css">
-	
-	
-	<style>
-	.box-wrap .box {
-	width: 358px;
-	height: 611px;
-    background: #fff;
-    border-radius: 10px;
-    box-shadow: 5px 5px 20px rgb(135 137 178 / 20%);
-    transition: 0.3s;
-    margin: 40px 10px 10px 0px;
-	}
-	
-	.box-wrap{
-	justif-content: center;
-	}
-	
-	.btn-lg{
-	font-size: 1.4rem
-	}
-	</style>
 </head>
 
 <body>
-	<div id="wrap">
-		<div id="container">
-			<div class="main contents">
+	<!-- Header -->
+	<header>
+		<a href="#" class="logo">JAGONGJA.</a>
+		<ul>
+			<li><a href="#" id="home">마이페이지</a></li>
+			<li><a href="#">SIGN IN</a></li>
+			<li><a href="#">SIGN UP</a></li>
+		</ul>
+	</header>
 
-				<div class="content exam-schedule">
-					<div class="inner">
-						<div class="tit-wrap">
-							<h2 class="main-tit" style="margin: auto; text-align: center; font-size: 3.3rem;">${notOverlapedJSON[0].implYy}년도 ${sessionScope.jmfldnm} 시험일정</h2>
-						</div>
-						<div class="box-wrap type03" style="justify-content: center;">
-						<c:forEach var="i" items="${notOverlapedJSON}">
-							
-							<!--============================================테스트용============================================  -->
-							<div class="box">
-								<div class="main-info">
-									<div class="item_label">
-										<span class="expected" style="color: #465fc6;">접수대기</span> <span
-											class="d-day"
-											style="color: #465fc6; border: 1px solid #465fc6;">64</span>
-									</div>
-									<p class="dream">
-										[제<span class="round mont" style="color: #465fc6;">${i.implSeq}</span>회
-										필기시험]
-									</p>
-									<p class="txt_type01 bold">
-										<span style="color: #465fc6;">${i.docExamStartDt}</span> ~ <span
-											style="color: #465fc6;">${i.docExamEndDt}</span>
-									</p>
-								</div>
-								<div class="sub-info">
-									<p class="txt_type03 color medium">
-										접수기간 : <span>${i.docRegStartDt}</span>~<span>${i.docRegEndDt}</span>
-									</p>
-									<p class="txt_type03 medium">
-										합격자 발표 : <span>${i.docPassDt}</span>
-									</p>
-								</div>
-								<br>
-								<div class="main-info">
-									<div class="item_label">
-										<span class="expected" style="color: #465fc6;">접수대기</span> <span
-											class="d-day"
-											style="color: #465fc6; border: 1px solid #465fc6;">64</span>
-									</div>
-									<p class="dream">
-										[제<span class="round mont" style="color: #465fc6;">${i.implSeq}</span>회
-										실기시험]
-									</p>
-									<p class="txt_type01 bold">
-										<span style="color: #465fc6;">${i.pracExamStartDt}</span>~ <span
-											style="color: #465fc6;">${i.pracExamEndDt}</span>
-									</p>
-								</div>
-								<div class="sub-info">
-									<p class="txt_type03 color medium">
-										접수기간 : <span>${i.pracRegStartDt}</span>~<span>${i.pracRegEndDt}</span>
-									</p>
-									<p class="txt_type03 medium">
-										합격자 발표 : <span>${i.pracPassDt}</span>
-									</p>
-								</div>
+	<!-- 타이틀 -->
+	<h4 class="main-tit">${sessionScope.jmfldnm} 문제출제</h4>
 
+	<!-- Schedule -->
 
-								<div class="btn-wrap type02">
-									<button type="button"
-										class="btn btn-lg btn-normal w100 disabled">접수기간이
-										아닙니다.</button>
-								</div>
+	<!-- ForEach -->
+	<c:forEach var="i" items="${notOverlapedJSON}">
 
-							</div>
-							<!-- =================================================테스트용============================================= -->
-							</c:forEach>
-
-						</div>
+		<!-- 1BOX -->
+		<div class="container_schedule">
+			<div class="card_schedule">
+				<div class="content_schedule">
+					<h2>
+						[제 <span class="round mont" style="color: #465fc6;">
+							${i.implSeq} </span>회 필기시험]
+					</h2>
+					<span style="color: #465fc6;">${i.docExamStartDt}</span> ~ <span
+						style="color: #465fc6;">${i.docExamEndDt}</span> <br>
+					<br>
+					<p>접수기간</p>
+					<span>${i.docRegStartDt}</span>~<span>${i.docRegEndDt}</span>
+					<p>합격자 발표</p>
+					<span>${i.docPassDt}</span> <br> <a href="#">접수하기</a> <br>
+					<hr>
+					<br>
+					<!-- ====================================================================== -->
+					<div class="content_schedule">
+						<h2>
+							[제 <span class="round mont" style="color: #465fc6;">${i.implSeq}</span>
+							실기시험]
+						</h2>
+						<span style="color: #465fc6;">${i.pracExamStartDt}</span>~ <span
+							style="color: #465fc6;">${i.pracExamEndDt}</span> <br>
+						<br>
+						<p>접수기간</p>
+						<span>${i.pracRegStartDt}</span>~<span>${i.pracRegEndDt}</span>
+						<p>합격자 발표</p>
+						<span>${i.pracPassDt}</span> <br> <a href="#">접수하기</a>
 					</div>
 				</div>
-				<!-- exam-schedule E -->
-				<script type="text/babel">
-                    var main = '';
-                    var userId = '';
-                    var RequestContext = {
-                        'currentUrl': 'Lw==',
-                        'prevPageUrl': ''
-                    };
+			</div>
+		</div>
 
-                    var isMobileLayer = 'true';
-                    if (isMobileLayer == 'true') {
-                        isMobileLayer = true;
-                    }
-                    $(function () {
-                        Common.handleFrameworkMessage(
-                            '',
-                            '',
-                            '',
-                            ''
-                        );
-
-                        if (main == 'main') {
-                            if ($.cookie('receiptPopup_' + userId) == 'null'
-                                || $.cookie('receiptPopup_' + userId) == ''
-                                || $.cookie('receiptPopup_' + userId) == undefined
-                            ) {
-                                Main.receiptPopup('');
-                            }
-                        }
-
-                    });
-                </script>
-                <script type="text/javascript">
-                console.log(${notOverlapedJSON})
-                </script>
-
+	</c:forEach>
 </body>
 
 </html>

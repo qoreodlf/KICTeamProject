@@ -1,0 +1,108 @@
+@charset "UTF-8";
+body {
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ min-height: 100vh;
+}
+
+/* 컨테이너 큰 틀 */
+.container_list {
+ position: relative;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ flex-wrap: wrap;
+ max-width: 1100px;
+}
+
+/* 컨테이너 IN 카드 */
+.container_list .card_list {
+ position: relative;
+ width: 320px;
+ height: 320px;
+ margin: 15px;
+ overflow: hidden;
+}
+
+/* 이미지박스,컨텐츠박스 */
+.imgBx_list,
+.contentBx_list {
+ position: absolute;
+ top: 0;
+ left: 0;
+ width: 100%;
+ height: 100%;
+}
+
+/* 이미지 */
+.container_list .card_list .imgBx_list img {
+ position: absolute;
+ top: 0;
+ left: 0;
+ width: 100%;
+ height: 100%;
+ object-fit: cover;
+}
+
+/* 컨텐츠 BEFORE */
+.contentBx_list::before {
+ content: "";
+ position: absolute;
+ top: 0;
+ left: 0;
+ width: 100%;
+ height: 100%;
+ background: #fff;
+ transform: scaleX(0);
+ transition: transform 0.5s ease-in-out;
+ transform-origin: right;
+ transition-delay: 0.5s;
+}
+
+/* 무브먼트 */
+.container_list .card_list:hover .contentBx_list::before {
+ transform: scaleX(1);
+ transition: transform 0.5s ease-in-out;
+ transform-origin: left;
+ transition-delay: 0s;
+}
+
+.container_list .card_list .contentBx_list {
+ display: flex;
+ justify-content: center;
+ align-items: center;
+}
+
+.container_list .card_list .contentBx_list .content_list {
+ position: relative;
+ padding: 30px;
+ z-index: 1;
+ transition: 0.5s;
+ transform: translateX(-300px);
+ transition-delay: 0s;
+}
+
+.container_list .card_list:hover .contentBx_list .content_list {
+ transform: translateX(0px);
+ transition-delay: 0s;
+}
+
+.container_list .card_list .contentBx_list .content_list h3 {
+ color: #000;
+ font-size: 1.3em;
+ text-transform: uppercase;
+ letter-spacing: 1px;
+}
+
+.container_list .card_list .contentBx_list .content_list p {
+ color: #000;
+ font-size: 1em;
+ line-height: 1.4em;
+ font-weight: 300;
+ cursor: pointer;
+}
+
+.container_list .card_list .contentBx_list .content_list p:hover {
+ text-shadow: 0 0 3px #999;
+}
