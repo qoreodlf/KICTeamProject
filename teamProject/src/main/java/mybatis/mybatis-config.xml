@@ -7,12 +7,15 @@
 		<typeAlias type="model.ExLocation" alias="exlocation" />
 		<typeAlias type="model.ExList" alias="exlist" />
 		<typeAlias type="model.Member" alias="member" />
+		<typeAlias type="model.WorkBook" alias="workbook" />
 
 	</typeAliases>
 
 	<mappers><!-- sql구문 -->
 		<mapper resource="mybatis/LocationScheduleMapper.xml" />
 		<mapper resource="mybatis/MemberMapper.xml" />
+		<mapper resource="mybatis/WorkBookMapper.xml" />
+		
 		
 
 	</mappers>

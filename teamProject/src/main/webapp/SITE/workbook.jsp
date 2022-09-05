@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!doctype html>
 <html lang="ko">
 
@@ -70,12 +71,14 @@
                         <div id="content1" class="info_box on">
                             <!-- 기본 10개 노출, 더보기 선택시 5개씩 추가 노출  -->
                             <ul id="list-data" class="list">
+                            <c:forEach var="i" items="${wbList}">
                                 <li>
-                                    <a href="#" class="noti-tit">Spring Framework</a>
-                                    <p class="good">추천수 : [추천수 값]</p>
-                                    <p class="viewer">조회수 : [조회수 값]</p>
-                                    <p class="date mont">출제자 : 김현겸</p>
+                                    <a href="${pageContext.request.contextPath}/workbook/workbookpost?wbNum=${i.wbNum}" class="noti-tit">${i.wbTittle}</a>
+                                    <p class="good">추천수 : ${i.recocnt}</p>
+                                    <p class="viewer">조회수 : ${i.readcnt}</p>
+                                    <p class="date mont">출제자 : ${i.userId}</p>
                                 </li>
+                                </c:forEach>
                             </ul>
 
                             <div class="btn_wd640 btn_wrap">
