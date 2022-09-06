@@ -64,12 +64,12 @@
 
 												<div class="form-group">
 
-													<input type="email" name="logemail" class="form-style"
+													<input type="email" name="userEmail" class="form-style"
 														placeholder="이메일" id="logemail" autocomplete="off">
 													<i class="input-icon uil uil-at"></i>
 												</div>
 												<div class="form-group mt-2">
-													<input type="password" name="logpass" class="form-style"
+													<input type="password" name="userPassword" class="form-style"
 														placeholder="비밀번호" id="logpass" autocomplete="off">
 													<i class="input-icon uil uil-lock-alt"></i>
 												</div>
@@ -96,19 +96,19 @@
 												method="post">
 
 												<div class="form-group">
-													<input type="text" name="logname" class="form-style"
+													<input type="text" name="userName" class="form-style"
 														placeholder="이름" id="logname" autocomplete="off">
 													<i class="input-icon uil uil-user"></i>
 												</div>
 
 												<div class="form-group mt-2">
-													<input type="email" name="logemail" class="form-style"
+													<input type="email" name="userEmail" class="form-style"
 														placeholder="아이디" id="logemail" autocomplete="off">
 													<i class="input-icon uil uil-at"></i>
 												</div>
 
 												<div class="form-group mt-2">
-													<input type="password" name="logpass" class="form-style"
+													<input type="password" name="userPassword" class="form-style"
 														placeholder="비밀번호" id="logpass" autocomplete="off">
 													<i class="input-icon uil uil-lock-alt"></i>
 												</div>
@@ -116,6 +116,7 @@
 												<button type="submit" class="btn mt-4">확인</button>
 												<a class="btn mt-4" href="javascript:kakaoLogin();">카카오톡
 													회원가입</a>
+												
 												<!-- form태그 submit 위해 <a>에서 <button으로 변경 (백대일)> -->
 											</form>
 										</div>
@@ -128,10 +129,12 @@
 			</div>
 		</div>
 	</div>
-</body>
 
-<script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+</body>
+	<script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
 <script type="text/javascript"
-	src="${pageContext.request.contextPath}/SITE/js/login_kakao.js"></script>
+	src="${pageContext.request.contextPath}/SITE/JS/login_kakao.js"></script>
+
+
 
 </html>

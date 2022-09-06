@@ -1,6 +1,4 @@
-/* 카카오 디벨롭 키 */
 window.Kakao.init("00abcb26ff21f4396d563e8d0aa1dada")
-window.Kakao.init("e6f49681a0acfa52262e987fe4da0029")
 //00abcb26ff21f4396d563e8d0aa1dada  백대일
 //e6f49681a0acfa52262e987fe4da0029 김현겸
 let email
@@ -41,4 +39,7 @@ function addinfo() {
 	document.getElementById("sendkakaomember").submit();
 	
 	
+}
+function aa(){
+	alert("제대로먹임")
 }
