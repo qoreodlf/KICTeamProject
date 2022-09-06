@@ -22,15 +22,6 @@
 </head>
 
 <body>
-    <!-- Header -->
-    <header>
-        <a href="#" class="logo">JAGONGJA.</a>
-        <ul>
-            <li><a href="#" id="home">마이페이지</a></li>
-            <li><a href="#">SIGN IN</a></li>
-            <li><a href="#">SIGN UP</a></li>
-        </ul>
-    </header>
 
     <script src="https://uicdn.toast.com/editor/latest/toastui-editor-all.min.js"></script>
     <link rel="stylesheet" href="https://uicdn.toast.com/editor/latest/toastui-editor.min.css" />

@@ -26,15 +26,7 @@
 </head>
 
 <body style="overflow:scroll;">
-    <!-- Header -->
-    <header>
-        <a href="#" class="logo">JAGONGJA.</a>
-        <ul>
-            <li><a href="my_page.html" id="home">마이페이지</a></li>
-            <li><a href="login.html">SIGN IN</a></li>
-            <li><a href="login.html">SIGN UP</a></li>
-        </ul>
-    </header>
+
 
     <!-- TOAST UI -->
     <script src="https://uicdn.toast.com/editor/latest/toastui-editor-viewer.js"></script>

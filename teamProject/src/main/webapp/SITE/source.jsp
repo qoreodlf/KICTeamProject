@@ -14,15 +14,7 @@
 </head>
 
 <body>
-    <!-- Header -->
-    <header>
-        <a href="${pageContext.request.contextPath}/losh/index" class="logo">JAGONGJA.</a>
-        <ul>
-            <li><a href="#" id="home">마이페이지</a></li>
-            <li><a href="#">SIGN IN</a></li>
-            <li><a href="#">SIGN UP</a></li>
-        </ul>
-    </header>
+
 
     <!-- SOURCE LIST -->
     <div class="container_source">

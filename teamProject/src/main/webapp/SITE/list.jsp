@@ -15,15 +15,6 @@
     </head>
 
     <body>
-        <!-- Header -->
-        <header>
-            <a href="${pageContext.request.contextPath}/member/loginform" class="logo">JAGONGJA.</a>
-            <ul>
-                <li><a href="#" id="home">마이페이지</a></li>
-                <li><a href="#">SIGN IN</a></li>
-                <li><a href="#">SIGN UP</a></li>
-            </ul>
-        </header>
 
         <!-- LIST BOX -->
         <div class="container_list">

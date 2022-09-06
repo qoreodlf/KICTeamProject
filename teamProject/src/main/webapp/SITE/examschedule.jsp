@@ -17,15 +17,7 @@
 </head>
 
 <body>
-	<!-- Header -->
-	<header>
-		<a href="#" class="logo">JAGONGJA.</a>
-		<ul>
-			<li><a href="#" id="home">마이페이지</a></li>
-			<li><a href="#">SIGN IN</a></li>
-			<li><a href="#">SIGN UP</a></li>
-		</ul>
-	</header>
+
 
 	<!-- 타이틀 -->
 	<h4 class="main-tit">${sessionScope.jmfldnm} 문제출제</h4>
