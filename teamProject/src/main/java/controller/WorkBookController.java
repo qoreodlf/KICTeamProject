@@ -10,6 +10,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import model.WorkBook;
 import service.LocationScheduleDao;
@@ -76,6 +77,8 @@ public class WorkBookController {
 		return "workbookpost";
 	}
 	
+	//게시물 추천기능(백대일)
+	@ResponseBody
 	@RequestMapping("updatelike")
 	public int updateLike(int wbNum, String userId) throws Exception{
 		System.out.println(wbNum + userId);
@@ -92,6 +95,7 @@ public class WorkBookController {
 			wd.updateLikeCancel(wbNum);
 			wd.deleteLike(wbNum, userId);
 		}
+		request.setAttribute("likeCheck", likeCheck);
 		return likeCheck;
 	}
 }

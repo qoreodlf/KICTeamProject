@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+	<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!doctype html>
 <html lang="ko">
 
@@ -88,11 +89,13 @@
 						<div id="content1" class="info_box on">
 							<!-- 기본 10개 노출, 더보기 선택시 5개씩 추가 노출  -->
 							<ul id="list-data" class="list">
-								<li><a href="#" class="noti-tit">제목 들어갈 곳</a> <input
+								<c:forEach var="i" items="${odlist}">
+								<li><a href="${pageContext.request.contextPath}/workbook/workbookpost?wbNum=${i.wbNum}" class="noti-tit">${i.wbTittle}</a> <input
 									type="checkbox" class="check">
-									<p class="date mont">출제자 : userId</p>
-									<p class="date mont">날짜 : Date</p>
-									<button style="font-weight: bold;">다시 풀기</button></li>
+									<p class="date mont">출제자 : ${i.userId}</p>
+									<p class="date mont">날짜 : </p>
+									<button style="font-weight: bold;" onclick="location.href='${pageContext.request.contextPath}/workbook/workbookpost?wbNum=${i.wbNum}'">다시 풀기</button></li>
+								</c:forEach>
 							</ul>
 							<div class="btn_wd640 btn_wrap">
 								<button type="button" class="btn btn-lg btn-success">선택항목

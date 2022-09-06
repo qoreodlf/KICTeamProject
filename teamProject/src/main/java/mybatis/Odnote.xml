@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org/DTD config 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="odnote">
+
+	<insert id="addodnote" parameterType="odnote">
+		insert into odnote
+		values
+		(#{wbNum}, #{userId}, sysdate, #{jmcd})
+	</insert>
+
+	<select id="selectodlist" parameterType="string"
+		resultType="workbook">
+		select w.* from workbook w, odnote o
+		where w.wbnum = o.wbnum and o.userid = #{value} order by o.oddate desc
+	</select>
+
+	<!-- 오답노트 추천 중복방지 select문 -->
+	<select id="odnotecheck" resultType="int" parameterType="odnote">
+		select
+		count(*) from odnote where wbNum = #{wbNum} and userId = #{userId}
+	</select>
+
+
+</mapper>

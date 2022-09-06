@@ -130,47 +130,69 @@
         </div>
 
         <script>
-            //라디오체크에 체크된 정답과 문제 정답 비교
-            console.log(${ selectedWB.wbAnswer })
-            function checkAnswer() {
-                var checkedAnswer  //체크된 정답
-                var wbAnswer = ${ selectedWB.wbAnswer }  //문제의 정답
-                var radioLenght = document.getElementsByName('Answer').length
-
-                for (var i = 0; i < radioLenght; i++) {
-                    if (document.getElementsByName("Answer")[i].checked == true) {
-                        checkedAnswer = document.getElementsByName("Answer")[i].value
-                    }
-                }
-
-                if (checkedAnswer == null) {
-                    alert("정답을 체크해주세요")
-                } else if (wbAnswer == checkedAnswer) {
-                    alert("정답입니다!")
-                } else {
-                    alert("오답입니다")
-                }
-            }
-
-            var wbNum = "${selectedWB.wbNum}"
-            var userId = "${sessionScope.userId}"
-            var url = "${pageContext.request.contextPath}/workbook/updatelike?wbNum=" + wbNum + "&userId=" + userId
-            function like() {
-                fetch(url)
-                    .then(response => {
-                        if (response == 0) {
-                            alert("추천완료.");
-                            location.reload();
-                        }
-                        else if (response == 1) {
-                            alert("추천취소");
-                            location.reload();
-                        }
-                    })
-            }
-
-
-        </script>
+		//라디오체크에 체크된 정답과 문제 정답 비교
+		console.log(${selectedWB.wbAnswer})
+		function checkAnswer() {
+			var checkedAnswer  //체크된 정답
+			var wbAnswer = ${selectedWB.wbAnswer}  //문제의 정답
+			var radioLenght=document.getElementsByName('Answer').length
+			 for (var i=0; i<radioLenght; i++) {
+		            if (document.getElementsByName("Answer")[i].checked == true) {
+		                checkedAnswer = document.getElementsByName("Answer")[i].value
+		            }
+		        }
+			if(checkedAnswer == null){
+				alert("정답을 체크해주세요")
+			} else if(wbAnswer == checkedAnswer){
+				alert("정답입니다!")
+			} else {
+				alert("오답입니다")
+				odnote()
+			} 
+		}
+		
+		var wbNum="${selectedWB.wbNum}"
+		var jmcd="${selectedWB.wbJmcd}"
+		var userId = "${sessionScope.userId}"
+		var odurl = "${pageContext.request.contextPath}/odnote/addodnote?wbNum="+wbNum+"&userId="+userId+"&jmcd="+jmcd
+		var likeurl="${pageContext.request.contextPath}/workbook/updatelike?wbNum="+wbNum+"&userId="+userId
+				
+		function odnote() {
+			fetch(odurl)
+			.then(response=>{
+				response.text().then(function(odCheck){
+					console.log("odcheck: "+odCheck)
+					 if(odCheck == 0){
+		                 	alert("오답노트에 추가되었습니다.");
+		                 	location.reload();
+		                 }
+		                 else if (odCheck == 1){
+		                  alert("오답노트에 추가되어있는 문제입니다.");
+		                 	location.reload();
+		                 }
+					})			
+				})
+		}
+		
+				
+		function like() {
+			fetch(likeurl)
+			.then(response=>{
+				response.text().then(function(likeCheck){
+					 if(likeCheck == 0){
+		                 	alert("추천완료.");
+		                 	location.reload();
+		                 }
+		                 else if (likeCheck == 1){
+		                  alert("추천취소");
+		                 	location.reload();
+		                 }
+					})			
+				})
+		}
+		
+		
+		</script>
 </body>
 
 </html>
