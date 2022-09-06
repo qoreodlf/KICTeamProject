@@ -152,4 +152,9 @@ public class MemberController {
 	public String loginForm() throws Exception {
 		return "login";
 	}
+	
+	@RequestMapping("mypage")
+	public String mypage() throws Exception{
+		return "mypage";
+	}
 }

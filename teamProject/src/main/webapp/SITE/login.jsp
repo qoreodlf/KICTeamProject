@@ -23,7 +23,7 @@
 <body>
   <!-- Header -->
   <header>
-    <a href="index.html" class="logo">JAGONGJA.</a>
+    <a href="${pageContext.request.contextPath}/losh/index" class="logo">JAGONGJA.</a>
   </header>
 
   <div class="section">

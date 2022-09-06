@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title><sitemesh:write property='title' /></title> 
 
 
 	<sitemesh:write property='head' />
@@ -15,6 +15,6 @@
 <%@include file="/SITE/common/HeaderMesh.jsp"%>
 		<sitemesh:write property='body' />
 
-	<sitemesh:write property='footer' />
 </body>
+<script src="${pageContext.request.contextPath}/SITE/JS/index_script.js"></script>
 </html>

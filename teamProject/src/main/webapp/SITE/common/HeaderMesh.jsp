@@ -1,18 +1,27 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
-
-<link rel="stylesheet" href="${pageContext.request.contextPath}/SITE/CSS/index_style.css">
+<link rel="stylesheet"
+	href="${pageContext.request.contextPath}/SITE/CSS/index_style.css">
 </head>
- <!-- Header -->
-    <header>
-        <a href="#" class="logo">JAGONGJA.</a>
-        <ul>
-            <li><a href="my_page.html" id="home">마이페이지</a></li>
-            <li><a href="login.html">SIGN IN</a></li>
-            <li><a href="login.html">SIGN UP</a></li>
-        </ul>
-        
-    </header>
-  
+<!-- Header -->
+<header>
+	<a href="${pageContext.request.contextPath}/losh/index" class="logo">JAGONGJA.</a>
+	<ul>
+		<c:if test="${sessionScope.userId eq null}">
+			<li><a
+				href="${pageContext.request.contextPath}/member/loginform">SIGN
+					IN/SIGN UP</a></li>
+		</c:if>
+
+		<c:if test="${sessionScope.userId ne null}">
+			<li><a href="${pageContext.request.contextPath}/member/mypage"
+				id="home">MY PAGE("${sessionScope.userName}")</a></li>
+			<li><a href="#">LOG OUT</a></li>
+		</c:if>
+	</ul>
+
+</header>
+
 

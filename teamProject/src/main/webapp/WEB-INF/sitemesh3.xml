@@ -3,7 +3,7 @@
 <mapping path="/*" decorator="/SITE/layout/layout.jsp" />
 
 
- <mapping path="*/common" exclude="true" />
+ <mapping path="*/loginform" exclude="true" />
   <mapping path="*/layout" exclude="true" />
 
 </sitemesh>
