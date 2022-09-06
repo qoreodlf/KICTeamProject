@@ -153,6 +153,18 @@ public class MemberController {
 		return "login";
 	}
 	
+	@RequestMapping("logout")
+	public String logOut() throws Exception {
+		session.invalidate();
+		String url = "/losh/index";
+		String msg = "로그아웃 되었습니다.";
+		
+		request.setAttribute("url", url);
+		request.setAttribute("msg", msg);
+
+		return "alert";
+	}
+	
 	@RequestMapping("mypage")
 	public String mypage() throws Exception{
 		return "mypage";

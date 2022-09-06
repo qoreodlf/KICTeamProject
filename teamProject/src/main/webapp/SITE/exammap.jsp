@@ -10,7 +10,7 @@
 <title>자격증 공부하자</title>
 <!-- <link rel="stylesheet" href="css/exammap.css"> -->
 <script
-	src="${pageContext.request.contextPath}/SITE/js/locationSelect.js"></script>
+	src="${pageContext.request.contextPath}/SITE/JS/locationSelect.js"></script>
 	
 <style>
 @charset "UTF-8";

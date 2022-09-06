@@ -9,6 +9,7 @@
 		<typeAlias type="model.Member" alias="member" />
 		<typeAlias type="model.WorkBook" alias="workbook" />
 		<typeAlias type="model.Odnote" alias="odnote" />
+		<typeAlias type="model.Wbreply" alias="wbreply" />
 
 	</typeAliases>
 

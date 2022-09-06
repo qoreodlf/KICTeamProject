@@ -8,6 +8,7 @@ import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import model.Wbreply;
 import model.WorkBook;
 
 @Repository
@@ -21,6 +22,11 @@ public class WorkBookDao {
 	
 	public int addWorkBook(WorkBook workBook) {
 		int num = session.insert(ns+"addworkbook", workBook);
+		return num;
+	}
+	
+	public int deleteWorkbook(String wbNum) {
+		int num = session.delete(ns+"deleteworkbook", wbNum);
 		return num;
 	}
 	
@@ -89,6 +95,25 @@ public class WorkBookDao {
 		return num;
 	}
 	
+	public int addReply(Wbreply wbreply) {
+		int num = session.insert(ns+"addreply", wbreply);
+		return num;
+	}
+	
+	public int deletereply(String replyNum) {
+		int num = session.delete(ns+"deletereply",replyNum);
+		return num;
+	}
+	
+	public List<Wbreply> replyList(String wbNum) {
+		List<Wbreply> replyList = session.selectList(ns+"replylist", wbNum);
+		return replyList;
+	}
+	
+	public int countReply(String wbNum) {
+		int num = session.selectOne(ns+"countreply", wbNum);
+		return num;
+	}
 	
 	
 	

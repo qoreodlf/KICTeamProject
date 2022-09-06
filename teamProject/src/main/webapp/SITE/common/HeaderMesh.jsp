@@ -17,8 +17,8 @@
 
 		<c:if test="${sessionScope.userId ne null}">
 			<li><a href="${pageContext.request.contextPath}/member/mypage"
-				id="home">MY PAGE("${sessionScope.userName}")</a></li>
-			<li><a href="#">LOG OUT</a></li>
+				id="home">MY PAGE(${sessionScope.userName})</a></li>
+			<li><a href="${pageContext.request.contextPath}/member/logout">LOG OUT</a></li>
 		</c:if>
 	</ul>
 

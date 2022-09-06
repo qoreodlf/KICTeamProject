@@ -10,17 +10,22 @@
 		#{wbAnswer},
 		sysdate,0,0)
 	</insert>
+	
+	<delete id="deleteworkbook" parameterType="string">
+		delete from workbook where wbNum = #{value}
+	</delete>
 
 	<select id="selectwblist" parameterType="string"
 		resultType="workbook">
-		select * from workbook where wbJmcd = #{value} order by wbdate desc
+		select * from workbook where wbJmcd = #{value} order by
+		wbdate desc
 	</select>
 
 	<select id="selectwbone" parameterType="string"
 		resultType="workbook">
 		select * from workbook where wbNum = #{value}
 	</select>
-	
+
 	<!-- 게시글 조회수 업 -->
 	<update id="readcountup" parameterType="string">
 		update workbook set
@@ -68,8 +73,34 @@
 
 	<!-- 게시글 추천 중복방지 select문 -->
 	<select id="likeCheck" resultType="int" parameterType="map">
-		select count(*) from boardlike where wbNum = #{wbNum} and userId = #{userId}
+		select
+		count(*) from boardlike where wbNum = #{wbNum} and userId = #{userId}
 	</select>
+
+	<!-- 댓글 추가 -->
+	<insert id="addreply" parameterType="wbreply">
+		insert into wbreply
+		values
+		(#{wbNum}, #{userId}, #{reText}, sysdate, replyseq.nextval)
+	</insert>
+	
+	<!-- 댓글 삭제 -->
+	<delete id="deletereply" parameterType="string">
+		delete from wbreply where replyNum = #{value}
+	</delete>
+
+	<!-- 댓글 가져오기 -->
+	<select id="replylist" resultType="wbreply"
+		parameterType="string">
+		select * from wbreply where wbnum = #{value} order by redate
+	</select>
+
+	<!-- 댓글 수 -->
+	<select id="countreply" resultType="int" parameterType="string">
+		select
+		count(*) from wbreply where wbNum = #{value}
+	</select>
+
 
 
 </mapper>
