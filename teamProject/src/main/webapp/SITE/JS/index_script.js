@@ -3,8 +3,8 @@
 let stars = document.getElementById('stars');
 let moon = document.getElementById('moon');
 let mountains_behind = document.getElementById('mountains_behind');
-let = document.getElementById('title_text');
-let = document.getElementById('btn');
+let title_text = document.getElementById('title_text');
+let btn = document.getElementById('btn');
 let mountains_front = document.getElementById('mountains_front');
 
 
