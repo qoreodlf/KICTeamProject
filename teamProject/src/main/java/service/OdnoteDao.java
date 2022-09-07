@@ -35,6 +35,14 @@ public class OdnoteDao {
 		return num;
 	}
 	
+	public int deleteOdnote(String userId, String wbNum) {
+		map.clear();
+		map.put("userId", userId);
+		map.put("wbNum", wbNum);
+		int num = session.delete(ns+"deleteodnote", map);
+		return num;
+	}
+	
 
 	
 	

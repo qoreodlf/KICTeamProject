@@ -10,15 +10,15 @@ function kakaoLogin(){
       Kakao.API.request({
          url: '/v2/user/me',
          success: function (response) {
-            console.log(response)
+           /* console.log(response)
             console.log(authObj)
             alert(JSON.stringify(response))
-              console.log(authObj.access_token);
+              console.log(authObj.access_token);*/
             
             email = response.kakao_account.email
             nickname = response.kakao_account.profile.nickname
             id = response.id
-            console.log(email, nickname, id)
+           // console.log(email, nickname, id)
             addinfo()
             
          },
@@ -39,7 +39,4 @@ function addinfo() {
 	document.getElementById("sendkakaomember").submit();
 	
 	
-}
-function aa(){
-	alert("제대로먹임")
 }

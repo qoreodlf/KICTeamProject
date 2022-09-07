@@ -16,9 +16,12 @@
 		</c:if>
 
 		<c:if test="${sessionScope.userId ne null}">
+			<li><a href="${pageContext.request.contextPath}/odnote/odnote"
+				id="home">오답노트</a></li>
 			<li><a href="${pageContext.request.contextPath}/member/mypage"
-				id="home">MY PAGE(${sessionScope.userName})</a></li>
-			<li><a href="${pageContext.request.contextPath}/member/logout">LOG OUT</a></li>
+				id="home">마이 페이지(${sessionScope.userName})</a></li>
+			<li><a href="${pageContext.request.contextPath}/member/logout">LOG
+					OUT</a></li>
 		</c:if>
 	</ul>
 

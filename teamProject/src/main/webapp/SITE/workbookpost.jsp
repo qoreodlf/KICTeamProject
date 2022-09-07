@@ -41,7 +41,6 @@
 		src="https://uicdn.toast.com/editor/latest/toastui-editor-viewer.js"></script>
 	<link rel="stylesheet"
 		href="https://uicdn.toast.com/editor/latest/toastui-editor-viewer.min.css" />
-
 	<div id="wrap">
 		<div id="container">
 			<div class="contents help notice mg_mobile">
@@ -54,14 +53,14 @@
 					</h2>
 					<div class="info_box">
 						<div class="input_wrap w100 ">
-							<form id="boardSearchParam" action="/board/words" method="get">
+
 								<input type="hidden" name="where" value="SUBJECT_CONTENT" />
 								<!-- <input type="text" class="input_txt required _filter" placeholder="제목" maxlength="20"> -->
 								<p class="viewer" style="color: #FFF;">작성자 :
 									${selectedWB.userId}</p>
-								<p class="viewer" style="color: #FFF;">작성날짜 :
+									
+								<p class="viewer" style="color: #FFF;">작성날짜 : 
 									${selectedWB.wbDate}</p>
-							</form>
 						</div>
 						<br> <br>
 
@@ -123,14 +122,16 @@
 									</c:if>
 									<br> <br>
 									<c:forEach var="i" items="${replyList}">
+
 										<div style="background: #fff;">
 											<!-- 댓글 -->
+											
 											<textarea name="comment" cols="10" rows="10"
 												style="height: 54px; border-radius: 5px; font-size: 1.2rem; background: #FFF;"
 												placeholder="${i.userId} : ${i.reText}" disabled></textarea>
-												<c:if test="${sessionScope.userId eq i.userId}">
-												<button value="${i.replyNum}" onclick="deleteReply(this)">댓글삭제</button>
-												</c:if>
+											<c:if test="${sessionScope.userId eq i.userId}">
+												<div><button value="${i.replyNum}" onclick="deleteReply(this)">댓글삭제</button></div>
+											</c:if>
 										</div>
 									</c:forEach>
 									<hr>
@@ -178,7 +179,9 @@
 				alert("정답입니다!")
 			} else {
 				alert("오답입니다")
-				odnote()
+				if(${sessionScope.userId ne selectedWB.userId}){  //문제출제자id와 문제 출제자 아이디가 같으면 od추가안함
+					odnote()
+				}
 			} 
 		}
 		
@@ -213,11 +216,11 @@
 				response.text().then(function(likeCheck){
 					 if(likeCheck == 0){
 		                 	alert("문제를 추천하였습니다.");
-		                 	
+		                 	location.reload()
 		                 }
 		                 else if (likeCheck == 1){
 		                  alert("추천을 취소하였습니다.");
-		                 	
+		                  location.reload()
 		                 }
 					})			
 				})
@@ -233,7 +236,8 @@
 			var url = "${pageContext.request.contextPath}/workbook/addreply?wbNum="+wbNum+"&userId="+userId+"&reText="+reText
 			console.log(url)
 			fetch(url)
-			.then(response=>alert(response.text()))
+			.then(response=>location.reload())
+			document.getElementById("reText").value = ""
 		}
 		
 		//댓글삭제
@@ -242,7 +246,7 @@
 			var replyNum = t.value
 			var url = "${pageContext.request.contextPath}/workbook/deletereply?replyNum="+replyNum
 			fetch(url)
-			.then(response=>alert(response.text()))		
+			.then(response=>location.reload())		
 		}
 		
 		

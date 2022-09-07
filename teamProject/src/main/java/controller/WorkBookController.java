@@ -63,7 +63,7 @@ public class WorkBookController {
 		System.out.println(workBook);
 		wd.addWorkBook(workBook);
 
-		return "workbook";
+		return "redirect:/workbook/workbooklist";
 	}
 
 	// 문제삭제. (벡대일)
