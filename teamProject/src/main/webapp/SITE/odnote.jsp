@@ -87,13 +87,16 @@
 					<div class="tab-panel">
 						<!-- 공지사항 -->
 						<div id="content1" class="info_box on">
+						<p>전체선택</p>
+						<input type="checkbox" name="checkAll" id="checkAll" class="check" onclick="checkAll()">
+						<br>
 							<!-- 기본 10개 노출, 더보기 선택시 5개씩 추가 노출  -->
 							<ul id="list-data" class="list">
 								<c:forEach var="i" items="${odlist}">
 									<li><a
 										href="${pageContext.request.contextPath}/workbook/workbookpost?wbNum=${i.wbNum}"
 										class="noti-tit">${i.wbTittle}</a> 
-										<input type="checkbox" name="odnote" class="check" value="${i.wbNum}">
+										<input type="checkbox" name="odnote" class="check" value="${i.wbNum}" onclick="checkone()">
 										<p class="date mont">출제자 : ${i.userId}</p>
 										<p class="date mont">날짜 :</p>
 										<button style="font-weight: bold;"
@@ -138,6 +141,26 @@ function deleteOdnote(){
 	})
 	
 	
+}
+	
+	//체크박스 전체선택, 해제
+function checkAll() {
+	var chked = document.getElementsByName('odnote')
+	if(document.getElementById("checkAll").checked==true){
+		for(var i = 0; i<chked.length; i++){
+			chked[i].checked = true;
+		}
+	}
+	if(document.getElementById("checkAll").checked==false){
+		for(var i = 0; i<chked.length; i++){
+			chked[i].checked = false;
+		}
+	}
+
+}	
+	
+function checkone() {
+		document.getElementById("checkAll").checked=false
 }
 </script>
 </body>
