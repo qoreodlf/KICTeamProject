@@ -9,7 +9,7 @@
     <title>자격증 공부하자</title>
 
     <!-- CSS -->
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/SITE/CSS/index_style.css">
+   <link rel="stylesheet" href="${pageContext.request.contextPath}/SITE/CSS/index_style.css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/SITE/CSS/source_style.css">
 </head>
 

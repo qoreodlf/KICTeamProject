@@ -28,7 +28,7 @@ body {
 }
 
 /* Header 큰 틀 */
-header {
+ header {
  position: absolute;
  top: 0;
  left: 0;
@@ -42,8 +42,8 @@ header {
  color: #fff;
 }
 
-/* Header In logo */
-header .logo {
+Header In logo
+ header .logo {
  color: #fff;
  font-weight: 700;
  text-decoration: none;
@@ -55,33 +55,33 @@ header .logo {
  font-family: "Jost", sans-serif;
 }
 
-/* Header In ul */
+Header In ul
 header ul {
  display: flex;
  justify-content: center;
  align-items: center;
 }
 
-/* Header In li */
+Header In li
 header ul li {
  list-style: none;
  margin-left: 20px;
 }
 
-/* 카테고리와 홈 간격 띄우기 */
+카테고리와 홈 간격 띄우기
 header ul li:nth-child(1) {
  margin-right: 40px;
 }
-/* Login Size */
+Login Size
 header ul li:nth-child(2) {
  font-size: 1.3rem;
 }
-/* Register Size */
+Register Size
 header ul li:nth-child(3) {
  font-size: 1.3rem;
 }
 
-/* Header In a Categories */
+Header In a Categories
 header ul li a {
  color: #fff;
  text-decoration: none;
@@ -90,11 +90,11 @@ header ul li a {
  font-weight: bold;
 }
 
-/* Header In a Categories Hover */
+Header In a Categories Hover
 header ul li a:hover {
  text-shadow: 0 0 5px #fff;
  color: #fff;
-}
+} 
 
 /* Section { */
 section {

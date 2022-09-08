@@ -38,6 +38,8 @@
 	href="https://kltfile.blob.core.windows.net/content/css/exam.css">
 <link rel="stylesheet" type="text/css"
 	href="https://kltfile.blob.core.windows.net/content/css/help.css">
+	<link rel="stylesheet"
+	href="${pageContext.request.contextPath}/SITE/CSS/index_style.css">
 
 
 
@@ -70,7 +72,7 @@
 				</form>
 				<div class="inner">
 					<h2 class="top_title">
-						문제집 <br> [자격증 이름]
+						오답노트 <br>
 					</h2>
 					<div class="info_box">
 						<div class="input_wrap w100 ">

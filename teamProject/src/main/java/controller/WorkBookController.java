@@ -84,8 +84,9 @@ public class WorkBookController {
 
 		// 파라메타에서 wbNum따서 해당 워크북 가져옴
 		String wbNum = request.getParameter("wbNum");
-		WorkBook selectedWB = wd.selectWBOne(wbNum);
 		wd.readCountUp(wbNum); // 조회수상승
+		WorkBook selectedWB = wd.selectWBOne(wbNum);
+		
 
 		List<Wbreply> replyList = wd.replyList(wbNum);// 댓글 리스트
 		int countReply = wd.countReply(wbNum);

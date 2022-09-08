@@ -7,11 +7,15 @@ public class WorkBook {
 	int wbNum;
 	String wbJmcd;
 	String wbTittle;
-	String wbText;
 	String wbAnswer;
 	Date wbDate;
 	int readcnt;
 	int recocnt;
+	String wbItem1;
+	String wbItem2;
+	String wbItem3;
+	String wbItem4;
+	String wbItem5;
 	public String getUserId() {
 		return userId;
 	}
@@ -35,12 +39,6 @@ public class WorkBook {
 	}
 	public void setWbTittle(String wbTittle) {
 		this.wbTittle = wbTittle;
-	}
-	public String getWbText() {
-		return wbText;
-	}
-	public void setWbText(String wbText) {
-		this.wbText = wbText;
 	}
 	public String getWbAnswer() {
 		return wbAnswer;
@@ -66,13 +64,45 @@ public class WorkBook {
 	public void setRecocnt(int recocnt) {
 		this.recocnt = recocnt;
 	}
+	public String getWbItem1() {
+		return wbItem1;
+	}
+	public void setWbItem1(String wbItem1) {
+		this.wbItem1 = wbItem1;
+	}
+	public String getWbItem2() {
+		return wbItem2;
+	}
+	public void setWbItem2(String wbItem2) {
+		this.wbItem2 = wbItem2;
+	}
+	public String getWbItem3() {
+		return wbItem3;
+	}
+	public void setWbItem3(String wbItem3) {
+		this.wbItem3 = wbItem3;
+	}
+	public String getWbItem4() {
+		return wbItem4;
+	}
+	public void setWbItem4(String wbItem4) {
+		this.wbItem4 = wbItem4;
+	}
+	public String getWbItem5() {
+		return wbItem5;
+	}
+	public void setWbItem5(String wbItem5) {
+		this.wbItem5 = wbItem5;
+	}
 	@Override
 	public String toString() {
 		return " {\"userId\":\"" + userId + "\", \"wbNum\":\"" + wbNum + "\", \"wbJmcd\":\"" + wbJmcd
-				+ "\", \"wbTittle\":\"" + wbTittle + "\", \"wbText\":\"" + wbText + "\", \"wbAnswer\":\"" + wbAnswer
-				+ "\", \"wbDate\":\"" + wbDate + "\", \"readcnt\":\"" + readcnt + "\", \"recocnt\":\"" + recocnt
-				+ "\"}";
+				+ "\", \"wbTittle\":\"" + wbTittle + "\", \"wbAnswer\":\"" + wbAnswer + "\", \"wbDate\":\"" + wbDate
+				+ "\", \"readcnt\":\"" + readcnt + "\", \"recocnt\":\"" + recocnt + "\", \"wbItem1\":\"" + wbItem1
+				+ "\", \"wbItem2\":\"" + wbItem2 + "\", \"wbItem3\":\"" + wbItem3 + "\", \"wbItem4\":\"" + wbItem4
+				+ "\", \"wbItem5\":\"" + wbItem5 + "\"}";
 	}
+	
 	
 	
 	

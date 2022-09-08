@@ -6,9 +6,9 @@
 	<insert id="addworkbook" parameterType="workbook">
 		insert into workbook
 		values
-		(#{userId}, wbseq.nextval, #{wbJmcd}, #{wbTittle}, #{wbText},
+		(#{userId}, wbseq.nextval, #{wbJmcd}, #{wbTittle},
 		#{wbAnswer},
-		sysdate,0,0)
+		sysdate,0,0,#{wbItem1},#{wbItem2},#{wbItem3},#{wbItem4},#{wbItem5})
 	</insert>
 	
 	<delete id="deleteworkbook" parameterType="string">

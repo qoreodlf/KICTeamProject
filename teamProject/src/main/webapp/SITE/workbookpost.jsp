@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!doctype html>
 <html lang="ko">
 
@@ -49,18 +50,23 @@
 					<input id="boardCode" name="boardCode" type="hidden" value="words" />
 				</form>
 				<div class="inner">
+					<h4 class="" style="color: #FFF;">[${sessionScope.jmfldnm}]</h4>
+					<p class="viewer" style="color: #FFF;">작성자 :
+						${selectedWB.userId}</p>
+
+					<p class="viewer" style="color: #FFF;">
+						작성날짜 :
+						<fmt:formatDate value="${selectedWB.wbDate}"
+							pattern="yyyy년 MM월 dd일" />
+					</p>
 					<h2 class="top_title" style="color: #FFF;">${selectedWB.wbTittle}<br>
 					</h2>
 					<div class="info_box">
 						<div class="input_wrap w100 ">
 
-								<input type="hidden" name="where" value="SUBJECT_CONTENT" />
-								<!-- <input type="text" class="input_txt required _filter" placeholder="제목" maxlength="20"> -->
-								<p class="viewer" style="color: #FFF;">작성자 :
-									${selectedWB.userId}</p>
-									
-								<p class="viewer" style="color: #FFF;">작성날짜 : 
-									${selectedWB.wbDate}</p>
+							<input type="hidden" name="where" value="SUBJECT_CONTENT" />
+							<!-- <input type="text" class="input_txt required _filter" placeholder="제목" maxlength="20"> -->
+
 						</div>
 						<br> <br>
 
@@ -71,7 +77,11 @@
 								<div id="editor"></div>
 								<div class="btn_wd500 btn_wrap">
 									<hr>
-									<h4 style="color: #FFF;">${selectedWB.wbText}</h4>
+									<h4 style="color: #FFF;">1. ${selectedWB.wbItem1}</h4>
+									<h4 style="color: #FFF;">2. ${selectedWB.wbItem2}</h4>
+									<h4 style="color: #FFF;">3. ${selectedWB.wbItem3}</h4>
+									<h4 style="color: #FFF;">4. ${selectedWB.wbItem4}</h4>
+									<h4 style="color: #FFF;">5. ${selectedWB.wbItem5}</h4>
 									<br> <br>
 
 									<div class="answerbox">
@@ -125,12 +135,14 @@
 
 										<div style="background: #fff;">
 											<!-- 댓글 -->
-											
+
 											<textarea name="comment" cols="10" rows="10"
 												style="height: 54px; border-radius: 5px; font-size: 1.2rem; background: #FFF;"
 												placeholder="${i.userId} : ${i.reText}" disabled></textarea>
 											<c:if test="${sessionScope.userId eq i.userId}">
-												<div><button value="${i.replyNum}" onclick="deleteReply(this)">댓글삭제</button></div>
+												<div>
+													<button value="${i.replyNum}" onclick="deleteReply(this)">댓글삭제</button>
+												</div>
 											</c:if>
 										</div>
 									</c:forEach>

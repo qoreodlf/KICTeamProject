@@ -6,15 +6,15 @@
 <meta charset="UTF-8">
 <title><sitemesh:write property='title' /></title> 
 
-
+<%@include file="/SITE/common/HeaderMesh.jsp"%>
 	<sitemesh:write property='head' />
 
 </head>
 <body>
 
-<%@include file="/SITE/common/HeaderMesh.jsp"%>
+
 		<sitemesh:write property='body' />
 
 </body>
-<script src="${pageContext.request.contextPath}/SITE/JS/index_script.js"></script>
+
 </html>

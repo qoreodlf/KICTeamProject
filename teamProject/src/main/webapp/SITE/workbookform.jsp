@@ -38,7 +38,7 @@
                         ${sessionScope.jmfldnm} 문제출제<br>
                     </h2>
                     <form action="${pageContext.request.contextPath}/workbook/workbookpro" method="post">
-                        <input type="text" placeholder="제목을 입력하세요" name="wbTittle"
+                        <input type="text" placeholder="문제제목을 입력하세요(문제는 오지선다로 작성해주세요)" name="wbTittle"
                             style="border-radius: 5px; background: #F7F9FC;">
                         <div class="info_box">
 
@@ -49,9 +49,19 @@
                                     <!-- 기본 10개 노출, 더보기 선택시 5개씩 추가 노출  -->
                                     <div id="editor"></div>
                                     <div class="btn_wd500 btn_wrap">
-                                        <textarea rows="" cols="" name="wbText"></textarea>
-                                        <div class="answerbox">
-                                            <input type="hidden" id="wbText" name="wbText">
+                                    
+                                        <h5> </h5><input type="text" placeholder="1번" name="wbItem1"
+                            style="border-radius: 3px; background: #F7F9FC;">
+                            <h4> <br></h4><input type="text" placeholder="2번" name="wbItem2"
+                            style="border-radius: 3px; background: #F7F9FC;">
+                            <h4><br> </h4><input type="text" placeholder="3번" name="wbItem3"
+                            style="border-radius: 3px; background: #F7F9FC;">
+                            <h4><br> </h4><input type="text" placeholder="4번" name="wbItem4"
+                            style="border-radius: 3px; background: #F7F9FC;">
+                            <h4><br> </h4><input type="text" placeholder="5번" name="wbItem5"
+                            style="border-radius: 3px; background: #F7F9FC;">
+                                        
+                                        <div class="answerbox">                          
                                             <h2 style="color: #FFF;">정답</h2>
                                             <span style="color: #FFF;">1.</span> <input type="radio" name="wbAnswer"
                                                 style="position: relative; width: 20px; height: 20px; margin: 0 10px 0 0; top: -2px"

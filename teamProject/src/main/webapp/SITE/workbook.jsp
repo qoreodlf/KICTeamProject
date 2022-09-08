@@ -31,6 +31,7 @@
     <link rel="stylesheet" type="text/css" href="https://kltfile.blob.core.windows.net/content/css/main.css">
     <link rel="stylesheet" type="text/css" href="https://kltfile.blob.core.windows.net/content/css/exam.css">
     <link rel="stylesheet" type="text/css" href="https://kltfile.blob.core.windows.net/content/css/help.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/SITE/CSS/index_style.css">
 
 
 

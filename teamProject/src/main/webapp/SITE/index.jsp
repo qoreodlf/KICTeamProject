@@ -167,7 +167,7 @@
 			src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.3/gsap.min.js"></script>
 	</div>
 	<!-- JS -->
-
+<script src="${pageContext.request.contextPath}/SITE/JS/index_script.js"></script>
 </body>
 
 
