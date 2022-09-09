@@ -72,12 +72,12 @@
                         <div id="content1" class="info_box on">
                             <!-- 기본 10개 노출, 더보기 선택시 5개씩 추가 노출  -->
                             <ul id="list-data" class="list">
-                            <c:forEach var="i" items="${wbList}">
+                                  <c:forEach var="i" items="${wbList}">
                                 <li>
                                     <a href="${pageContext.request.contextPath}/workbook/workbookpost?wbNum=${i.wbNum}" class="noti-tit">${i.wbTittle}</a>
                                     <p class="good">추천수 : ${i.recocnt}</p>
                                     <p class="viewer">조회수 : ${i.readcnt}</p>
-                                    <p class="date mont">출제자 : ${i.userId}</p>
+                                    <p class="date mont">출제자 : ${i.userNickname}</p>
                                 </li>
                                 </c:forEach>
                             </ul>

@@ -11,8 +11,8 @@
 
 	<select id="selectodlist" parameterType="string"
 		resultType="workbook">
-		select w.* from workbook w, odnote o
-		where w.wbnum = o.wbnum and o.userid = #{value} order by o.oddate desc
+		select * from workbook w, odnote o, exlist e, jgjuser j
+		where w.wbnum = o.wbnum and o.userid = #{value} and o.jmcd = e.jmcd and j.userid = w.userid order by o.oddate desc
 	</select>
 
 	<!-- 오답노트 추천 중복방지 select문 -->

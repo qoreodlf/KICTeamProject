@@ -1,5 +1,8 @@
 package controller;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -15,6 +18,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import model.Wbreply;
 import model.WorkBook;
 import service.LocationScheduleDao;
+import service.MemberDao;
 import service.WorkBookDao;
 
 @Controller
@@ -23,6 +27,9 @@ public class WorkBookController {
 
 	@Autowired
 	WorkBookDao wd;
+
+	@Autowired
+	MemberDao md;
 
 	HttpServletRequest request;
 	Model m;
@@ -39,8 +46,12 @@ public class WorkBookController {
 	// 워크북 db에서 종목코드가 세션아이디 종목코드와 맞는애들만 불러서 띄우면됨(0830백대일)
 	@RequestMapping("workbooklist")
 	public String workBookList() throws Exception {
+
+
 		String wbJmcd = (String) session.getAttribute("jmcd");
 		List<WorkBook> wbList = wd.selectWBList(wbJmcd);
+
+
 		request.setAttribute("wbList", wbList);
 
 		// 워크북 db에서 종목코드가 세션아이디 종목코드와 맞는애들만 불러서 띄우면됨
@@ -86,16 +97,35 @@ public class WorkBookController {
 		String wbNum = request.getParameter("wbNum");
 		wd.readCountUp(wbNum); // 조회수상승
 		WorkBook selectedWB = wd.selectWBOne(wbNum);
-		
-
-		List<Wbreply> replyList = wd.replyList(wbNum);// 댓글 리스트
-		int countReply = wd.countReply(wbNum);
 
 		request.setAttribute("selectedWB", selectedWB);
-		request.setAttribute("replyList", replyList);
-		request.setAttribute("countReply", countReply);
 
 		return "workbookpost";
+	}
+	
+	//댓글리스트
+	@RequestMapping("replylist")
+	@ResponseBody
+	public List<Wbreply> replyList(String wbNum) throws Exception {
+		System.out.println(wbNum);
+		List<Wbreply> replyList = wd.replyList(wbNum);
+		return replyList;
+	}
+	
+	//댓글수
+	@RequestMapping("countreply")
+	@ResponseBody
+	public int countReply(String wbNum) throws Exception {
+		int countReply = wd.countReply(wbNum);
+		return countReply;
+	}
+	
+	//추천수
+	@RequestMapping("countlike")
+	@ResponseBody
+	public int countLike(String wbNum) throws Exception {
+		int countLike = wd.countLike(wbNum);
+		return countLike;
 	}
 
 	// 게시물 추천기능(백대일)
@@ -134,7 +164,7 @@ public class WorkBookController {
 	@RequestMapping("deletereply")
 	public String deleteReply(String replyNum) throws Exception {
 		wd.deletereply(replyNum);
-		
+
 		return "alert";
 	}
 }

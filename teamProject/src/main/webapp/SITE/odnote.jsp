@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!doctype html>
 <html lang="ko">
 
@@ -38,7 +39,7 @@
 	href="https://kltfile.blob.core.windows.net/content/css/exam.css">
 <link rel="stylesheet" type="text/css"
 	href="https://kltfile.blob.core.windows.net/content/css/help.css">
-	<link rel="stylesheet"
+<link rel="stylesheet"
 	href="${pageContext.request.contextPath}/SITE/CSS/index_style.css">
 
 
@@ -89,26 +90,31 @@
 					<div class="tab-panel">
 						<!-- 공지사항 -->
 						<div id="content1" class="info_box on">
-						<p>전체선택</p>
-						<input type="checkbox" name="checkAll" id="checkAll" class="check" onclick="checkAll()">
-						<br>
+							<p>전체선택</p>
+							<input type="checkbox" name="checkAll" id="checkAll"
+								class="check" onclick="checkAll()"> <br>
 							<!-- 기본 10개 노출, 더보기 선택시 5개씩 추가 노출  -->
 							<ul id="list-data" class="list">
 								<c:forEach var="i" items="${odlist}">
 									<li><a
 										href="${pageContext.request.contextPath}/workbook/workbookpost?wbNum=${i.wbNum}"
-										class="noti-tit">${i.wbTittle}</a> 
-										<input type="checkbox" name="odnote" class="check" value="${i.wbNum}" onclick="checkone()">
-										<p class="date mont">출제자 : ${i.userId}</p>
-										<p class="date mont">날짜 :</p>
+										class="noti-tit">${i.wbTittle}</a> <input type="checkbox"
+										name="odnote" class="check" value="${i.wbNum}"
+										onclick="checkone()">
+										<p class="date mont">출제자 : ${i.userName}</p>
+										<p class="date mont">
+											추가날짜 :
+											<fmt:formatDate value="${i.odDate}" pattern="yyyy년 MM월 dd일" />
+										</p>
+										<p class="date mont">과목 : ${i.jmfldnm}</p>
 										<button style="font-weight: bold;"
 											onclick="location.href='${pageContext.request.contextPath}/workbook/workbookpost?wbNum=${i.wbNum}'">다시
 											풀기</button></li>
 								</c:forEach>
 							</ul>
 							<div class="btn_wd640 btn_wrap">
-								<button type="button" class="btn btn-lg btn-success" onclick="deleteOdnote()">선택항목
-									삭제</button>
+								<button type="button" class="btn btn-lg btn-success"
+									onclick="deleteOdnote()">선택항목 삭제</button>
 							</div>
 						</div>
 					</div>

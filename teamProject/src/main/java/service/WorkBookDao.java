@@ -95,6 +95,11 @@ public class WorkBookDao {
 		return num;
 	}
 	
+	public int countLike(String wbNum) {
+		int num = session.selectOne(ns+"countlike", wbNum);
+		return num;
+	}
+	
 	public int addReply(Wbreply wbreply) {
 		int num = session.insert(ns+"addreply", wbreply);
 		return num;

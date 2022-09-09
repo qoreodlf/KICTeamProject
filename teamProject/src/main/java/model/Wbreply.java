@@ -8,6 +8,8 @@ public class Wbreply {
 	String reText;
 	Date reDate;
 	int replyNum;
+	String userName;
+	String userNickname;
 	public int getWbNum() {
 		return wbNum;
 	}
@@ -38,11 +40,27 @@ public class Wbreply {
 	public void setReplyNum(int replyNum) {
 		this.replyNum = replyNum;
 	}
+	
+	public String getUserName() {
+		return userName;
+	}
+	public void setUserName(String userName) {
+		this.userName = userName;
+	}
+	public String getUserNickname() {
+		return userNickname;
+	}
+	public void setUserNickname(String userNickname) {
+		this.userNickname = userNickname;
+	}
 	@Override
 	public String toString() {
 		return " {\"wbNum\":\"" + wbNum + "\", \"userId\":\"" + userId + "\", \"reText\":\"" + reText
-				+ "\", \"reDate\":\"" + reDate + "\", \"replyNum\":\"" + replyNum + "\"}";
+				+ "\", \"reDate\":\"" + reDate + "\", \"replyNum\":\"" + replyNum + "\", \"userName\":\"" + userName
+				+ "\"}";
 	}
+	
+	
 	
 	
 }

@@ -6,6 +6,7 @@ public class Member {
 	String userName;
 	String userEmail;
 	int userType;
+	String userNickname;
 	
 	public String getUserId() {
 		return userId;
@@ -37,11 +38,20 @@ public class Member {
 	public void setUserType(int userType) {
 		this.userType = userType;
 	}
+	
+	public String getUserNickname() {
+		return userNickname;
+	}
+	public void setUserNickname(String userNickname) {
+		this.userNickname = userNickname;
+	}
 	@Override
 	public String toString() {
 		return " {\"userId\":\"" + userId + "\", \"userPassword\":\"" + userPassword + "\", \"userName\":\"" + userName
-				+ "\", \"userEmail\":\"" + userEmail + "\", \"userType\":\"" + userType + "\"}";
+				+ "\", \"userEmail\":\"" + userEmail + "\", \"userType\":\"" + userType + "\", \"userNickname\":\""
+				+ userNickname + "\"}";
 	}
+	
 	
 	
 	

@@ -19,7 +19,7 @@
 			<li><a href="${pageContext.request.contextPath}/odnote/odnote"
 				id="home">오답노트</a></li>
 			<li><a href="${pageContext.request.contextPath}/member/mypage"
-				id="home">마이 페이지(${sessionScope.userName})</a></li>
+				id="home">마이 페이지(${sessionScope.userNickname})</a></li>
 			<li><a href="${pageContext.request.contextPath}/member/logout">LOG
 					OUT</a></li>
 		</c:if>

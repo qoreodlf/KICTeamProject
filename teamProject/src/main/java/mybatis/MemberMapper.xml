@@ -8,6 +8,14 @@
 	</select>
 
 	<insert id="addkakaomember" parameterType="member">
-		insert into jgjuser values (#{userId}, #{userPassword}, #{userName}, #{userEmail}, #{userType})
+		insert into jgjuser values (#{userId}, #{userPassword}, #{userName}, #{userEmail}, #{userType}, #{userNickname})
 	</insert>
+	
+	<update id="updatenickname" parameterType="map">
+		update jgjuser set usernickname = #{userNickname} where userid = #{userId}
+	</update>
+	
+	<select id="selectbynickname" parameterType="string" resultType="member">
+	 select * from jgjuser where usernickname = #{value}
+	</select>
 </mapper>

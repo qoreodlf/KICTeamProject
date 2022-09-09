@@ -52,7 +52,7 @@
 				<div class="inner">
 					<h4 class="" style="color: #FFF;">[${sessionScope.jmfldnm}]</h4>
 					<p class="viewer" style="color: #FFF;">작성자 :
-						${selectedWB.userId}</p>
+						${selectedWB.userNickname}</p>
 
 					<p class="viewer" style="color: #FFF;">
 						작성날짜 :
@@ -107,12 +107,10 @@
 									</div>
 									<br>
 									<div style="float: right; display: flex;">
-										<p class="comment" style="color: #FFF;">댓글 :
-											${countReply}개</p>
+										<p class="comment" style="color: #FFF;" id="countReply"></p>
 										<p class="#" style="color: #FFF; margin: 0 0 0 20px">조회수 :
 											${selectedWB.readcnt}개</p>
-										<p class="#" style="color: #FFF; margin: 0 0 0 20px">추천수 :
-											${selectedWB.recocnt}개</p>
+										<p class="#" style="color: #FFF; margin: 0 0 0 20px" id="countLike"></p>
 									</div>
 									<hr>
 									<br>
@@ -131,21 +129,7 @@
 											삭제</button>
 									</c:if>
 									<br> <br>
-									<c:forEach var="i" items="${replyList}">
-
-										<div style="background: #fff;">
-											<!-- 댓글 -->
-
-											<textarea name="comment" cols="10" rows="10"
-												style="height: 54px; border-radius: 5px; font-size: 1.2rem; background: #FFF;"
-												placeholder="${i.userId} : ${i.reText}" disabled></textarea>
-											<c:if test="${sessionScope.userId eq i.userId}">
-												<div>
-													<button value="${i.replyNum}" onclick="deleteReply(this)">댓글삭제</button>
-												</div>
-											</c:if>
-										</div>
-									</c:forEach>
+									<div id="replyList"></div> <!-- 댓글 -->
 									<hr>
 									<br> <br>
 									<c:if test="${sessionScope.userId ne null}">
@@ -160,6 +144,7 @@
 											style="width: 120px; height: 50px; border: 0; color: #000"
 											onclick="addReply();">댓글등록</button>
 									</c:if>
+								
 								</div>
 							</div>
 						</div>
@@ -169,8 +154,9 @@
 		</div>
 
 		<script>
+		
+		
 		//라디오체크에 체크된 정답과 문제 정답 비교
-		console.log(${selectedWB.wbAnswer})
 		function checkAnswer() {
 			if(${sessionScope.userId eq null}){
 				alert("로그인 후 이용해주세요")
@@ -208,14 +194,12 @@
 			fetch(odurl)
 			.then(response=>{
 				response.text().then(function(odCheck){
-					console.log("odcheck: "+odCheck)
 					 if(odCheck == 0){
 		                 	alert("오답노트에 추가되었습니다.");
 		                 	
 		                 }
 		                 else if (odCheck == 1){
-		                  alert("오답노트에 추가되어있는 문제입니다.");
-		                 
+		                  alert("오답노트에 추가되어있는 문제입니다.");                 
 		                 }
 					})			
 				})
@@ -223,45 +207,95 @@
 		
 				//추천
 		function like() {
+			if(${sessionScope.userId eq null}){
+				alert("로그인 후 이용해주세요")
+				return
+			}
 			fetch(likeurl)
 			.then(response=>{
 				response.text().then(function(likeCheck){
 					 if(likeCheck == 0){
 		                 	alert("문제를 추천하였습니다.");
-		                 	location.reload()
+		                 	countLike()
 		                 }
 		                 else if (likeCheck == 1){
 		                  alert("추천을 취소하였습니다.");
-		                  location.reload()
+		                  countLike()
 		                 }
 					})			
 				})
 		}
 				//댓글추가
 		function addReply() {
-			console.log("oooo")
 			var reText = document.getElementById("reText").value
 			if(reText==null||reText==""){
 				alert("댓글을 작성해주세요")
 				return
 			}
 			var url = "${pageContext.request.contextPath}/workbook/addreply?wbNum="+wbNum+"&userId="+userId+"&reText="+reText
-			console.log(url)
-			fetch(url)
-			.then(response=>location.reload())
+			fetch(url).then(response=>{
+				replyList()
+				countReply()
+			})
 			document.getElementById("reText").value = ""
 		}
 		
 		//댓글삭제
 		function deleteReply(t) {
-			console.log(t.value)
 			var replyNum = t.value
 			var url = "${pageContext.request.contextPath}/workbook/deletereply?replyNum="+replyNum
 			fetch(url)
-			.then(response=>location.reload())		
+			.then(response=>{
+				replyList()
+				countReply()
+			})		
 		}
 		
+		//댓글 목록
+		function replyList() {
+			fetch("${pageContext.request.contextPath}/workbook/replylist?wbNum="+wbNum)
+			.then(response=>response.json())
+			.then(json=> {
+				var a = ''
+				for(var i=0; i<json.length; i++){
+					a += '<div style="background: #fff;">'
+					a += '<textarea name="comment" cols="10" rows="10"'
+					a += 'style="height: 54px; border-radius: 5px; font-size: 1.2rem; background: #FFF;"'
+					a += 'placeholder="'+ json[i].userNickname +' : ' + json[i].reText + '" disabled></textarea>'
+					if(userId==json[i].userId) {
+						a += '<div>'
+						a += '<button value="'+json[i].replyNum+'" onclick="deleteReply(this)">댓글삭제</button>'
+						a += '</div>'
+					}
+					a += '</div>'
+				}
+			
+			document.getElementById("replyList").innerHTML = a
+			
+			})
+		}
 		
+		//댓글 수
+		function countReply() {
+			fetch("${pageContext.request.contextPath}/workbook/countreply?wbNum="+wbNum)
+			.then(response=>response.text())
+			.then(count=>{
+				document.getElementById("countReply").innerHTML = "댓글 : " + count + " 개"
+			})
+		}
+		
+		//추천수
+		function countLike() {
+			fetch("${pageContext.request.contextPath}/workbook/countlike?wbNum="+wbNum)
+			.then(response=>response.text())
+			.then(count=>{
+				document.getElementById("countLike").innerHTML = "추천 : " + count + " 개"
+			})
+		}
+		
+		window.onload=replyList()
+		window.onload=countReply()
+		window.onload=countLike()
 		</script>
 </body>
 

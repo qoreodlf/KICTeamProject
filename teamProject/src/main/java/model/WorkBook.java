@@ -16,6 +16,10 @@ public class WorkBook {
 	String wbItem3;
 	String wbItem4;
 	String wbItem5;
+	String userName;
+	String jmfldnm;
+	Date odDate;
+	String userNickname;
 	public String getUserId() {
 		return userId;
 	}
@@ -94,14 +98,46 @@ public class WorkBook {
 	public void setWbItem5(String wbItem5) {
 		this.wbItem5 = wbItem5;
 	}
+	
+	public String getUserName() {
+		return userName;
+	}
+	public void setUserName(String userName) {
+		this.userName = userName;
+	}
+	
+	public String getJmfldnm() {
+		return jmfldnm;
+	}
+	public void setJmfldnm(String jmfldnm) {
+		this.jmfldnm = jmfldnm;
+	}
+	
+	public Date getOdDate() {
+		return odDate;
+	}
+	public void setOdDate(Date odDate) {
+		this.odDate = odDate;
+	}
+	
+	public String getUserNickname() {
+		return userNickname;
+	}
+	public void setUserNickname(String userNickname) {
+		this.userNickname = userNickname;
+	}
 	@Override
 	public String toString() {
 		return " {\"userId\":\"" + userId + "\", \"wbNum\":\"" + wbNum + "\", \"wbJmcd\":\"" + wbJmcd
 				+ "\", \"wbTittle\":\"" + wbTittle + "\", \"wbAnswer\":\"" + wbAnswer + "\", \"wbDate\":\"" + wbDate
 				+ "\", \"readcnt\":\"" + readcnt + "\", \"recocnt\":\"" + recocnt + "\", \"wbItem1\":\"" + wbItem1
 				+ "\", \"wbItem2\":\"" + wbItem2 + "\", \"wbItem3\":\"" + wbItem3 + "\", \"wbItem4\":\"" + wbItem4
-				+ "\", \"wbItem5\":\"" + wbItem5 + "\"}";
+				+ "\", \"wbItem5\":\"" + wbItem5 + "\", \"userName\":\"" + userName + "\", \"jmfldnm\":\"" + jmfldnm
+				+ "\", \"odDate\":\"" + odDate + "\"}";
 	}
+	
+	
+	
 	
 	
 	

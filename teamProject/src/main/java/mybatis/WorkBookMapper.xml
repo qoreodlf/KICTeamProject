@@ -17,13 +17,14 @@
 
 	<select id="selectwblist" parameterType="string"
 		resultType="workbook">
-		select * from workbook where wbJmcd = #{value} order by
+		select * from workbook w, jgjuser j, exlist e where wbJmcd = #{value} and w.userid= j.userid and w.wbjmcd = e.jmcd
+		 order by
 		wbdate desc
 	</select>
 
 	<select id="selectwbone" parameterType="string"
 		resultType="workbook">
-		select * from workbook where wbNum = #{value}
+		select * from workbook w, jgjuser j where wbNum = #{value} and w.userid = j.userid
 	</select>
 
 	<!-- 게시글 조회수 업 -->
@@ -76,6 +77,12 @@
 		select
 		count(*) from boardlike where wbNum = #{wbNum} and userId = #{userId}
 	</select>
+	
+	<!-- 게시글 추천 수 -->
+	<select id="countlike" resultType="int" parameterType="string">
+		select
+		recocnt from workbook where wbNum = #{value}
+	</select>
 
 	<!-- 댓글 추가 -->
 	<insert id="addreply" parameterType="wbreply">
@@ -92,7 +99,7 @@
 	<!-- 댓글 가져오기 -->
 	<select id="replylist" resultType="wbreply"
 		parameterType="string">
-		select * from wbreply where wbnum = #{value} order by redate
+		select * from wbreply w, jgjuser j where wbnum = #{value} and w.userid= j.userid order by redate
 	</select>
 
 	<!-- 댓글 수 -->
