@@ -49,6 +49,28 @@
 </head>
 
 <body>
+
+<!-- Header -->
+<header>
+	<a href="${pageContext.request.contextPath}/losh/index" class="logo">JAGONGJA.</a>
+	<ul>
+		<c:if test="${sessionScope.userId eq null}">
+			<li><a
+				href="${pageContext.request.contextPath}/member/loginform">SIGN
+					IN/SIGN UP</a></li>
+		</c:if>
+
+		<c:if test="${sessionScope.userId ne null}">
+			<li><a href="${pageContext.request.contextPath}/odnote/odnote"
+				id="home">오답노트</a></li>
+			<li><a href="${pageContext.request.contextPath}/member/mypage"
+				id="home">마이 페이지(${sessionScope.userNickname})</a></li>
+			<li><a href="${pageContext.request.contextPath}/member/logout">LOG
+					OUT</a></li>
+		</c:if>
+	</ul>
+
+</header>
     <div id="wrap">
         <div id="container">
             <div class="contents help notice mg_mobile">
@@ -56,7 +78,7 @@
                 <form id="boardSearchParam" action="/board/words" method="get"><input id="boardCode" name="boardCode"
                         type="hidden" value="words" /></form>
                 <div class="inner">
-                    <h2 class="top_title">문제집 <br> [${sessionScope.jmfldnm}]</h2>
+                    <h2 class="top_title" style="color: #FFF;">문제집 <br> [${sessionScope.jmfldnm}]</h2>
                     <div class="info_box">
                         <div class="input_wrap w100 ">
                             <!-- <form id="boardSearchParam" action="/board/words" method="get"><input type="hidden"

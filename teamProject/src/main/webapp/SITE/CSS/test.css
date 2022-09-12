@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* FONT */
 @import url("https://fonts.googleapis.com/css2?family=Jost:wght@900&family=Jua&display=swap");
 
@@ -28,7 +29,7 @@ body {
 }
 
 /* Header 큰 틀 */
- header {
+header {
  position: absolute;
  top: 0;
  left: 0;
@@ -43,7 +44,7 @@ body {
 }
 
 /* Header In logo */
- header .logo {
+header .logo {
  color: #fff;
  font-weight: 700;
  text-decoration: none;
@@ -70,7 +71,7 @@ header ul li {
 
 /* 카테고리와 홈 간격 띄우기 */
 header ul li:nth-child(1) {
- font-size: 1.3rem;
+ margin-right: 40px;
 }
 /* Login Size */
 header ul li:nth-child(2) {
@@ -94,7 +95,7 @@ header ul li a {
 header ul li a:hover {
  text-shadow: 0 0 5px #fff;
  color: #fff;
-} 
+}
 
 /* Section { */
 section {
@@ -163,6 +164,19 @@ section img#mountains_front {
  font-family: "Jua", sans-serif;
 }
 
+/* Scrolling SEC */
+.sec {
+ position: relative;
+ width: 100%;
+ min-height: 100vh;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ padding: 100px;
+ background: #000000;
+}
+
+/* SEC TITLE */
 .sec h2 {
  font-size: 3.5em;
  margin-bottom: 10px;
@@ -173,8 +187,4 @@ section img#mountains_front {
 .sec p {
  font-size: 1em;
  color: #fff;
-}
-
-header ul li a{
- font-size: 10px;	
 }

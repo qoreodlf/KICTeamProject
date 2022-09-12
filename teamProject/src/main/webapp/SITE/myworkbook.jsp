@@ -48,6 +48,11 @@
 
 </head>
 
+<!-- Header -->
+<header>
+	<a href="${pageContext.request.contextPath}/losh/index" class="logo">JAGONGJA.</a>
+</header>
+
 <body>
     <div id="wrap">
         <div id="container">
@@ -56,7 +61,7 @@
                 <form id="boardSearchParam" action="/board/words" method="get"><input id="boardCode" name="boardCode"
                         type="hidden" value="words" /></form>
                 <div class="inner">
-                    <h2 class="top_title">${sessionScope.userNickname} 문제 출제 목록</h2>
+                    <h2 class="top_title" style="color:#FFF;">${sessionScope.userNickname} 문제 출제 목록</h2>
                     <div class="info_box">
                         <div class="input_wrap w100 ">
                             <!-- <form id="boardSearchParam" action="/board/words" method="get"><input type="hidden"

@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+		<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!doctype html>
 <html lang="ko">
 
@@ -27,7 +28,26 @@
 </head>
 
 <body>
+<header>
+	<a href="${pageContext.request.contextPath}/losh/index" class="logo">JAGONGJA.</a>
+	<ul>
+		<c:if test="${sessionScope.userId eq null}">
+			<li><a
+				href="${pageContext.request.contextPath}/member/loginform">SIGN
+					IN/SIGN UP</a></li>
+		</c:if>
 
+		<c:if test="${sessionScope.userId ne null}">
+			<li><a href="${pageContext.request.contextPath}/odnote/odnote"
+				id="home">오답노트</a></li>
+			<li><a href="${pageContext.request.contextPath}/member/mypage"
+				id="home">마이 페이지(${sessionScope.userNickname})</a></li>
+			<li><a href="${pageContext.request.contextPath}/member/logout">LOG
+					OUT</a></li>
+		</c:if>
+	</ul>
+
+</header>
 	<script
 		src="https://uicdn.toast.com/editor/latest/toastui-editor-all.min.js"></script>
 	<link rel="stylesheet"
@@ -48,35 +68,34 @@
 						action="${pageContext.request.contextPath}/workbook/workbookpro"
 						method="post" name="f">
 						<input type="text" placeholder="문제제목을 입력하세요(문제는 사지선다로 작성해주세요)"
-							name="wbTittle" style="border-radius: 5px; background: #F7F9FC;">
+							name="wbTittle" style="border-radius: 5px; background: #F7F9FC; font-size: 10px;">
 						<div class="info_box">
 
 							<br> <br>
 							<div class="tab-panel">
 								<!-- 공지사항 -->
-								<div id="content1" class="info_box on">
+								<div id="content1" class="info_box on" style="width:500px;">
 									<!-- 기본 10개 노출, 더보기 선택시 5개씩 추가 노출  -->
-									<div id="editor"></div>
 									<div class="btn_wd500 btn_wrap">
 
 										<h5></h5>
 										<input type="text" placeholder="1번" name="wbItem1"
-											style="border-radius: 3px; background: #F7F9FC;">
+											style="border-radius: 3px; background: #F7F9FC; font-size: 8px;">
 										<h4>
 											<br>
 										</h4>
 										<input type="text" placeholder="2번" name="wbItem2"
-											style="border-radius: 3px; background: #F7F9FC;">
+											style="border-radius: 3px; background: #F7F9FC; font-size: 8px;">
 										<h4>
 											<br>
 										</h4>
 										<input type="text" placeholder="3번" name="wbItem3"
-											style="border-radius: 3px; background: #F7F9FC;">
+											style="border-radius: 3px; background: #F7F9FC; font-size: 8px;">
 										<h4>
 											<br>
 										</h4>
 										<input type="text" placeholder="4번" name="wbItem4"
-											style="border-radius: 3px; background: #F7F9FC;">
+											style="border-radius: 3px; background: #F7F9FC; font-size: 8px;">
 										<h4>
 											<br>
 										</h4>

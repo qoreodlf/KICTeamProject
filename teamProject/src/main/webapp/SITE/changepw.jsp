@@ -26,11 +26,10 @@
 </head>
 
 <body>
-	<!-- Header -->
-	<header>
-		<a class="logo">JAGONGJA.</a>
-	</header>
-
+<!-- Header -->
+<header>
+	<a href="${pageContext.request.contextPath}/losh/index" class="logo">JAGONGJA.</a>
+</header>
 	<div class="section">
 		<div class="container">
 			<div class="row full-height justify-content-center">

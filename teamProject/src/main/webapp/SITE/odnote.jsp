@@ -72,7 +72,7 @@
 					<input id="boardCode" name="boardCode" type="hidden" value="words" />
 				</form>
 				<div class="inner">
-					<h2 class="top_title">
+					<h2 class="top_title" style="color: #FFF;'">
 						오답노트 <br>
 					</h2>
 					<div class="info_box">
@@ -82,14 +82,14 @@
 									id="query" name="query" title="검색어"
 									placeholder="검색어를 입력해 주세요. (제목, 내용)"
 									class="input_txt required _filter" type="text" value=""
-									maxlength="20" />
+									maxlength="20" style="font-size:15px;" />
 								<button type="submit" class="btn_search">검색하기</button>
 							</form>
 						</div>
 					</div>
 					<div class="tab-panel">
 						<!-- 공지사항 -->
-						<div id="content1" class="info_box on">
+						<div id="content1" class="info_box on" style="color: #FFF;">
 							<p>전체선택</p>
 							<input type="checkbox" name="checkAll" id="checkAll"
 								class="check" onclick="checkAll()"> <br>

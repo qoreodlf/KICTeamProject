@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    	<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <html lang="en">
 
 <head>
@@ -7,7 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>자격증 공부하자</title>
-    <%-- <link rel="stylesheet" href="${pageContext.request.contextPath}/SITE/CSS/index_style.css"> --%>
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/SITE/CSS/index_style.css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/SITE/CSS/my_page_style.css">
 
     <!-- GOOGLE ICON -->
@@ -20,7 +21,24 @@
 </head>
 
 <body>
-    <!-- Header -->
+    <header>
+	<a href="${pageContext.request.contextPath}/losh/index" class="logo">JAGONGJA.</a>
+	<ul>
+		<c:if test="${sessionScope.userId eq null}">
+			<li><a
+				href="${pageContext.request.contextPath}/member/loginform">SIGN
+					IN/SIGN UP</a></li>
+		</c:if>
+
+		<c:if test="${sessionScope.userId ne null}">
+			<li><a href="${pageContext.request.contextPath}/odnote/odnote"
+				id="home">오답노트</a></li>
+			<li><a href="${pageContext.request.contextPath}/member/logout">LOG
+					OUT</a></li>
+		</c:if>
+	</ul>
+
+</header>
 
 
     <!-- MYPAGE LAYOUT -->
@@ -33,25 +51,25 @@
                   
                 </div>
                 <input type="text" placeholder="${sessionScope.userNickname}">
-                <button onclick="location.href='${pageContext.request.contextPath}/member/nickname'">EDIT</button>
+                <button onclick="location.href='${pageContext.request.contextPath}/member/nickname'" style="outline:none; border: 0; font-size:20px; background: transparent;">EDIT</button>
             </div>
 
             <!-- 2BOX -->
             <div class="userinfo">
                 <div class="infotitle">
-                    <span class="material-symbols-outlined">
+                    <span class="material-symbols-outlined" style="color:#FFF;">
                         bookmark
                     </span>
-                    <h2>Contact info</h2>
+                    <h2 style="color: #FFF;">Contact info</h2>
                 </div>
                 <div class="infocontact">
-                <h4>이름</h4>
-                    <p>${sessionScope.userName}</p>
-                    <h4>Email</h4>
-                    <p>${sessionScope.userEmail}</p>
-                    <button onclick="location.href='${pageContext.request.contextPath}/workbook/myworkbook'">내가 낸 문제</button><br>
-                    <button onclick="location.href='${pageContext.request.contextPath}/member/changepassword'">비밀번호 변경</button><br>
-                    <button onclick="location.href='${pageContext.request.contextPath}/member/deleteuser'">회원탈퇴</button>
+                <h4 style="color:#FFF;">이름</h4>
+                    <p style="color:#FFF;">${sessionScope.userName}</p>
+                    <h4 style="color:#FFF;">Email</h4>
+                    <p style="color:#FFF;">${sessionScope.userEmail}</p>
+                    <button onclick="location.href='${pageContext.request.contextPath}/workbook/myworkbook'"style="border: 0; outline:none; color:#FFF; background: transparent; font-size:20px; margin: 0 0 10px 0;">내가 낸 문제</button><br>
+                    <button onclick="location.href='${pageContext.request.contextPath}/member/changepassword'" style="border: 0; outline:none; color:#FFF; background: transparent; font-size:20px; margin: 0 0 10px 0;">비밀번호 변경</button><br>
+                    <button onclick="location.href='${pageContext.request.contextPath}/member/deleteuser'" style="border: 0; outline:none; color:#FFF; background: transparent; font-size:20px; margin: 0 0 10px 0;">회원탈퇴</button>
                 </div>
             </div>
 

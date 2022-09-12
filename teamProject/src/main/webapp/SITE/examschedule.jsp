@@ -19,6 +19,28 @@
 <body>
 
 
+<!-- Header -->
+<header>
+	<a href="${pageContext.request.contextPath}/losh/index" class="logo">JAGONGJA.</a>
+	<ul>
+		<c:if test="${sessionScope.userId eq null}">
+			<li><a
+				href="${pageContext.request.contextPath}/member/loginform">SIGN
+					IN/SIGN UP</a></li>
+		</c:if>
+
+		<c:if test="${sessionScope.userId ne null}">
+			<li><a href="${pageContext.request.contextPath}/odnote/odnote"
+				id="home">오답노트</a></li>
+			<li><a href="${pageContext.request.contextPath}/member/mypage"
+				id="home">마이 페이지(${sessionScope.userNickname})</a></li>
+			<li><a href="${pageContext.request.contextPath}/member/logout">LOG
+					OUT</a></li>
+		</c:if>
+	</ul>
+
+</header>
+
 	<!-- 타이틀 -->
 	<h4 class="main-tit">${sessionScope.jmfldnm} 일정</h4>
 
@@ -41,7 +63,7 @@
 					<p>접수기간</p>
 					<span>${i.docRegStartDt}</span>~<span>${i.docRegEndDt}</span>
 					<p>합격자 발표</p>
-					<span>${i.docPassDt}</span> <br> <a href="#">접수하기</a> <br>
+					<span>${i.docPassDt}</span> <br> <a href="#" onclick="no()">접수하기</a> <br>
 					<hr>
 					<br>
 					<!-- ====================================================================== -->
@@ -56,7 +78,7 @@
 						<p>접수기간</p>
 						<span>${i.pracRegStartDt}</span>~<span>${i.pracRegEndDt}</span>
 						<p>합격자 발표</p>
-						<span>${i.pracPassDt}</span> <br> <a href="#">접수하기</a>
+						<span>${i.pracPassDt}</span> <br> <a href="#" onclick="no()">접수하기</a>
 					</div>
 				</div>
 			</div>
@@ -65,4 +87,9 @@
 	</c:forEach>
 </body>
 
+<script>
+function no(){
+	alert("현재 접수기간이 아닙니다.");
+}
+</script>
 </html>
