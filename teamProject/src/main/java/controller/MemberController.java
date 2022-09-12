@@ -143,7 +143,7 @@ public class MemberController {
 				session.setAttribute("userEmail", loginMember.getUserEmail());
 				session.setAttribute("userName", loginMember.getUserName());
 				session.setAttribute("userType", loginMember.getUserType());
-				session.setAttribute("userNickname", loginMember.getUserEmail());
+				session.setAttribute("userNickname", loginMember.getUserNickname());
 				url = "/losh/index";
 				msg = null;
 				if (loginMember.getUserNickname().contains("@")) {

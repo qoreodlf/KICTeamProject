@@ -103,7 +103,7 @@
 
 												<div class="form-group mt-2">
 													<input type="email" name="userEmail" class="form-style"
-														placeholder="아이디" id="logemail" autocomplete="off">
+														placeholder="이메일" id="logemail" autocomplete="off">
 													<i class="input-icon uil uil-at"></i>
 												</div>
 

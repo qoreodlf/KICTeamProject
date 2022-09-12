@@ -8,7 +8,7 @@
 		values
 		(#{userId}, wbseq.nextval, #{wbJmcd}, #{wbTittle},
 		#{wbAnswer},
-		sysdate,0,0,#{wbItem1},#{wbItem2},#{wbItem3},#{wbItem4},#{wbItem5})
+		sysdate,0,0,#{wbItem1},#{wbItem2},#{wbItem3},#{wbItem4})
 	</insert>
 	
 	<delete id="deleteworkbook" parameterType="string">

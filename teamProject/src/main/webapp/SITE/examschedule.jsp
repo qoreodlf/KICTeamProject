@@ -20,7 +20,7 @@
 
 
 	<!-- 타이틀 -->
-	<h4 class="main-tit">${sessionScope.jmfldnm} 문제출제</h4>
+	<h4 class="main-tit">${sessionScope.jmfldnm} 일정</h4>
 
 	<!-- Schedule -->
 

@@ -81,7 +81,6 @@
 									<h4 style="color: #FFF;">2. ${selectedWB.wbItem2}</h4>
 									<h4 style="color: #FFF;">3. ${selectedWB.wbItem3}</h4>
 									<h4 style="color: #FFF;">4. ${selectedWB.wbItem4}</h4>
-									<h4 style="color: #FFF;">5. ${selectedWB.wbItem5}</h4>
 									<br> <br>
 
 									<div class="answerbox">
@@ -99,10 +98,7 @@
 											id="3" value="3"> <span style="color: #FFF;">4.</span>
 										<input type="radio" name="Answer"
 											style="position: relative; width: 20px; height: 20px; margin: 0 10px 0 0; top: -2px"
-											id="4" value="4"> <span style="color: #FFF;">5.</span>
-										<input type="radio" name="Answer"
-											style="position: relative; width: 20px; height: 20px; margin: 0 10px 0 0; top: -2px"
-											id="5" value="5">
+											id="4" value="4"> 
 
 									</div>
 									<br>

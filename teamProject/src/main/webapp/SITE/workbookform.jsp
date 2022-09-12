@@ -47,7 +47,7 @@
 					<form
 						action="${pageContext.request.contextPath}/workbook/workbookpro"
 						method="post" name="f">
-						<input type="text" placeholder="문제제목을 입력하세요(문제는 오지선다로 작성해주세요)"
+						<input type="text" placeholder="문제제목을 입력하세요(문제는 사지선다로 작성해주세요)"
 							name="wbTittle" style="border-radius: 5px; background: #F7F9FC;">
 						<div class="info_box">
 
@@ -80,8 +80,7 @@
 										<h4>
 											<br>
 										</h4>
-										<input type="text" placeholder="5번" name="wbItem5"
-											style="border-radius: 3px; background: #F7F9FC;">
+
 
 										<div class="answerbox">
 											<h2 style="color: #FFF;">정답</h2>
@@ -97,10 +96,8 @@
 												id="3" value="3"> <span style="color: #FFF;">4.</span>
 											<input type="radio" name="wbAnswer"
 												style="position: relative; width: 20px; height: 20px; margin: 0 10px 0 0; top: -2px"
-												id="4" value="4"> <span style="color: #FFF;">5.</span>
-											<input type="radio" name="wbAnswer"
-												style="position: relative; width: 20px; height: 20px; margin: 0 10px 0 0; top: -2px"
-												id="5" value="5">
+												id="4" value="4">
+								
 
 										</div>
 										<br>
@@ -123,7 +120,7 @@
 		function checkInput() {
 			if (!document.f.wbTittle.value || !document.f.wbItem1.value
 					|| !document.f.wbItem2.value || !document.f.wbItem3.value
-					|| !document.f.wbItem4.value || !document.f.wbItem5.value) {
+					|| !document.f.wbItem4.value) {
 				alert("빈칸을 채워주세요.")
 				return
 			}

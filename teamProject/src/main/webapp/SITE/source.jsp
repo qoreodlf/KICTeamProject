@@ -1,66 +1,76 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>자격증 공부하자</title>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>자격증 공부하자</title>
 
-    <!-- CSS -->
-   <link rel="stylesheet" href="${pageContext.request.contextPath}/SITE/CSS/index_style.css">
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/SITE/CSS/source_style.css">
+<!-- CSS -->
+<link rel="stylesheet"
+	href="${pageContext.request.contextPath}/SITE/CSS/index_style.css">
+<link rel="stylesheet"
+	href="${pageContext.request.contextPath}/SITE/CSS/source_style.css">
 </head>
 
 <body>
 
 
-    <!-- SOURCE LIST -->
-    <div class="container_source">
+	<!-- SOURCE LIST -->
 
-        <!-- 1BOX -->
-        <div class="hexagon_source">
-            <div class="shape_source">
-                <img src="${pageContext.request.contextPath}/SITE/IMG/source/mappin.gif" alt="">
-                <div class="content_source"
-                    onclick="location.href='${pageContext.request.contextPath}/losh/exschedule'">
-                    <div>
-                        <h2>${sessionScope.jmfldnm} 시험 일정</h2>
-                        <p>자공자에서 시험 일정을 확인해보세요</p>
-                    </div>
-                </div>
-            </div>
-        </div>
+	<div class="container_source">
 
-        <!-- 2BOX -->
-        <div class="hexagon_source">
-            <div class="shape_source">
-                <img src="${pageContext.request.contextPath}/SITE/IMG/source/schedule.gif" alt="">
-                <div class="content_source" onclick="location.href='${pageContext.request.contextPath}/losh/exmap'">
-                    <div>
-                        <h2>${sessionScope.jmfldnm} 시험 장소</h2>
-                        <p>자공자에서 시험 장소를 확인해보세요</p>
-                    </div>
-                </div>
-            </div>
-        </div>
+		<!-- 1BOX -->
+		<div class="hexagon_source">
+			<div class="shape_source">
+				<img
+					src="${pageContext.request.contextPath}/SITE/IMG/source/mappin.gif"
+					alt="">
+				<div class="content_source"
+					onclick="location.href='${pageContext.request.contextPath}/losh/exschedule'">
+					<div>
+						<h2>${sessionScope.jmfldnm}시험 일정</h2>
+						<p>자공자에서 시험 일정을 확인해보세요</p>
+					</div>
+				</div>
+			</div>
+		</div>
 
-        <!-- 3BOX -->
-        <div class="hexagon_source">
-            <div class="shape_source">
-                <img src="${pageContext.request.contextPath}/SITE/IMG/source/workbook.gif" alt="">
-                <div class="content_source"
-                    onclick="location.href='${pageContext.request.contextPath}/workbook/workbooklist'">
-                    <div>
-                        <h2>${sessionScope.jmfldnm} 문제집</h2>
-                        <p>공부하는 사람들과 문제를 내고 풀어보세요</p>
-                    </div>
-                </div>
-            </div>
-        </div>
+		<!-- 2BOX -->
+		<div class="hexagon_source">
+			<div class="shape_source">
+				<img
+					src="${pageContext.request.contextPath}/SITE/IMG/source/schedule.gif"
+					alt="">
+				<div class="content_source"
+					onclick="location.href='${pageContext.request.contextPath}/losh/exmap'">
+					<div>
+						<h2>${sessionScope.jmfldnm}시험 장소</h2>
+						<p>자공자에서 시험 장소를 확인해보세요</p>
+					</div>
+				</div>
+			</div>
+		</div>
 
-    </div>
+		<!-- 3BOX -->
+		<div class="hexagon_source">
+			<div class="shape_source">
+				<img
+					src="${pageContext.request.contextPath}/SITE/IMG/source/workbook.gif"
+					alt="">
+				<div class="content_source"
+					onclick="location.href='${pageContext.request.contextPath}/workbook/workbooklist'">
+					<div>
+						<h2>${sessionScope.jmfldnm}문제집</h2>
+						<p>공부하는 사람들과 문제를 내고 풀어보세요</p>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
 </body>
 
 </html>

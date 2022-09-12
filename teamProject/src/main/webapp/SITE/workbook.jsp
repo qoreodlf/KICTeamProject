@@ -59,12 +59,12 @@
                     <h2 class="top_title">문제집 <br> [${sessionScope.jmfldnm}]</h2>
                     <div class="info_box">
                         <div class="input_wrap w100 ">
-                            <form id="boardSearchParam" action="/board/words" method="get"><input type="hidden"
+                            <!-- <form id="boardSearchParam" action="/board/words" method="get"><input type="hidden"
                                     name="where" value="SUBJECT_CONTENT" />
                                 <input id="query" name="query" title="검색어" placeholder="검색어를 입력해 주세요. (제목, 내용)"
                                     class="input_txt required _filter" type="text" value="" maxlength="20" /><button
                                     type="submit" class="btn_search">검색하기</button>
-                            </form>
+                            </form> -->
                         </div>
                     </div>
                     <div class="tab-panel">
@@ -83,7 +83,7 @@
                             </ul>
 
                             <div class="btn_wd640 btn_wrap">
-                                <button type="button" class="btn btn-lg btn-success">더보기</button>
+                           <!--      <button type="button" class="btn btn-lg btn-success">더보기</button> -->
                                 <br><br>
                                 <button type="button" class="btn btn-lg btn-success" onclick="location.href='${pageContext.request.contextPath}/workbook/workbookform'">
                                 문제 출제</button>
