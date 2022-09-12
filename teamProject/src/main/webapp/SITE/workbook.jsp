@@ -51,26 +51,7 @@
 <body>
 
 <!-- Header -->
-<header>
-	<a href="${pageContext.request.contextPath}/losh/index" class="logo">JAGONGJA.</a>
-	<ul>
-		<c:if test="${sessionScope.userId eq null}">
-			<li><a
-				href="${pageContext.request.contextPath}/member/loginform">SIGN
-					IN/SIGN UP</a></li>
-		</c:if>
-
-		<c:if test="${sessionScope.userId ne null}">
-			<li><a href="${pageContext.request.contextPath}/odnote/odnote"
-				id="home">오답노트</a></li>
-			<li><a href="${pageContext.request.contextPath}/member/mypage"
-				id="home">마이 페이지(${sessionScope.userNickname})</a></li>
-			<li><a href="${pageContext.request.contextPath}/member/logout">LOG
-					OUT</a></li>
-		</c:if>
-	</ul>
-
-</header>
+<%@include file="/SITE/common/HeaderMesh.jsp"%>
     <div id="wrap">
         <div id="container">
             <div class="contents help notice mg_mobile">
@@ -89,14 +70,14 @@
                             </form> -->
                         </div>
                     </div>
-                    <div class="tab-panel">
+                    <div class="tab-panel" style="color: #fff;">
                         <!-- 공지사항 -->
                         <div id="content1" class="info_box on">
                             <!-- 기본 10개 노출, 더보기 선택시 5개씩 추가 노출  -->
                             <ul id="list-data" class="list">
                                   <c:forEach var="i" items="${wbList}">
-                                <li>
-                                    <a href="${pageContext.request.contextPath}/workbook/workbookpost?wbNum=${i.wbNum}" class="noti-tit">${i.wbTittle}</a>
+                                <li style="color: #fff;">
+                                    <a href="${pageContext.request.contextPath}/workbook/workbookpost?wbNum=${i.wbNum}" class="noti-tit" style="color: #fff;">${i.wbTittle}</a>
                                     <p class="good">추천수 : ${i.recocnt}</p>
                                     <p class="viewer">조회수 : ${i.readcnt}</p>
                                     <p class="date mont">출제자 : ${i.userNickname}</p>

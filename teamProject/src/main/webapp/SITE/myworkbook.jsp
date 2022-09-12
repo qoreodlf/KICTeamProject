@@ -49,9 +49,7 @@
 </head>
 
 <!-- Header -->
-<header>
-	<a href="${pageContext.request.contextPath}/losh/index" class="logo">JAGONGJA.</a>
-</header>
+<%@include file="/SITE/common/HeaderMesh.jsp"%>
 
 <body>
     <div id="wrap">
@@ -78,8 +76,8 @@
                             <!-- 기본 10개 노출, 더보기 선택시 5개씩 추가 노출  -->
                             <ul id="list-data" class="list">
                                   <c:forEach var="i" items="${mywbList}">
-                                <li>
-                                    <a href="${pageContext.request.contextPath}/workbook/workbookpost?wbNum=${i.wbNum}" class="noti-tit">${i.wbTittle}</a>
+                                <li style="color: #fff;">
+                                    <a href="${pageContext.request.contextPath}/workbook/workbookpost?wbNum=${i.wbNum}" class="noti-tit" style="color: #fff;">${i.wbTittle}</a>
                                     <p class="good">추천수 : ${i.recocnt}</p>
                                     <p class="viewer">조회수 : ${i.readcnt}</p>
                                     <p class="date mont">출제자 : ${i.userNickname}</p>
@@ -87,13 +85,6 @@
                                 </li>
                                 </c:forEach>
                             </ul>
-
-                            <div class="btn_wd640 btn_wrap">
-                           <!--      <button type="button" class="btn btn-lg btn-success">더보기</button> -->
-                                <br><br>
-                                <button type="button" class="btn btn-lg btn-success" onclick="location.href='${pageContext.request.contextPath}/workbook/workbookform'">
-                                문제 출제</button>
-                            </div>
                         </div>
                     </div>
                 </div>

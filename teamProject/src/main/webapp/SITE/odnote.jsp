@@ -64,6 +64,8 @@
 </head>
 
 <body>
+<%@include file="/SITE/common/HeaderMesh.jsp"%>
+
 	<div id="wrap">
 		<div id="container">
 			<div class="contents help notice mg_mobile">
@@ -75,7 +77,7 @@
 					<h2 class="top_title" style="color: #FFF;'">
 						오답노트 <br>
 					</h2>
-					<div class="info_box">
+					<!--  <div class="info_box">
 						<div class="input_wrap w100 ">
 							<form id="boardSearchParam" action="/board/words" method="get">
 								<input type="hidden" name="where" value="SUBJECT_CONTENT" /> <input
@@ -86,7 +88,7 @@
 								<button type="submit" class="btn_search">검색하기</button>
 							</form>
 						</div>
-					</div>
+					</div>-->
 					<div class="tab-panel">
 						<!-- 공지사항 -->
 						<div id="content1" class="info_box on" style="color: #FFF;">
@@ -96,9 +98,9 @@
 							<!-- 기본 10개 노출, 더보기 선택시 5개씩 추가 노출  -->
 							<ul id="list-data" class="list">
 								<c:forEach var="i" items="${odlist}">
-									<li><a
+									<li style="color: #fff;"><a
 										href="${pageContext.request.contextPath}/workbook/workbookpost?wbNum=${i.wbNum}"
-										class="noti-tit">${i.wbTittle}</a> <input type="checkbox"
+										class="noti-tit" style="color: #fff;">${i.wbTittle}</a> <input type="checkbox"
 										name="odnote" class="check" value="${i.wbNum}"
 										onclick="checkone()">
 										<p class="date mont">출제자 : ${i.userName}</p>
@@ -107,7 +109,7 @@
 											<fmt:formatDate value="${i.odDate}" pattern="yyyy년 MM월 dd일" />
 										</p>
 										<p class="date mont">과목 : ${i.jmfldnm}</p>
-										<button style="font-weight: bold;"
+										<button style="font-weight: bold; color: #fff;" 
 											onclick="location.href='${pageContext.request.contextPath}/workbook/workbookpost?wbNum=${i.wbNum}'">다시
 											풀기</button></li>
 								</c:forEach>

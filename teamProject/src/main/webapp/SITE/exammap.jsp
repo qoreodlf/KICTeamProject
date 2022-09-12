@@ -11,8 +11,8 @@
 <!-- <link rel="stylesheet" href="css/exammap.css"> -->
 <script
 	src="${pageContext.request.contextPath}/SITE/JS/locationSelect.js"></script>
-	
 <style>
+
 @charset "UTF-8";
 
 @import
@@ -350,6 +350,7 @@ select {
 </head>
 
 <body>
+<%@include file="/SITE/common/HeaderMesh.jsp"%>
 	<div class="map_wrap">
 		<div id="map"
 			style="width: 100%; height: 100%; position: relative; overflow: hidden; padding: 5px 10px;"></div>

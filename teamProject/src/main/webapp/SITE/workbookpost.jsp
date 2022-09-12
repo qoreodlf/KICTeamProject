@@ -35,7 +35,7 @@
 </head>
 
 <body style="overflow: scroll;">
-
+<%@include file="/SITE/common/HeaderMesh.jsp"%>
 
 	<!-- TOAST UI -->
 	<script
@@ -126,11 +126,12 @@
 									</c:if>
 									<br> <br>
 									<div id="replyList"></div> <!-- 댓글 -->
-									<hr>
-									<br> <br>
+									</div>
+									<br>
+									
 									<c:if test="${sessionScope.userId ne null}">
 										<textarea name="comment" id="reText" cols="10" rows="10"
-											style="height: 54px; border-radius: 5px; font-size: 1.2rem;"
+											style="height: 54px; border-radius: 5px; font-size: 1.2rem; width: 95%;  float: left"
 											placeholder="댓글 작성"></textarea>
 
 										<br>
@@ -140,6 +141,7 @@
 											style="width: 120px; height: 50px; border: 0; color: #000"
 											onclick="addReply();">댓글등록</button>
 									</c:if>
+					
 								
 								</div>
 							</div>
@@ -254,13 +256,14 @@
 			.then(json=> {
 				var a = ''
 				for(var i=0; i<json.length; i++){
-					a += '<div style="background: #fff;">'
+					a += '<div style="background: #fff; position: relative;">'
+					a+= '<div style="width: 95%; float: left;">'
 					a += '<textarea name="comment" cols="10" rows="10"'
 					a += 'style="height: 54px; border-radius: 5px; font-size: 1.2rem; background: #FFF;"'
-					a += 'placeholder="'+ json[i].userNickname +' : ' + json[i].reText + '" disabled></textarea>'
+					a += 'placeholder="'+ json[i].userNickname +' : ' + json[i].reText + '" disabled></textarea></div>'
 					if(userId==json[i].userId) {
-						a += '<div>'
-						a += '<button value="'+json[i].replyNum+'" onclick="deleteReply(this)">댓글삭제</button>'
+						a += '<div style="width: 5%; float: right;">'
+						a += '<button value="'+json[i].replyNum+'" onclick="deleteReply(this)" style="color: #fff;">삭제</button>'
 						a += '</div>'
 					}
 					a += '</div>'

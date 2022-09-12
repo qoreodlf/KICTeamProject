@@ -24,7 +24,7 @@ a {
 body {
  min-height: 100vh;
  background: linear-gradient(#000000, #3b3b3b);
- overflow: hidden;
+ overflow-x: hidden;
 }
 
 /* Header 큰 틀 */
