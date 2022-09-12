@@ -28,6 +28,14 @@ public class MemberDao {
 		return member;
 	}
 	
+	public int updatePassword(String userId, String userPassword) {
+		map.clear();
+		map.put("userId", userId);
+		map.put("userPassword", userPassword);
+		int num = session.update(ns+"updatepassword", map);
+		return num;
+	}
+	
 	public int updateNickname(String userId, String userNickname) {
 		map.clear();
 		map.put("userId", userId);
@@ -38,6 +46,11 @@ public class MemberDao {
 	
 	public int addKakaoMember(Member member) {
 		int num = session.insert(ns+"addkakaomember", member);
+		return num;
+	}
+	
+	public int deleteUser(String userId) {
+		int num = session.delete(ns+"deleteuser", userId);
 		return num;
 	}
 }

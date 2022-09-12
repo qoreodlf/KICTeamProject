@@ -11,6 +11,10 @@
 		insert into jgjuser values (#{userId}, #{userPassword}, #{userName}, #{userEmail}, #{userType}, #{userNickname})
 	</insert>
 	
+	<update id="updatepassword" parameterType="map">
+		update jgjuser set userpassword = #{userPassword} where userid = #{userId}
+	</update>
+	
 	<update id="updatenickname" parameterType="map">
 		update jgjuser set usernickname = #{userNickname} where userid = #{userId}
 	</update>
@@ -18,4 +22,8 @@
 	<select id="selectbynickname" parameterType="string" resultType="member">
 	 select * from jgjuser where usernickname = #{value}
 	</select>
+	
+	<delete id="deleteuser" parameterType="string">
+	 delete from jgjuser where userid = #{value}
+	</delete>
 </mapper>

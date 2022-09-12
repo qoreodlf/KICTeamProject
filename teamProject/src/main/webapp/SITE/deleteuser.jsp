@@ -43,19 +43,18 @@
 								<div class="card-front" id="front">
 									<div class="center-wrap">
 										<div class="section text-center">
-											<h4 class="mb-4 pb-3">닉네임을 설정해주세요</h4>
+											<h4 class="mb-4 pb-3">회원을 탈퇴하겠습니까?</h4>
 											<!-- KAKAO -->
 											<form
-												action="${pageContext.request.contextPath}/member/nicknamepro"
+												action="${pageContext.request.contextPath}/member/deleteuserpro"
 												method="post">
-
-												<div class="form-group">
-
-													<input type="text" name="userNickname" class="form-style"
-														placeholder="닉네임" id="logname" autocomplete="off">
-													<i class="input-icon uil uil-user"></i>
-
+												
+												<div class="form-group mt-2">
+													<input type="password" name="userPassword" class="form-style"
+														placeholder="비밀번호" id="logpass" autocomplete="off">
+													<i class="input-icon uil uil-lock-alt"></i>
 												</div>
+
 												
 
 												<button type="submit" class="btn mt-4">확인</button>
@@ -75,6 +74,7 @@
 	</div>
 
 </body>
+
 
 
 

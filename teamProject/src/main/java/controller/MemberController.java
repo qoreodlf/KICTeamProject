@@ -208,4 +208,63 @@ public class MemberController {
 
 		return "alert";
 	}
+	
+	@RequestMapping("changepassword")
+	public String changePassword() throws Exception{
+		return "changepw";
+	}
+	
+	//비밀번호 변경
+	@RequestMapping("changepasswordpro")
+	public String changePasswordPro(String newPassword1, String newPassword2, String userPassword) throws Exception{
+		
+		String userId = (String) session.getAttribute("userId");
+		Member loginMember = md.selectMemberOne(userId);
+		String url;
+		String msg;
+		System.out.println("userid"+userId);
+		System.out.println("dddd"+newPassword1 +newPassword2+ userPassword);
+		if(newPassword1 == null || newPassword2 == null || userPassword ==null) {
+			url = "/member/changepassword";
+			msg = "빈칸을 확인해주세요";
+		} else if(!newPassword1.equals(newPassword2)) {
+			url = "/member/changepassword";
+			msg = "새 비밀번호가 일치하지 않습니다.";
+		} else if (!loginMember.getUserPassword().equals(userPassword)) {
+			url = "/member/changepassword";
+			msg = "현재 비밀번호가 일치하지 않습니다.";
+		} else {
+			md.updatePassword(userId, newPassword1);
+			url = "/losh/index";
+			msg = "비밀번호가 변경되었습니다.";
+		}
+		request.setAttribute("url", url);
+		request.setAttribute("msg", msg);
+		return "alert";
+	}
+	
+	@RequestMapping("deleteuser")
+	public String deleteUser() throws Exception{
+		return "deleteuser";
+	}
+	
+	@RequestMapping("deleteuserpro")
+	public String deleteUserPro(String userPassword) throws Exception{
+		String userId = (String) session.getAttribute("userId");
+		Member loginMember = md.selectMemberOne(userId);
+		String url;
+		String msg;
+		if(!userPassword.equals(loginMember.getUserPassword())) {
+			url = "/member/deleteuser";
+			msg = "비밀번호가 일치하지 않습니다.";
+		}else {
+			md.deleteUser(userId);
+			session.invalidate();
+			url = "/losh/index";
+			msg = "탈퇴되었습니다.";
+		}
+		request.setAttribute("url", url);
+		request.setAttribute("msg", msg);
+		return "alert";
+	}
 }

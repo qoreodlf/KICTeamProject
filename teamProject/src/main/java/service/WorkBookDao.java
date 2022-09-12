@@ -35,6 +35,11 @@ public class WorkBookDao {
 		return wblist;
 	}
 	
+	public List<WorkBook> selectMyWBList(String userId) {
+		List<WorkBook> wblist = session.selectList(ns+"selectmywblist", userId);
+		return wblist;
+	}
+	
 	public WorkBook selectWBOne(String wbNum) {
 		WorkBook wb = session.selectOne(ns+"selectwbone", wbNum);
 		return wb;

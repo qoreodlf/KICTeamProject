@@ -50,13 +50,25 @@ public class WorkBookController {
 
 		String wbJmcd = (String) session.getAttribute("jmcd");
 		List<WorkBook> wbList = wd.selectWBList(wbJmcd);
-
+		System.out.println(wbJmcd);
 
 		request.setAttribute("wbList", wbList);
+		System.out.println(wbList);
 
 		// 워크북 db에서 종목코드가 세션아이디 종목코드와 맞는애들만 불러서 띄우면됨
 		return "workbook";
 
+	}
+	
+	//내 워크북 작성 리스트
+	@RequestMapping("myworkbook")
+	public String myWorkbook() throws Exception {
+		String userId = (String) session.getAttribute("userId");
+		List<WorkBook> mywbList = wd.selectMyWBList(userId);
+		System.out.println(userId);
+		System.out.println(mywbList);
+		request.setAttribute("mywbList", mywbList);
+		return "myworkbook";
 	}
 
 	// 문제작성페이지

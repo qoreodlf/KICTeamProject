@@ -5,5 +5,7 @@
  <mapping path="*/loginform" exclude="true" />
   <mapping path="*/layout" exclude="true" />
   <mapping path="*/nickname" exclude="true" />
+  <mapping path="*/changepassword" exclude="true" />
+  <mapping path="*/deleteuser" exclude="true" />
 
 </sitemesh>

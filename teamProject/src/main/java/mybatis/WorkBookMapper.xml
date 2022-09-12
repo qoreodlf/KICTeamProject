@@ -21,6 +21,15 @@
 		 order by
 		wbdate desc
 	</select>
+	
+	<select id="selectmywblist" parameterType="string"
+		resultType="workbook">
+		select * from workbook w, jgjuser j, exlist e where w.userId = #{value} and w.userid= j.userid and w.wbjmcd = e.jmcd
+		 order by
+		wbdate desc
+	</select>
+	
+	
 
 	<select id="selectwbone" parameterType="string"
 		resultType="workbook">
