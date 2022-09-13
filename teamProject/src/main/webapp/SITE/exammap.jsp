@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+	<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,6 +12,9 @@
 <!-- <link rel="stylesheet" href="css/exammap.css"> -->
 <script
 	src="${pageContext.request.contextPath}/SITE/JS/locationSelect.js"></script>
+	<!— CSS —>
+<link rel="stylesheet"
+	href="${pageContext.request.contextPath}/SITE/CSS/index_stylemap.css">
 <style>
 
 @charset "UTF-8";
@@ -357,7 +361,7 @@ select {
 		<div id="menu_wrap" class="bg_white" style="padding: 5px 10px">
 			<div class="colorbox" style="padding: 5px 10px"></div>
 			<h1
-				style="text-align: center; font-size: 3rem; color: #FFF; padding: 5px 10px">JAGONGJA.</h1>
+				style="text-align: center; font-size: 3rem; color: #FFF; padding: 5px 10px">시험장소</h1>
 			<div class="option" style="padding: 5px 10px">
 				<div>
 					<form name="f" method="post" class="selectlist"

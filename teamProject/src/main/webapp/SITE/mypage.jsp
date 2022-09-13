@@ -33,7 +33,7 @@
                 <div class="userprofile_wrap">
                   
                 </div>
-                <input type="text" placeholder="${sessionScope.userNickname}">
+                <input type="text" placeholder="${sessionScope.userNickname}" style="color: #FFF;" disabled>
                 <button onclick="location.href='${pageContext.request.contextPath}/member/nickname'" style="outline:none; border: 0; font-size:20px; background: transparent;">EDIT</button>
             </div>
 
@@ -49,10 +49,10 @@
                 <h4 style="color:#FFF;">이름</h4>
                     <p style="color:#FFF;">${sessionScope.userName}</p>
                     <h4 style="color:#FFF;">Email</h4>
-                    <p style="color:#FFF;">${sessionScope.userEmail}</p>
-                    <button onclick="location.href='${pageContext.request.contextPath}/workbook/myworkbook'"style="border: 0; outline:none; color:#FFF; background: transparent; font-size:20px; margin: 0 0 10px 0;">내가 낸 문제</button><br>
-                    <button onclick="location.href='${pageContext.request.contextPath}/member/changepassword'" style="border: 0; outline:none; color:#FFF; background: transparent; font-size:20px; margin: 0 0 10px 0;">비밀번호 변경</button><br>
-                    <button onclick="location.href='${pageContext.request.contextPath}/member/deleteuser'" style="border: 0; outline:none; color:#FFF; background: transparent; font-size:20px; margin: 0 0 10px 0;">회원탈퇴</button>
+                    <p style="color:#FFF; margin: 0 0 40px 0;">${sessionScope.userEmail}</p>
+                    <button onclick="location.href='${pageContext.request.contextPath}/workbook/myworkbook'"style="border: 0; outline:none; color:#FFF; background: transparent; font-size:20px; margin: 0 0 30px 0;">내가 낸 문제</button><br>
+                    <button onclick="location.href='${pageContext.request.contextPath}/member/changepassword'" style="border: 0; outline:none; color:#FFF; background: transparent; font-size:20px; margin: 0 0 30px 0;">비밀번호 변경</button><br>
+                    <button onclick="location.href='${pageContext.request.contextPath}/member/deleteuser'" style="border: 0; outline:none; color:#FFF; background: transparent; font-size:20px; margin: 0 0 30px 0;">회원탈퇴</button>
                 </div>
             </div>
 

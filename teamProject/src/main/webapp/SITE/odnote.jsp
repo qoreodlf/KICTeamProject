@@ -103,7 +103,7 @@
 										class="noti-tit" style="color: #fff;">${i.wbTittle}</a> <input type="checkbox"
 										name="odnote" class="check" value="${i.wbNum}"
 										onclick="checkone()">
-										<p class="date mont">출제자 : ${i.userName}</p>
+										<p class="date mont">출제자 : ${i.userNickname}</p>
 										<p class="date mont">
 											추가날짜 :
 											<fmt:formatDate value="${i.odDate}" pattern="yyyy년 MM월 dd일" />

@@ -28,7 +28,7 @@
 		<div class="hexagon_source">
 			<div class="shape_source">
 				<img
-					src="${pageContext.request.contextPath}/SITE/IMG/source/mappin.gif"
+					src="${pageContext.request.contextPath}/SITE/IMG/source/schedule.gif"
 					alt="">
 				<div class="content_source"
 					onclick="location.href='${pageContext.request.contextPath}/losh/exschedule'">
@@ -43,8 +43,8 @@
 		<!-- 2BOX -->
 		<div class="hexagon_source">
 			<div class="shape_source">
-				<img
-					src="${pageContext.request.contextPath}/SITE/IMG/source/schedule.gif"
+			<img
+					src="${pageContext.request.contextPath}/SITE/IMG/source/mappin.gif"
 					alt="">
 				<div class="content_source"
 					onclick="location.href='${pageContext.request.contextPath}/losh/exmap'">
